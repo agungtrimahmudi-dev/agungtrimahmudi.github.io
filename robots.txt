@@ -1,8 +1,6 @@
 # robots.txt — Agung Tri Mahmudi Portfolio
-# PENTING: ganti "https://agungtrimahmudi.site" dengan domain VPS aslimu.
 
 User-agent: *
 Allow: /
 
-# Lokasi sitemap (bantu mesin pencari menemukan semua halaman)
 Sitemap: https://agungtrimahmudi.site/sitemap.xml
