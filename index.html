@@ -1,6 +1,6 @@
 <!--
   =====================================================================
-  PORTOFOLIO — AGUNG TRI MAHMUDI
+  PORTOFOLIO , AGUNG TRI MAHMUDI
   AI Automation Engineer | n8n Workflow Specialist
   ---------------------------------------------------------------------
   1 file HTML  •  Tailwind CDN + custom CSS  •  Vanilla JS
@@ -13,14 +13,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agung Tri Mahmudi — AI Automation Engineer | n8n Workflow Specialist</title>
+  <title>Agung Tri Mahmudi | AI Automation Engineer | n8n Workflow Specialist</title>
 
   <!-- ===================================================================
        SEO / SOCIAL META
        PENTING: ganti semua "https://agungtrimahmudi.site" di bawah dengan
        domain asli VPS-mu setelah online (mis. https://agungtm.com).
        og:image sebaiknya gambar 1200x630. Sementara memakai profile.jpg
-       (1:1) — tetap jalan, hanya sedikit ter-crop di preview. Untuk hasil
+       (1:1) , tetap jalan, hanya sedikit ter-crop di preview. Untuk hasil
        terbaik, buat file "og-image.jpg" ukuran 1200x630 lalu ganti di sini.
        =================================================================== -->
 
@@ -32,13 +32,13 @@
   <meta name="theme-color" content="#5763A6" />
   <link rel="canonical" href="https://agungtrimahmudi.site/" />
 
-  <!-- Favicon (ikon tab browser) — inisial ATM, tema keunguan/putih -->
+  <!-- Favicon (ikon tab browser) , inisial ATM, tema keunguan/putih -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <!-- Open Graph (Facebook, LinkedIn, WhatsApp, dll) -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Agung Tri Mahmudi — Portfolio" />
-  <meta property="og:title" content="Agung Tri Mahmudi — AI Automation Engineer | n8n Workflow Specialist" />
+  <meta property="og:site_name" content="Agung Tri Mahmudi Portfolio" />
+  <meta property="og:title" content="Agung Tri Mahmudi | AI Automation Engineer | n8n Workflow Specialist" />
   <meta property="og:description" content="Merancang alur kerja otomatisasi yang menghemat waktu & biaya. Solusi nyata untuk rumah sakit, Basarnas, UMKM, dan knowledge base berbasis AI." />
   <meta property="og:url" content="https://agungtrimahmudi.site/" />
   <meta property="og:image" content="https://agungtrimahmudi.site/profile.jpg" />
@@ -48,11 +48,11 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Agung Tri Mahmudi — AI Automation Engineer | n8n Workflow Specialist" />
+  <meta name="twitter:title" content="Agung Tri Mahmudi | AI Automation Engineer | n8n Workflow Specialist" />
   <meta name="twitter:description" content="Merancang alur kerja otomatisasi yang menghemat waktu & biaya. Solusi nyata untuk rumah sakit, Basarnas, UMKM, dan knowledge base berbasis AI." />
   <meta name="twitter:image" content="https://agungtrimahmudi.site/profile.jpg" />
 
-  <!-- Structured Data (schema.org Person) — bantu Google mengenali profil.
+  <!-- Structured Data (schema.org Person) , bantu Google mengenali profil.
        Ganti "url" & "image" dengan domain asli setelah online. -->
   <script type="application/ld+json">
   {
@@ -136,22 +136,39 @@
       border-bottom: 1px solid rgba(160,132,232,0.15);
     }
 
-    /* ===== TEKS GRADIENT ===== */
+    /* ===== TEKS GRADIENT (3 warna + gerak halus, bukan statis) ===== */
     .text-gradient {
-      background: linear-gradient(120deg, #5763A6, #9A8AD6 80%);
+      background: linear-gradient(120deg, #5763A6, #9A8AD6 55%, #F2B265 100%);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% center; }
+      50%      { background-position: 100% center; }
     }
 
-    /* ===== KARTU PROYEK: hover lift + glow ===== */
+    /* ===== KARTU PROYEK: hover lift + glow lebih kaya ===== */
     .project-card {
       transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
     }
     .project-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 40px -12px rgba(74,85,162,0.35);
+      box-shadow: 0 24px 48px -14px rgba(74,85,162,0.4), 0 8px 20px -8px rgba(242,178,101,0.25);
       border-color: rgba(160,132,232,0.5);
+    }
+
+    /* ===== AKSEN "BARIS PERTAMA": tiap paragraf cerita proyek dibuka dengan
+       baris pertama yang sedikit lebih tebal & berwarna aksen, gaya editorial
+       majalah, supaya kartu cerita terasa lebih premium saat dibaca ===== */
+    #modalBody p::first-line {
+      font-weight: 700;
+      color: #5763A6;
+    }
+    .dark #modalBody p::first-line {
+      color: #C3B6EE;
     }
 
     /* ===== ANIMASI FADE-IN ON SCROLL ===== */
@@ -282,7 +299,7 @@
 
         <!-- Bio ringkas -->
         <p class="mt-5 max-w-2xl text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="hero_bio">
-          Saya merancang alur kerja otomatisasi yang menghemat waktu dan biaya — menggabungkan logika node dengan kecerdasan buatan untuk menyelesaikan masalah operasional yang kompleks.
+          Saya merancang alur kerja otomatisasi yang menghemat waktu dan biaya, menggabungkan logika node dengan kecerdasan buatan untuk menyelesaikan masalah operasional yang kompleks.
         </p>
 
         <!-- Tombol aksi -->
@@ -296,19 +313,19 @@
       <div class="reveal mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
         <!-- data-count = angka target untuk animasi count-up; data-suffix = teks setelah angka -->
         <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
-          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-accent"><span class="stat-num" data-count="95">0</span>%</div>
+          <div class="text-3xl md:text-4xl font-extrabold text-gradient"><span class="stat-num" data-count="95">0</span>%</div>
           <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_time">Waktu Dihemat</div>
         </div>
         <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
-          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-accent"><span class="stat-num" data-count="5">0</span></div>
+          <div class="text-3xl md:text-4xl font-extrabold text-gradient"><span class="stat-num" data-count="5">0</span></div>
           <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_systems">Sistem Produksi</div>
         </div>
         <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
-          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-accent"><span class="stat-num" data-count="0">0</span>%</div>
+          <div class="text-3xl md:text-4xl font-extrabold text-gradient"><span class="stat-num" data-count="0">0</span>%</div>
           <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_halu">Halusinasi AI</div>
         </div>
         <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
-          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-accent">24/7</div>
+          <div class="text-3xl md:text-4xl font-extrabold text-gradient">24/7</div>
           <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_service">Layanan Otomatis</div>
         </div>
       </div>
@@ -379,7 +396,7 @@
   </section>
 
   <!-- =================================================================
-       REPOSITORIES  (daftar lengkap, diambil otomatis via GitHub API —
+       REPOSITORIES  (daftar lengkap, diambil otomatis via GitHub API ,
        jadi repo baru langsung muncul di sini tanpa perlu edit manual.
        Kartu cerita di atas ("Proyek") tetap ditulis manual karena butuh
        narasi Problem/Solusi/Hasil yang tidak bisa di-generate dari README.)
@@ -389,7 +406,7 @@
       <div class="reveal max-w-2xl">
         <p class="text-sm font-bold uppercase tracking-widest text-accent" data-i18n="repo_kicker">Repository</p>
         <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="repo_title">Semua repository publik</h2>
-        <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="repo_sub">Diambil langsung dari GitHub — selalu terbaru, termasuk proyek yang belum sempat dibuatkan cerita di atas.</p>
+        <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="repo_sub">Diambil langsung dari GitHub, selalu terbaru, termasuk proyek yang belum sempat dibuatkan cerita di atas.</p>
       </div>
 
       <div id="repoGrid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -555,23 +572,23 @@
       image: 'rekap-rs-workflow.png', // screenshot n8n asli dari repo (assets/workflow.PNG)
       tags: ['n8n','Apps Script','Google Sheets API','Google Docs API','Google Drive API','Gmail API','JavaScript'],
       id: {
-        title: 'Rekap Data Kunjungan Dokter — Otomatis dalam 1 Menit',
-        hook: 'Dari 2 jam menyatukan 3 file Excel jadi 1 menit — laporan kunjungan dokter langsung tersaji sebagai PDF rapi, siap kirim.',
+        title: 'Rekap Data Kunjungan Dokter: Otomatis dalam 1 Menit',
+        hook: 'Dari 2 jam menyatukan 3 file Excel jadi 1 menit. Laporan kunjungan dokter langsung tersaji sebagai PDF rapi, siap kirim.',
         sections: [
-          { h: 'Pendahuluan', p: 'Setiap bulan, staf administrasi rumah sakit harus menyusun laporan kunjungan dokter — dokumen wajib yang harus akurat dan tepat waktu. Tapi prosesnya menyita dua jam, penuh salah hitung, dan sering berujung lembur. Saya melihat ini, dan saya yakin ada cara yang lebih baik.' },
+          { h: 'Pendahuluan', p: 'Setiap bulan, staf administrasi rumah sakit harus menyusun laporan kunjungan dokter, dokumen wajib yang harus akurat dan tepat waktu. Tapi prosesnya menyita dua jam, penuh salah hitung, dan sering berujung lembur. Saya melihat ini, dan saya yakin ada cara yang lebih baik.' },
           { h: 'Masalah', p: 'Ada tiga sumber data yang harus digabung: Rawat Inap, Poli, dan ICU. Setiap sumber memiliki format yang berbeda. Di satu file, tanggal tertulis DD/MM/YYYY. Di file lain, MM/DD/YYYY. Ada juga yang pakai strip, ada yang pakai slash. Staf harus menyesuaikan semuanya secara manual. Masalah berikutnya adalah data pasien rawat inap. Seorang pasien yang masuk 2 Juni dan keluar 5 Juni hanya muncul sebagai satu baris di Excel. Tapi untuk laporan, satu baris itu harus dipecah menjadi empat hari terpisah. Ini harus dilakukan untuk setiap pasien, setiap bulan. Setelah semua data selesai dipecah dan disesuaikan, staf masih harus mengelompokkan data per dokter dan menghitung jumlah pasien per hari. Selama tiga puluh hari. Untuk empat dokter berbeda. Proses ini sederhana, tapi sangat melelahkan. Kesalahan kecil bisa menyebabkan laporan harus diulang dari awal.' },
-          { h: 'Solusi', p: 'Saya merancang sistem otomatis yang menangani seluruh langkah ini tanpa campur tangan manusia. Staf cukup membuka form yang saya buat dengan Google Apps Script, mengunggah tiga file Excel, dan memasukkan bulan target. Setelah tombol submit ditekan, sistem bekerja sendiri: membaca ketiga file, menormalkan semua format tanggal, memecah rentang tanggal rawat inap menjadi per hari, lalu menggabungkan seluruh data. Setelah itu data dikelompokkan per dokter dan dihitung jumlah pasien per hari. Hasil akhirnya disusun rapi ke dalam Google Docs, lalu otomatis dikonversi menjadi PDF — siap langsung diunggah atau dibagikan, atau diedit manual dulu bila masih ada yang perlu disesuaikan. Staf menerima email notifikasi berisi file laporan tersebut.' },
-          { h: 'Hasil', p: 'Proses yang dulu memakan waktu dua jam kini selesai dalam satu menit — penghematan waktu mencapai 95 persen. Kesalahan hitung nyaris tidak pernah terjadi lagi, dan staf tidak perlu lagi lembur di akhir bulan sehingga bisa fokus ke pekerjaan yang lebih penting. Sistem ini mulai dipakai staf rumah sakit sejak Juni 2026, dan langsung memangkas beban kerja mereka sejak laporan bulan pertama.' },
+          { h: 'Solusi', p: 'Saya merancang sistem otomatis yang menangani seluruh langkah ini tanpa campur tangan manusia. Staf cukup membuka form yang saya buat dengan Google Apps Script, mengunggah tiga file Excel, dan memasukkan bulan target. Setelah tombol submit ditekan, sistem bekerja sendiri: membaca ketiga file, menormalkan semua format tanggal, memecah rentang tanggal rawat inap menjadi per hari, lalu menggabungkan seluruh data. Setelah itu data dikelompokkan per dokter dan dihitung jumlah pasien per hari. Hasil akhirnya disusun rapi ke dalam Google Docs, lalu otomatis dikonversi menjadi PDF, siap langsung diunggah atau dibagikan, atau diedit manual dulu bila masih ada yang perlu disesuaikan. Staf menerima email notifikasi berisi file laporan tersebut.' },
+          { h: 'Hasil', p: 'Proses yang dulu memakan waktu dua jam kini selesai dalam satu menit: penghematan waktu mencapai 95 persen. Kesalahan hitung nyaris tidak pernah terjadi lagi, dan staf tidak perlu lagi lembur di akhir bulan sehingga bisa fokus ke pekerjaan yang lebih penting. Sistem ini mulai dipakai staf rumah sakit sejak Juni 2026, dan langsung memangkas beban kerja mereka sejak laporan bulan pertama.' },
         ],
       },
       en: {
-        title: 'Doctor Visit Report — Automated in Under a Minute',
-        hook: 'From 2 hours merging three Excel files down to 1 minute — the doctor visit report is generated straight into a clean, send-ready PDF.',
+        title: 'Doctor Visit Report: Automated in Under a Minute',
+        hook: 'From 2 hours merging three Excel files down to 1 minute. The doctor visit report is generated straight into a clean, send-ready PDF.',
         sections: [
-          { h: 'Introduction', p: 'Every month, hospital admin staff must compile the doctor visit report — a mandatory document that has to be accurate and on time. But the process ate up two hours, was riddled with miscalculations, and often meant overtime. I saw this, and I was sure there was a better way.' },
-          { h: 'Problem', p: 'Three data sources had to be merged: Inpatient, Outpatient (Poli), and ICU. Each source had a different format. In one file, dates were written as DD/MM/YYYY. In another, MM/DD/YYYY. Some used dashes, some used slashes. Staff had to reconcile all of it by hand. The next problem was the inpatient data. A patient admitted on June 2 and discharged on June 5 appeared as a single row in Excel. But for the report, that one row had to be split into four separate days. This had to be done for every patient, every month. After all the data was split and reconciled, staff still had to group it per doctor and count patients per day — for thirty days, across four different doctors. The process was simple but exhausting. One small mistake could force the whole report to be redone.' },
-          { h: 'Solution', p: 'I designed an automated system that handles every one of these steps without human intervention. Staff simply open a form I built with Google Apps Script, upload the three Excel files, and enter the target month. Once submit is pressed, the system works on its own: it reads all three files, normalizes every date format, expands inpatient date ranges into individual days, then merges all the data. It then groups the data per doctor and counts patients per day. The final result is laid out neatly in Google Docs and automatically converted into a PDF — ready to upload or share directly, or to edit manually first if something still needs adjusting. Staff receive an email notification containing the report file.' },
-          { h: 'Result', p: 'A process that once took two hours now finishes in one minute — a 95 percent time saving. Miscalculations have all but disappeared, and staff no longer work overtime at month-end, freeing them to focus on more important work. The system has been used by the hospital staff since June 2026 and cut their workload from the very first monthly report.' },
+          { h: 'Introduction', p: 'Every month, hospital admin staff must compile the doctor visit report, a mandatory document that has to be accurate and on time. But the process ate up two hours, was riddled with miscalculations, and often meant overtime. I saw this, and I was sure there was a better way.' },
+          { h: 'Problem', p: 'Three data sources had to be merged: Inpatient, Outpatient (Poli), and ICU. Each source had a different format. In one file, dates were written as DD/MM/YYYY. In another, MM/DD/YYYY. Some used dashes, some used slashes. Staff had to reconcile all of it by hand. The next problem was the inpatient data. A patient admitted on June 2 and discharged on June 5 appeared as a single row in Excel. But for the report, that one row had to be split into four separate days. This had to be done for every patient, every month. After all the data was split and reconciled, staff still had to group it per doctor and count patients per day, for thirty days, across four different doctors. The process was simple but exhausting. One small mistake could force the whole report to be redone.' },
+          { h: 'Solution', p: 'I designed an automated system that handles every one of these steps without human intervention. Staff simply open a form I built with Google Apps Script, upload the three Excel files, and enter the target month. Once submit is pressed, the system works on its own: it reads all three files, normalizes every date format, expands inpatient date ranges into individual days, then merges all the data. It then groups the data per doctor and counts patients per day. The final result is laid out neatly in Google Docs and automatically converted into a PDF, ready to upload or share directly, or to edit manually first if something still needs adjusting. Staff receive an email notification containing the report file.' },
+          { h: 'Result', p: 'A process that once took two hours now finishes in one minute: a 95 percent time saving. Miscalculations have all but disappeared, and staff no longer work overtime at month-end, freeing them to focus on more important work. The system has been used by the hospital staff since June 2026 and cut their workload from the very first monthly report.' },
         ],
       },
     },
@@ -583,23 +600,23 @@
       image: 'placeholder-jurnal.svg', // TODO: ganti dengan screenshot form/spreadsheet asli
       tags: ['n8n','Google Sheets API','Google Drive API','Google Form','SMTP Email','JavaScript'],
       id: {
-        title: 'Jurnal Siaga — Generator Laporan Shift Bulanan Otomatis',
+        title: 'Jurnal Siaga: Generator Laporan Shift Bulanan Otomatis',
         hook: 'Laporan shift Basarnas dari 30+ dropdown manual jadi 1 form: 30 menit → 2 menit.',
         sections: [
           { h: 'Pendahuluan', p: 'Di setiap bulan, staf Basarnas harus membuat jurnal siaga shift. Dokumen ini wajib, harus akurat, dan harus selesai tepat waktu. Tapi di satu kantor, proses ini selalu menyita waktu. Mereka harus memilih dari dropdown panjang, menyesuaikan kombinasi shift dan hari, lalu mengetik ulang data yang sama setiap bulan. Butuh 30 menit. Repetitif. Membosankan. Dan selalu terasa seperti pekerjaan sia-sia. Saya melihat ini, dan saya yakin ada cara yang lebih baik.' },
-          { h: 'Masalah', p: 'Setiap bulan, staf membuat laporan shift lewat file dengan dropdown yang panjang — 30+ pilihan. Alurnya selalu sama: pilih dari dropdown, lalu salin baris itu dan ganti isinya dengan kegiatan shift berikutnya, berulang-ulang sampai satu bulan penuh. Duplikasinya memang mudah, tapi sangat membosankan dan menyita 30 menit setiap bulan. Padahal kalau diperhatikan, semua kombinasi shift dan hari itu sebenarnya hanya membentuk empat pola yang berulang — sesuatu yang sangat mungkin diotomatisasi.' },
-          { h: 'Solusi', p: 'Saya menganalisis pola shift dan hari, dan menemukan bahwa semua kombinasi hanya membentuk 4 pola berulang. Saya menyederhanakan semuanya menjadi 4 template: A, B, C, dan D. Staf hanya perlu mengisi 1 Google Form — tanggal, bulan, dan shift awal. Sistem otomatis menentukan template yang tepat untuk setiap tanggal, menyalinnya, mengisi hari dan tanggal, menggabungkan semua sheet, lalu mengirim PDF ke email pengirim. Semua otomatis.' },
-          { h: 'Hasil', p: 'Proses yang dulu memakan waktu 30 menit kini selesai dalam 2 menit. Penghematan waktu mencapai 80 persen. Sistem ini sudah berjalan konsisten sejak Juli 2025 — lebih dari 1 tahun. Meskipun template admin berubah dua kali, logika inti tetap sama dan sistem tetap berjalan tanpa kendala.' },
+          { h: 'Masalah', p: 'Setiap bulan, staf membuat laporan shift lewat file dengan dropdown yang panjang (30+ pilihan). Alurnya selalu sama: pilih dari dropdown, lalu salin baris itu dan ganti isinya dengan kegiatan shift berikutnya, berulang-ulang sampai satu bulan penuh. Duplikasinya memang mudah, tapi sangat membosankan dan menyita 30 menit setiap bulan. Padahal kalau diperhatikan, semua kombinasi shift dan hari itu sebenarnya hanya membentuk empat pola yang berulang, sesuatu yang sangat mungkin diotomatisasi.' },
+          { h: 'Solusi', p: 'Saya menganalisis pola shift dan hari, dan menemukan bahwa semua kombinasi hanya membentuk 4 pola berulang. Saya menyederhanakan semuanya menjadi 4 template: A, B, C, dan D. Staf hanya perlu mengisi 1 Google Form: tanggal, bulan, dan shift awal. Sistem otomatis menentukan template yang tepat untuk setiap tanggal, menyalinnya, mengisi hari dan tanggal, menggabungkan semua sheet, lalu mengirim PDF ke email pengirim. Semua otomatis.' },
+          { h: 'Hasil', p: 'Proses yang dulu memakan waktu 30 menit kini selesai dalam 2 menit. Penghematan waktu mencapai 80 persen. Sistem ini sudah berjalan konsisten sejak Juli 2025, lebih dari 1 tahun. Meskipun template admin berubah dua kali, logika inti tetap sama dan sistem tetap berjalan tanpa kendala.' },
         ],
       },
       en: {
-        title: 'Standby Journal — Automated Monthly Shift Report Generator',
+        title: 'Standby Journal: Automated Monthly Shift Report Generator',
         hook: 'Basarnas shift reports from 30+ manual dropdowns down to a single form: 30 minutes → 2 minutes.',
         sections: [
           { h: 'Introduction', p: 'Every month, Basarnas (search & rescue) staff must produce a standby shift journal. The document is mandatory, must be accurate, and must be finished on time. But at one office, this process always ate up time. They had to pick from long dropdowns, adjust shift-and-day combinations, then retype the same data every month. It took 30 minutes. Repetitive. Tedious. And it always felt like wasted effort. I saw this, and I was sure there was a better way.' },
-          { h: 'Problem', p: 'Every month, staff created the shift report in a file full of long dropdowns — 30+ options. The routine was always the same: pick from a dropdown, then copy that row and replace its contents with the next shift’s activity, over and over until the whole month was filled. The duplication was easy but deeply tedious, eating up 30 minutes every month. Yet on closer inspection, all the shift-and-day combinations really formed just four recurring patterns — something perfectly suited for automation.' },
-          { h: 'Solution', p: 'I analyzed the shift-and-day patterns and found that all the combinations formed only 4 recurring patterns. I simplified everything into 4 templates: A, B, C, and D. Staff only fill in a single Google Form — date, month, and starting shift. The system automatically selects the correct template for each date, copies it, fills in the day and date, merges all sheets, then emails a PDF to the sender. All automatic.' },
-          { h: 'Result', p: 'A process that once took 30 minutes now finishes in 2 minutes — an 80 percent time saving. The system has run consistently since July 2025 — over a year. Even though the admin template changed twice, the core logic stayed the same and the system kept running without issues.' },
+          { h: 'Problem', p: 'Every month, staff created the shift report in a file full of long dropdowns (30+ options). The routine was always the same: pick from a dropdown, then copy that row and replace its contents with the next shift’s activity, over and over until the whole month was filled. The duplication was easy but deeply tedious, eating up 30 minutes every month. Yet on closer inspection, all the shift-and-day combinations really formed just four recurring patterns, something perfectly suited for automation.' },
+          { h: 'Solution', p: 'I analyzed the shift-and-day patterns and found that all the combinations formed only 4 recurring patterns. I simplified everything into 4 templates: A, B, C, and D. Staff only fill in a single Google Form: date, month, and starting shift. The system automatically selects the correct template for each date, copies it, fills in the day and date, merges all sheets, then emails a PDF to the sender. All automatic.' },
+          { h: 'Result', p: 'A process that once took 30 minutes now finishes in 2 minutes: an 80 percent time saving. The system has run consistently since July 2025, over a year. Even though the admin template changed twice, the core logic stayed the same and the system kept running without issues.' },
         ],
       },
     },
@@ -607,11 +624,11 @@
     /* ---------- PROYEK 3: AI Chatbot UMKM ---------- */
     {
       icon: '🤖',
-      github: null, // instance lama, tidak ada repo publik — tampil sebagai studi kasus teknis
+      github: null, // instance lama, tidak ada repo publik , tampil sebagai studi kasus teknis
       image: 'placeholder-umkm.svg', // TODO: ganti dengan screenshot chat/Sheets asli
       tags: ['n8n','Google Sheets API','Gemini API','Telegram API'],
       id: {
-        title: 'AI Chatbot UMKM — Otomatisasi Layanan Pelanggan 24/7',
+        title: 'AI Chatbot UMKM: Otomatisasi Layanan Pelanggan 24/7',
         hook: 'Bot Telegram + Google Sheets + AI menjawab 80% pertanyaan pelanggan secara otomatis.',
         sections: [
           { h: 'Pendahuluan', p: 'Setiap UMKM punya masalah yang sama: pelanggan bertanya terus menerus soal stok, harga, dan ketersediaan barang. Admin harus membalas satu per satu. Saat jam sibuk, balasan tertunda. Pelanggan kecewa. Penjualan hilang. Seorang teman yang punya usaha jajanan di Kotamara mengeluh hal yang sama. Dia harus mengecek stok manual, membalas chat satu per satu, dan sering kewalahan. Saya melihat ini, dan saya yakin ada cara yang lebih baik.' },
@@ -621,7 +638,7 @@
         ],
       },
       en: {
-        title: 'SME AI Chatbot — 24/7 Automated Customer Service',
+        title: 'SME AI Chatbot: 24/7 Automated Customer Service',
         hook: 'A Telegram bot + Google Sheets + AI that answers 80% of customer questions automatically.',
         sections: [
           { h: 'Introduction', p: 'Every small business (SME) has the same problem: customers constantly ask about stock, prices, and availability. The admin has to reply one by one. During busy hours, replies get delayed. Customers get frustrated. Sales are lost. A friend who runs a snack business in Kotamara complained about exactly this. He had to check stock manually, reply to chats one by one, and was often overwhelmed. I saw this, and I was sure there was a better way.' },
@@ -639,23 +656,23 @@
       image: 'placeholder-recipe.svg', // TODO: ganti dengan screenshot percakapan bot asli
       tags: ['Python','FastAPI','Gemini API','Telegram API','n8n','Docker'],
       id: {
-        title: 'Recipe RAG — Asisten Masak via Telegram',
-        hook: 'Bot Telegram yang menjawab dari 1.000 resep asli — tanpa vector database, tanpa resep karangan.',
+        title: 'Recipe RAG: Asisten Masak via Telegram',
+        hook: 'Bot Telegram yang menjawab dari 1.000 resep asli, tanpa vector database, tanpa resep karangan.',
         sections: [
-          { h: 'Pendahuluan', p: '"Enaknya tempe di rumah dimasak apa ya?" adalah pertanyaan yang lebih cocok ditanyakan ke bot daripada mesin pencari — tapi hanya kalau bot itu benar-benar melihat kumpulan resep nyata, bukan mengarang sesuatu yang terdengar masuk akal. AI generatif biasa tidak bisa melihat koleksi resep tertentu, dan akan dengan santai mengarang bahan atau langkah yang sebenarnya tidak ada.' },
-          { h: 'Masalah', p: 'Saya ingin pipeline yang menjejakkan setiap klaim pada kumpulan dokumen nyata, bisa diakses dari Telegram, dan mau mengaku "tidak ada di koleksi saya" ketimbang menebak-nebak — juga berperilaku seperti asisten sungguhan (bisa basa-basi, tanya balik, memilih dari daftar pendek), bukan kotak pencarian sekali tembak yang menumpahkan daftar tautan.' },
-          { h: 'Solusi', p: 'Tiga bagian terpisah: (1) `prepare_dataset.py` menyaring dataset resep Indonesia dari Kaggle (8 kategori dari Cookpad Indonesia) menjadi 1.000 resep paling disukai, tiap baris menyimpan URL sumber aslinya. (2) `build_index.py` meng-embed setiap resep dengan Gemini dan menyimpan vektornya ke file JSON biasa — sengaja tanpa vector database terpisah — dan bisa dilanjutkan kapan saja tanpa mengulang panggilan API untuk resep yang sudah pernah di-embed. (3) `ask.py` / `api.py` menjalankan pencarian + jawaban, baik lewat CLI untuk uji manual maupun sebagai bot Telegram untuk pemakaian sehari-hari.' },
-          { h: 'Hasil', p: 'Berjalan aktif lewat Telegram untuk kebutuhan sehari-hari. Contoh nyata: tanya "saya punya tempe di rumah, enaknya dimasak apa ya?" — bot mengambil 8 resep tempe paling relevan (skor kecocokan 0.72–0.73) lengkap dengan tautan sumber Cookpad-nya, lalu menjawab dari resep-resep itu saja. Tidak ada bahan atau langkah yang dikarang; semua bisa ditelusuri balik ke resep aslinya.' },
+          { h: 'Pendahuluan', p: '"Enaknya tempe di rumah dimasak apa ya?" adalah pertanyaan yang lebih cocok ditanyakan ke bot daripada mesin pencari, tapi hanya kalau bot itu benar-benar melihat kumpulan resep nyata, bukan mengarang sesuatu yang terdengar masuk akal. AI generatif biasa tidak bisa melihat koleksi resep tertentu, dan akan dengan santai mengarang bahan atau langkah yang sebenarnya tidak ada.' },
+          { h: 'Masalah', p: 'Saya ingin pipeline yang menjejakkan setiap klaim pada kumpulan dokumen nyata, bisa diakses dari Telegram, dan mau mengaku "tidak ada di koleksi saya" ketimbang menebak-nebak. Bot ini juga harus berperilaku seperti asisten sungguhan (bisa basa-basi, tanya balik, memilih dari daftar pendek), bukan kotak pencarian sekali tembak yang menumpahkan daftar tautan.' },
+          { h: 'Solusi', p: 'Tiga bagian terpisah: (1) `prepare_dataset.py` menyaring dataset resep Indonesia dari Kaggle (8 kategori dari Cookpad Indonesia) menjadi 1.000 resep paling disukai, tiap baris menyimpan URL sumber aslinya. (2) `build_index.py` meng-embed setiap resep dengan Gemini dan menyimpan vektornya ke file JSON biasa (sengaja tanpa vector database terpisah), bisa dilanjutkan kapan saja tanpa mengulang panggilan API untuk resep yang sudah pernah di-embed. (3) `ask.py` / `api.py` menjalankan pencarian dan jawaban, baik lewat CLI untuk uji manual maupun sebagai bot Telegram untuk pemakaian sehari-hari.' },
+          { h: 'Hasil', p: 'Berjalan aktif lewat Telegram untuk kebutuhan sehari-hari. Contoh nyata: tanya "saya punya tempe di rumah, enaknya dimasak apa ya?", bot mengambil 8 resep tempe paling relevan (skor kecocokan 0.72–0.73) lengkap dengan tautan sumber Cookpad-nya, lalu menjawab dari resep-resep itu saja. Tidak ada bahan atau langkah yang dikarang, semua bisa ditelusuri balik ke resep aslinya.' },
         ],
       },
       en: {
-        title: 'Recipe RAG — Telegram Cooking Assistant',
-        hook: 'A Telegram bot that answers from 1,000 real recipes — no vector database, no invented recipes.',
+        title: 'Recipe RAG: Telegram Cooking Assistant',
+        hook: 'A Telegram bot that answers from 1,000 real recipes, no vector database, no invented recipes.',
         sections: [
           { h: 'Introduction', p: '"What can I cook with the tempe I already have?" is a question worth asking a bot instead of a search engine, but only if the bot actually looks at a real recipe collection instead of hallucinating a plausible-sounding one. A plain LLM call can\'t see any particular collection and will happily invent ingredients or steps that don\'t exist.' },
-          { h: 'Problem', p: 'I wanted a pipeline that grounds every factual claim in a real document set, reachable from Telegram, that admits "not in my collection" instead of guessing — and that behaves like an actual assistant (chit-chat, follow-up questions, picking from a shortlist) rather than a one-shot search box that dumps a wall of links.' },
-          { h: 'Solution', p: 'Three separate pieces: (1) `prepare_dataset.py` samples a Kaggle Indonesian-recipe dataset (8 categories scraped from Cookpad Indonesia) down to the 1,000 most-loved recipes, each keeping its source URL. (2) `build_index.py` embeds every recipe with Gemini and caches the vectors to a plain JSON file — deliberately with no separate vector database — and is resumable, so re-running it only embeds genuinely new recipes. (3) `ask.py` / `api.py` handle retrieval and generation, either as a CLI for manual testing or as a Telegram bot for everyday use.' },
-          { h: 'Result', p: 'Runs actively via Telegram for daily use. A real example: asking "I have tempe at home, what should I cook?" returns the 8 most relevant tempe recipes (match scores 0.72–0.73) with their original Cookpad source links, and answers only from those recipes. Nothing is invented — every claim traces back to an actual recipe.' },
+          { h: 'Problem', p: 'I wanted a pipeline that grounds every factual claim in a real document set, reachable from Telegram, that admits "not in my collection" instead of guessing. It also had to behave like an actual assistant (chit-chat, follow-up questions, picking from a shortlist) rather than a one-shot search box that dumps a wall of links.' },
+          { h: 'Solution', p: 'Three separate pieces: (1) `prepare_dataset.py` samples a Kaggle Indonesian-recipe dataset (8 categories scraped from Cookpad Indonesia) down to the 1,000 most-loved recipes, each keeping its source URL. (2) `build_index.py` embeds every recipe with Gemini and caches the vectors to a plain JSON file (deliberately with no separate vector database), and is resumable, so re-running it only embeds genuinely new recipes. (3) `ask.py` / `api.py` handle retrieval and generation, either as a CLI for manual testing or as a Telegram bot for everyday use.' },
+          { h: 'Result', p: 'Runs actively via Telegram for daily use. A real example: asking "I have tempe at home, what should I cook?" returns the 8 most relevant tempe recipes (match scores 0.72–0.73) with their original Cookpad source links, and answers only from those recipes. Nothing is invented, every claim traces back to an actual recipe.' },
         ],
       },
     },
@@ -667,22 +684,22 @@
       image: 'placeholder-hp.svg', // TODO: ganti dengan screenshot PDF/rekap Sheets asli
       tags: ['Python','YouTube Data API','Google Sheets API','Google Slides API','Gmail API'],
       id: {
-        title: 'Laporan Mingguan HP — Konsensus Top 10 per Kelas Harga',
+        title: 'Laporan Mingguan HP: Konsensus Top 10 per Kelas Harga',
         hook: 'Memindai ratusan ulasan YouTube dan artikel setiap Minggu, lalu mengirim peringkat konsensus Top 10 HP per kelas harga sebagai PDF + rekap Sheets.',
         sections: [
           { h: 'Pendahuluan', p: 'Setiap kali ada yang bertanya "HP 3 jutaan sekarang bagusnya apa?", jawabannya butuh satu jam menonton review. Tiap kanal punya jagoan sendiri, tiap artikel menyusun daftar dengan kriteria yang tidak dijelaskan, dan tidak ada satu pun yang menggabungkan semuanya menjadi satu daftar per kelas harga.' },
-          { h: 'Masalah', p: 'Yang sebenarnya dicari bukan opini satu reviewer, melainkan titik temu banyak reviewer — dan itu pekerjaan yang bisa dihitung, bukan ditonton. Seminggu kemudian pertanyaannya berulang, dan pekerjaannya harus diulang dari nol kalau dikerjakan manual.' },
-          { h: 'Solusi', p: 'Pipeline Python delapan tahap: kumpulkan ulasan YouTube dan artikel media teknologi, ekstrak penyebutan tiap perangkat, hitung skor konsensus (otoritas sumber × kesegaran × sinyal peringkat × kecocokan kelas harga), lalu susun deliverable — Google Sheets dan deck Google Slides yang diekspor ke PDF — dan kirim ke email. Sengaja tanpa model bahasa di jalur penilaian, supaya setiap angka bisa ditelusuri ke sumber dan posisi karakternya. Berjalan otomatis tiap Minggu pagi lewat Windows Task Scheduler.' },
+          { h: 'Masalah', p: 'Yang sebenarnya dicari bukan opini satu reviewer, melainkan titik temu banyak reviewer, dan itu pekerjaan yang bisa dihitung, bukan ditonton. Seminggu kemudian pertanyaannya berulang, dan pekerjaannya harus diulang dari nol kalau dikerjakan manual.' },
+          { h: 'Solusi', p: 'Pipeline Python delapan tahap: kumpulkan ulasan YouTube dan artikel media teknologi, ekstrak penyebutan tiap perangkat, hitung skor konsensus (otoritas sumber × kesegaran × sinyal peringkat × kecocokan kelas harga), lalu susun deliverable (Google Sheets dan deck Google Slides yang diekspor ke PDF) dan kirim ke email. Sengaja tanpa model bahasa di jalur penilaian, supaya setiap angka bisa ditelusuri ke sumber dan posisi karakternya. Berjalan otomatis tiap Minggu pagi lewat Windows Task Scheduler.' },
           { h: 'Hasil', p: 'Run 2026-W30: 238 sumber terkumpul (174 video YouTube, 64 artikel web) menghasilkan 2.102 penyebutan perangkat, disaring menjadi 50 peringkat akhir (10 HP × 5 kelas harga). Deliverable berupa PDF dan rekap Google Sheets dengan 238 sumber yang bisa ditelusuri balik.' },
         ],
       },
       en: {
-        title: 'Weekly Phone Report — Top 10 Consensus per Price Class',
+        title: 'Weekly Phone Report: Top 10 Consensus per Price Class',
         hook: 'Scans hundreds of YouTube reviews and tech articles every Sunday, then emails a consensus Top 10 phone ranking per price class as a PDF + Sheets recap.',
         sections: [
           { h: 'Introduction', p: 'Whenever someone asks "what\'s the best phone under 3 million rupiah right now?", the answer takes an hour of watching reviews. Every channel has its own favorite, every article ranks by unstated criteria, and none of them combine everything into a single list per price class.' },
-          { h: 'Problem', p: 'What\'s actually being sought isn\'t one reviewer\'s opinion, but the point where many reviewers agree — and that\'s something that can be computed, not watched. A week later the same question comes up, and the manual work starts over from zero.' },
-          { h: 'Solution', p: 'An eight-stage Python pipeline: collect YouTube reviews and tech articles, extract device mentions, compute a consensus score (source authority × recency × ranking signal × price-class fit), then assemble the deliverables — a Google Sheets recap and a Google Slides deck exported to PDF — and email them out. Deliberately no language model in the scoring path, so every number can be traced back to its source and character position. Runs automatically every Sunday morning via Windows Task Scheduler.' },
+          { h: 'Problem', p: 'What\'s actually being sought isn\'t one reviewer\'s opinion, but the point where many reviewers agree, and that\'s something that can be computed, not watched. A week later the same question comes up, and the manual work starts over from zero.' },
+          { h: 'Solution', p: 'An eight-stage Python pipeline: collect YouTube reviews and tech articles, extract device mentions, compute a consensus score (source authority × recency × ranking signal × price-class fit), then assemble the deliverables (a Google Sheets recap and a Google Slides deck exported to PDF) and email them out. Deliberately no language model in the scoring path, so every number can be traced back to its source and character position. Runs automatically every Sunday morning via Windows Task Scheduler.' },
           { h: 'Result', p: 'Run 2026-W30: 238 collected sources (174 YouTube videos, 64 web articles) produced 2,102 device mentions, filtered down to 50 final rankings (10 phones × 5 price classes). The deliverable is a PDF plus a Google Sheets recap with all 238 sources traceable.' },
         ],
       },
@@ -695,23 +712,23 @@
       image: 'placeholder-novel.svg', // TODO: ganti dengan screenshot email digest asli
       tags: ['n8n','Gemini API','Google Sheets API','Gmail API'],
       id: {
-        title: 'Novel Rekomendasi Harian — Digest Ranking Lintas Situs',
+        title: 'Novel Rekomendasi Harian: Digest Ranking Lintas Situs',
         hook: 'Digest email otomatis tiap pagi berisi Top 10 novel dari empat situs berbeda, dengan penanda judul baru dan perubahan peringkat.',
         sections: [
-          { h: 'Pendahuluan', p: 'Saya membaca web novel setiap hari, dan tiap pagi selalu mengulang ritual yang sama: buka satu per satu situs peringkat, bandingkan mana yang naik, tebak mana yang layak dibaca — sering membaca daftar yang sama persis dengan kemarin tanpa sadar, karena peringkat jarang berubah drastis.' },
+          { h: 'Pendahuluan', p: 'Saya membaca web novel setiap hari, dan tiap pagi selalu mengulang ritual yang sama: buka satu per satu situs peringkat, bandingkan mana yang naik, tebak mana yang layak dibaca. Sering saya membaca daftar yang sama persis dengan kemarin tanpa sadar, karena peringkat jarang berubah drastis.' },
           { h: 'Masalah', p: 'Tiga hal yang ingin diselesaikan: empat situs harus dibuka manual tiap hari, tidak ada cara tahu mana judul yang benar-benar baru versus yang sudah nangkring seminggu, dan sebagian besar situs berbahasa Inggris termasuk genre yang selalu harus difilter manual.' },
-          { h: 'Solusi', p: 'Satu workflow n8n terjadwal 07:00 WITA yang mengambil data dari empat sumber (WTR Lab, Royal Road, NovelUpdates via proxy, MeioNovel), menggabungkan dan menyaring genre, menerjemahkan dengan Gemini 2.5 Flash, membandingkan dengan riwayat di Google Sheets untuk menghitung status baru/naik/turun, lalu mengirim digest HTML lewat Gmail. Sebelas situs di-probe lebih dulu untuk memetakan mana yang bisa diakses sebelum arsitektur diputuskan — lima di antaranya diblokir Cloudflare atau mati dan tidak dipakai.' },
-          { h: 'Hasil', p: 'Berjalan otomatis tiap pagi, satu eksekusi ±67 detik, menghasilkan 40 judul per hari (10 dari tiap 4 sumber) yang sudah tersaring genre — lengkap dengan badge BARU, indikator naik/turun peringkat, dan hari ke-berapa judul itu bertahan di daftar.' },
+          { h: 'Solusi', p: 'Satu workflow n8n terjadwal 07:00 WITA yang mengambil data dari empat sumber (WTR Lab, Royal Road, NovelUpdates via proxy, MeioNovel), menggabungkan dan menyaring genre, menerjemahkan dengan Gemini 2.5 Flash, membandingkan dengan riwayat di Google Sheets untuk menghitung status baru/naik/turun, lalu mengirim digest HTML lewat Gmail. Sebelas situs di-probe lebih dulu untuk memetakan mana yang bisa diakses sebelum arsitektur diputuskan. Lima di antaranya diblokir Cloudflare atau mati dan tidak dipakai.' },
+          { h: 'Hasil', p: 'Berjalan otomatis tiap pagi, satu eksekusi ±67 detik, menghasilkan 40 judul per hari (10 dari tiap 4 sumber) yang sudah tersaring genre, lengkap dengan badge BARU, indikator naik/turun peringkat, dan hari ke-berapa judul itu bertahan di daftar.' },
         ],
       },
       en: {
-        title: 'Daily Novel Recommendations — Cross-Site Ranking Digest',
+        title: 'Daily Novel Recommendations: Cross-Site Ranking Digest',
         hook: 'An automated morning email digest of Top 10 novels from four different sites, with new-title badges and rank-change indicators.',
         sections: [
-          { h: 'Introduction', p: 'I read web novels every day, and every morning I repeated the same ritual: open each ranking site one by one, compare what moved up, guess what\'s worth reading — often reading the exact same list as yesterday without realizing it, since rankings rarely change drastically.' },
+          { h: 'Introduction', p: 'I read web novels every day, and every morning I repeated the same ritual: open each ranking site one by one, compare what moved up, guess what\'s worth reading. I\'d often read the exact same list as yesterday without realizing it, since rankings rarely change drastically.' },
           { h: 'Problem', p: 'Three things needed solving: four sites had to be opened manually every day, there was no way to tell a genuinely new title from one that had been sitting there for a week, and most sites were in English, including genres that always had to be filtered by hand.' },
-          { h: 'Solution', p: 'A single n8n workflow scheduled for 07:00 WITA that fetches from four sources (WTR Lab, Royal Road, NovelUpdates via proxy, MeioNovel), merges and filters by genre, translates with Gemini 2.5 Flash, compares against history in Google Sheets to compute new/up/down status, then sends an HTML digest via Gmail. Eleven sites were probed first to map what was actually reachable before the architecture was decided — five of them were Cloudflare-blocked or dead and were dropped.' },
-          { h: 'Result', p: 'Runs automatically every morning, one execution takes about 67 seconds, producing 40 titles a day (10 from each of 4 sources) already filtered by genre — complete with a NEW badge, rank up/down indicators, and a day-count for titles that have stuck around.' },
+          { h: 'Solution', p: 'A single n8n workflow scheduled for 07:00 WITA that fetches from four sources (WTR Lab, Royal Road, NovelUpdates via proxy, MeioNovel), merges and filters by genre, translates with Gemini 2.5 Flash, compares against history in Google Sheets to compute new/up/down status, then sends an HTML digest via Gmail. Eleven sites were probed first to map what was actually reachable before the architecture was decided. Five of them were Cloudflare-blocked or dead and were dropped.' },
+          { h: 'Result', p: 'Runs automatically every morning, one execution takes about 67 seconds, producing 40 titles a day (10 from each of 4 sources) already filtered by genre, complete with a NEW badge, rank up/down indicators, and a day-count for titles that have stuck around.' },
         ],
       },
     },
@@ -725,7 +742,7 @@
       nav_about:'Tentang', nav_projects:'Proyek', nav_skills:'Keahlian', nav_repos:'Repositori', nav_contact:'Kontak',
       hero_badge:'Tersedia untuk proyek otomatisasi',
       hero_hello:'Halo, saya',
-      hero_bio:'Saya merancang alur kerja otomatisasi yang menghemat waktu dan biaya — menggabungkan logika node dengan kecerdasan buatan untuk menyelesaikan masalah operasional yang kompleks.',
+      hero_bio:'Saya merancang alur kerja otomatisasi yang menghemat waktu dan biaya, menggabungkan logika node dengan kecerdasan buatan untuk menyelesaikan masalah operasional yang kompleks.',
       hero_cta1:'Lihat Proyek', hero_cta2:'Hubungi Saya',
       stat_time:'Waktu Dihemat', stat_systems:'Sistem Produksi', stat_halu:'Halusinasi AI', stat_service:'Layanan Otomatis',
       about_kicker:'Tentang Saya', about_title:'Otomatisasi cerdas, hasil nyata.',
@@ -739,7 +756,7 @@
       skill_kicker:'Teknologi', skill_title:'Tools & keahlian saya',
       skill_sub:'n8n sebagai platform utama saya, didukung keahlian di AI/LLM, integrasi API, dan perancangan workflow.',
       repo_kicker:'Repository', repo_title:'Semua repository publik',
-      repo_sub:'Diambil langsung dari GitHub — selalu terbaru, termasuk proyek yang belum sempat dibuatkan cerita di atas.',
+      repo_sub:'Diambil langsung dari GitHub, selalu terbaru, termasuk proyek yang belum sempat dibuatkan cerita di atas.',
       repo_loading:'Memuat daftar repository…',
       repo_error:'Daftar repository belum bisa dimuat otomatis saat ini.',
       repo_error_link:'Lihat langsung di GitHub',
@@ -757,7 +774,7 @@
       nav_about:'About', nav_projects:'Projects', nav_skills:'Skills', nav_repos:'Repositories', nav_contact:'Contact',
       hero_badge:'Available for automation projects',
       hero_hello:"Hi, I'm",
-      hero_bio:'I design automation workflows that save time and cost — combining node logic with artificial intelligence to solve complex operational problems.',
+      hero_bio:'I design automation workflows that save time and cost, combining node logic with artificial intelligence to solve complex operational problems.',
       hero_cta1:'View Projects', hero_cta2:'Contact Me',
       stat_time:'Time Saved', stat_systems:'Production Systems', stat_halu:'AI Hallucination', stat_service:'Automated Service',
       about_kicker:'About Me', about_title:'Smart automation, real results.',
@@ -771,7 +788,7 @@
       skill_kicker:'Technology', skill_title:'My tools & skills',
       skill_sub:'n8n as my primary platform, supported by expertise in AI/LLM, API integration, and workflow design.',
       repo_kicker:'Repositories', repo_title:'All public repositories',
-      repo_sub:'Pulled directly from GitHub — always current, including projects not yet written up as a case study above.',
+      repo_sub:'Pulled directly from GitHub, always current, including projects not yet written up as a case study above.',
       repo_loading:'Loading repository list…',
       repo_error:'The repository list could not be loaded automatically right now.',
       repo_error_link:'View directly on GitHub',
@@ -787,7 +804,7 @@
     },
   };
 
-  /* Daftar skill DIKELOMPOKKAN — framing jelas: n8n = tool utama, sisanya keahlian.
+  /* Daftar skill DIKELOMPOKKAN , framing jelas: n8n = tool utama, sisanya keahlian.
      Tiap grup punya label bilingual (cat) + catatan opsional (note).
      Grup dengan learning:true ditampilkan bergaya "garis putus-putus" (aspirasi).
      GANTI isi grup "Sedang Dipelajari" sesuai apa yang benar-benar kamu pelajari. */
@@ -798,12 +815,21 @@
       items:[ ['⚡','n8n'] ],
     },
     {
-      // Sengaja TIDAK menyebut model spesifik (Gemini/GPT/Claude/DeepSeek) —
+      // Python & JavaScript dipindah ke sini (bukan lagi "sedang dipelajari") karena
+      // sudah dipakai di repo produksi nyata: recipe-rag-assistant & laporan-hp-mingguan
+      // (Python), workflow n8n & Apps Script (JavaScript).
+      cat:  { id:'Bahasa Pemrograman', en:'Programming Languages' },
+      items:[ ['🐍','Python'], ['🟨','JavaScript'] ],
+    },
+    {
+      // Sengaja TIDAK menyebut model spesifik (Gemini/GPT/Claude/DeepSeek),
       // cukup "LLM" generik agar tidak terkunci ke satu model & fleksibel saat ditanya.
+      // "Vector DB" juga sengaja tidak disebut, karena repo RAG yang sudah jadi
+      // (recipe-rag-assistant) justru sengaja dibangun TANPA vector database.
       cat:  { id:'AI & LLM', en:'AI & LLM' },
       items:[
         ['✨','Generative AI (LLM)'], ['✍️','Prompt Engineering'], ['📚','RAG'],
-        ['🌲','Vector DB (Pinecone)'], ['🤖','AI Agent'], ['🧑‍💻','AI-Driven Coding'],
+        ['🔎','Embeddings & Retrieval'], ['🤖','AI Agent'], ['🧑‍💻','AI-Driven Coding'],
       ],
     },
     {
@@ -812,13 +838,13 @@
     },
     {
       cat:  { id:'Inti & Pendukung', en:'Core & Supporting' },
-      items:[ ['🧩','Workflow Design'], ['🟨','JavaScript'], ['📜','Apps Script'], ['🎨','HTML/CSS'], ['🟢','Node.js'], ['🐳','Docker'] ],
+      items:[ ['🧩','Workflow Design'], ['📜','Apps Script'], ['🎨','HTML/CSS'], ['🟢','Node.js'], ['🐳','Docker'] ],
     },
     {
       cat:  { id:'Sedang Dipelajari', en:'Currently Learning' },
       note: { id:'target belajar berikutnya', en:'next learning goals' },
       learning: true,
-      items:[ ['🐍','Python'], ['🗄️','Supabase'], ['🧠','MCP (Model Context Protocol)'] ],
+      items:[ ['🗄️','Supabase'], ['🧠','MCP (Model Context Protocol)'] ],
     },
   ];
 
@@ -866,7 +892,7 @@
   }
 
   /* ===================================================================
-     4b) REPOSITORIES — daftar live via GitHub REST API (tanpa autentikasi,
+     4b) REPOSITORIES , daftar live via GitHub REST API (tanpa autentikasi,
          cukup untuk trafik portofolio pribadi). Fork & repo profil README
          sendiri disaring. Gagal fetch (rate limit/offline) → degrade ke
          link langsung ke GitHub, bukan section kosong/rusak.
@@ -908,7 +934,7 @@
     grid.innerHTML = REPO_CACHE.map(r => `
       <a href="${r.html_url}" target="_blank" rel="noopener" class="project-card block rounded-2xl bg-white dark:bg-nightCard border border-primary/10 dark:border-nightLine p-5 shadow-sm">
         <h3 class="font-bold text-slate-800 dark:text-white">${escapeHtml(r.name)}</h3>
-        <!-- Deskripsi mentah dari GitHub sengaja TIDAK ditampilkan di sini — bahasanya
+        <!-- Deskripsi mentah dari GitHub sengaja TIDAK ditampilkan di sini , bahasanya
              ikut bahasa asli tiap repo (campur ID/EN) dan tidak bisa ikut toggle ID/EN
              halaman ini, jadi malah bikin tampilan campur aduk kalau ditampilkan. -->
         <div class="mt-3 flex items-center gap-3 text-xs text-slate-400 dark:text-slate-500">
@@ -930,7 +956,7 @@
         `<span class="${pillClass}"><span class="text-lg">${icon}</span>${name}</span>`
       ).join('');
       const note = group.note
-        ? `<span class="text-xs font-semibold text-slate-400 dark:text-slate-500 normal-case tracking-normal">— ${group.note[LANG]}</span>` : '';
+        ? `<span class="text-xs font-semibold text-slate-400 dark:text-slate-500 normal-case tracking-normal">(${group.note[LANG]})</span>` : '';
       return `
         <div class="reveal">
           <div class="flex items-center gap-3 mb-4">
@@ -1088,7 +1114,7 @@
   }
 
   /* ===================================================================
-     11) FORM KONTAK — submit via fetch (Formspree). Placeholder-safe:
+     11) FORM KONTAK , submit via fetch (Formspree). Placeholder-safe:
          jika endpoint belum diganti, tetap tampilkan pesan sukses lokal.
      =================================================================== */
   const form = document.getElementById('contactForm');
@@ -1097,7 +1123,7 @@
     const status = document.getElementById('formStatus');
     const action = form.getAttribute('action');
 
-    // Jika endpoint masih placeholder, jangan kirim ke server — tampilkan sukses lokal.
+    // Jika endpoint masih placeholder, jangan kirim ke server , tampilkan sukses lokal.
     if (action.includes('your-id-here')) {
       status.classList.remove('hidden');
       form.reset();
