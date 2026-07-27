@@ -72,15 +72,14 @@
   }
   </script>
 
-  <!-- Google Fonts: Plus Jakarta Sans (teks isi, mudah dibaca) +
-       Cinzel (judul section, aksen dramatis bergaya LOTM) -->
+  <!-- Google Fonts: Plus Jakarta Sans (satu typeface, isi & judul, konsisten) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons (MIT) — SVG modern, dipanggil lewat <i data-lucide="nama-icon">,
+  <!-- Lucide Icons (MIT) , SVG modern, dipanggil lewat <i data-lucide="nama-icon">,
        diubah jadi SVG oleh lucide.createIcons(). Menggantikan emoji lama. -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Konfigurasi Tailwind: palet warna kustom + font + dark mode via class -->
@@ -90,20 +89,20 @@
       theme: {
         extend: {
           colors: {
-            // Palet LOTM (Lord of the Mysteries): ungu royal pekat + emas/perunggu
-            // redup, gaya Beyonder/Tarot Club, tetap terbaca untuk portofolio kerja.
-            primary:   '#3D2E63', // ungu royal pekat (utama)
-            primary2:  '#4A3B7C', // ungu sedikit lebih terang, untuk gradient
-            accent:    '#B08D57', // emas/perunggu redup (aksen, gaya segel Beyonder)
-            warm:      '#C9A227', // emas lebih cerah (glow, highlight)
-            warmSoft:  '#E4C77E', // emas pucat (glow lembut)
-            night:     '#0B0A14', // dark bg utama, hitam kebiruan pekat
-            nightCard: '#161225', // dark bg kartu, ungu-hitam
-            nightLine: '#2E2447', // dark border, ungu gelap
+            // Palet biru-netral, dipilih berdasarkan riset: biru/warna sejuk
+            // paling konsisten dikaitkan dengan kepercayaan & profesionalitas,
+            // dan tiap warna teks dicek supaya lolos kontras WCAG AA (4.5:1).
+            primary:   '#1E4272', // navy blue (warna utama, teks di atas latar terang)
+            primary2:  '#3B6EA8', // biru lebih terang, untuk gradient/aksen sekunder
+            accent:    '#0F766E', // teal gelap (aksen/CTA, kontras 5.9:1 di atas putih)
+            warm:      '#64748B', // abu-biru netral (dekorasi halus, pengganti emas)
+            warmSoft:  '#94A3B8', // abu-biru lebih terang
+            night:     '#0F172A', // slate-900, dark mode utama
+            nightCard: '#1E293B', // slate-800, kartu dark mode
+            nightLine: '#334155', // slate-700, border dark mode
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['Cinzel', 'serif'], // judul section, kesan dramatis/gothic
           },
         },
       },
@@ -113,30 +112,23 @@
   <style>
     /* ===== BASE ===== */
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    /* Satu typeface untuk judul & isi (bukan serif dekoratif terpisah) ,
+       kejelasan diutamakan di atas efek visual, sesuai riset hero section. */
 
-    /* Judul (h1 hero + h2 tiap section) pakai Cinzel: aksen dramatis gaya
-       LOTM, tanpa mengganti font isi/paragraf supaya tetap mudah dibaca HRD. */
-    h1.font-extrabold, h2.font-extrabold {
-      font-family: 'Cinzel', serif;
-      letter-spacing: 0.01em;
-    }
-
-    /* ===== GRADIENT MESH HERO: kabut ungu-emas gaya LOTM, bukan mesh cerah ===== */
+    /* ===== LATAR: kabut abu-abu netral, tanpa tint warna, nyaman di mata ===== */
     .mesh-bg {
-      background-color: #EDEAF4;
+      background-color: #F1F5F9;
       background-image:
-        radial-gradient(at 12% 18%, rgba(61,46,99,0.18) 0px, transparent 55%),
-        radial-gradient(at 88% 12%, rgba(74,59,124,0.14) 0px, transparent 50%),
-        radial-gradient(at 80% 90%, rgba(176,141,87,0.14) 0px, transparent 52%),
-        radial-gradient(at 30% 85%, rgba(61,46,99,0.10) 0px, transparent 45%);
+        radial-gradient(at 15% 20%, rgba(100,116,139,0.10) 0px, transparent 55%),
+        radial-gradient(at 85% 15%, rgba(30,66,114,0.08) 0px, transparent 50%),
+        radial-gradient(at 50% 90%, rgba(100,116,139,0.08) 0px, transparent 55%);
     }
     .dark .mesh-bg {
-      background-color: #0B0A14;
+      background-color: #0F172A;
       background-image:
-        radial-gradient(at 12% 18%, rgba(74,59,124,0.35) 0px, transparent 55%),
-        radial-gradient(at 88% 12%, rgba(176,141,87,0.10) 0px, transparent 48%),
-        radial-gradient(at 80% 90%, rgba(201,162,39,0.08) 0px, transparent 52%),
-        radial-gradient(at 30% 85%, rgba(74,59,124,0.25) 0px, transparent 45%);
+        radial-gradient(at 15% 20%, rgba(59,110,168,0.16) 0px, transparent 55%),
+        radial-gradient(at 85% 15%, rgba(100,116,139,0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 90%, rgba(30,66,114,0.14) 0px, transparent 55%);
     }
 
     /* ===== GLASSMORPHISM NAVBAR ===== */
@@ -144,67 +136,48 @@
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       background: rgba(255,255,255,0.72);
-      border-bottom: 1px solid rgba(74,85,162,0.10);
+      border-bottom: 1px solid rgba(30,66,114,0.10);
     }
     .dark .glass {
-      background: rgba(18,21,46,0.72);
-      border-bottom: 1px solid rgba(160,132,232,0.15);
+      background: rgba(15,23,42,0.75);
+      border-bottom: 1px solid rgba(51,65,85,0.6);
     }
 
-    /* ===== TEKS GRADIENT: ungu royal ke emas, gerak halus ===== */
+    /* ===== TEKS AKSEN: dua warna biru, statis (tanpa animasi) ===== */
     .text-gradient {
-      background: linear-gradient(120deg, #3D2E63, #B08D57 55%, #C9A227 100%);
-      background-size: 200% auto;
+      background: linear-gradient(120deg, #1E4272, #3B6EA8);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: gradientShift 8s ease-in-out infinite;
-    }
-    @keyframes gradientShift {
-      0%, 100% { background-position: 0% center; }
-      50%      { background-position: 100% center; }
     }
 
-    /* ===== KARTU PROYEK gaya "segel/tarot": hairline emas di atas, hover
-       lift + glow ungu-emas, medali ikon melingkar ===== */
+    /* ===== KARTU PROYEK: hover lift halus, tanpa ornamen ===== */
     .project-card {
-      position: relative;
-      transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 14%; right: 14%; height: 2px;
-      background: linear-gradient(90deg, transparent, #B08D57, transparent);
-      opacity: .85;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
     }
     .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 48px -14px rgba(61,46,99,0.45), 0 8px 20px -8px rgba(176,141,87,0.3);
-      border-color: rgba(176,141,87,0.55);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -16px rgba(30,66,114,0.25);
+      border-color: rgba(59,110,168,0.4);
     }
     .icon-seal {
       width: 3.5rem; height: 3.5rem;
       border-radius: 9999px;
       display: grid; place-content: center;
-      border: 2px solid rgba(176,141,87,0.55);
-      background: radial-gradient(circle, rgba(61,46,99,0.08), rgba(176,141,87,0.08));
-      box-shadow: 0 0 18px rgba(201,162,39,0.25);
+      background: rgba(30,66,114,0.08);
     }
     .dark .icon-seal {
-      border-color: rgba(201,162,39,0.45);
-      box-shadow: 0 0 20px rgba(201,162,39,0.2);
+      background: rgba(59,110,168,0.16);
     }
 
-    /* ===== AKSEN "BARIS PERTAMA": tiap paragraf cerita proyek dibuka dengan
-       baris pertama yang sedikit lebih tebal & berwarna aksen, gaya editorial
-       majalah, supaya kartu cerita terasa lebih premium saat dibaca ===== */
+    /* ===== AKSEN "BARIS PERTAMA": baris pembuka tiap paragraf cerita proyek
+       sedikit lebih tebal, supaya lebih mudah dipindai saat dibaca cepat ===== */
     #modalBody p::first-line {
       font-weight: 700;
-      color: #3D2E63;
+      color: #1E4272;
     }
     .dark #modalBody p::first-line {
-      color: #E4C77E;
+      color: #93C5FD;
     }
 
     /* ===== ANIMASI FADE-IN ON SCROLL ===== */
@@ -246,7 +219,7 @@
   </style>
 </head>
 
-<body class="bg-[#EDEAF4] dark:bg-night text-slate-800 dark:text-slate-200 transition-colors duration-500">
+<body class="bg-[#F1F5F9] dark:bg-night text-slate-800 dark:text-slate-200 transition-colors duration-500">
 
   <!-- =================================================================
        NAVBAR
@@ -264,16 +237,16 @@
           <!-- Fallback inisial (disembunyikan bila foto berhasil dimuat) -->
           <span class="hidden w-full h-full place-content-center bg-gradient-to-br from-primary to-accent text-white font-extrabold text-sm">AT</span>
         </span>
-        <span class="font-extrabold tracking-tight text-slate-800 dark:text-white">Agung<span class="text-accent">.</span></span>
+        <span class="font-extrabold tracking-tight text-slate-800 dark:text-white">Agung Tri Mahmudi</span>
       </a>
 
       <!-- Menu desktop -->
       <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
-        <a href="#about"    class="hover:text-accent transition" data-i18n="nav_about">Tentang</a>
-        <a href="#projects" class="hover:text-accent transition" data-i18n="nav_projects">Proyek</a>
-        <a href="#skills"   class="hover:text-accent transition" data-i18n="nav_skills">Keahlian</a>
-        <a href="#repos"    class="hover:text-accent transition" data-i18n="nav_repos">Repositori</a>
-        <a href="#contact"  class="hover:text-accent transition" data-i18n="nav_contact">Kontak</a>
+        <a href="#about"    class="hover:text-accent dark:hover:text-sky-300 transition" data-i18n="nav_about">Tentang</a>
+        <a href="#projects" class="hover:text-accent dark:hover:text-sky-300 transition" data-i18n="nav_projects">Proyek</a>
+        <a href="#skills"   class="hover:text-accent dark:hover:text-sky-300 transition" data-i18n="nav_skills">Keahlian</a>
+        <a href="#repos"    class="hover:text-accent dark:hover:text-sky-300 transition" data-i18n="nav_repos">Repositori</a>
+        <a href="#contact"  class="hover:text-accent dark:hover:text-sky-300 transition" data-i18n="nav_contact">Kontak</a>
       </div>
 
       <!-- Kontrol kanan: toggle bahasa + dark mode + menu mobile -->
@@ -298,11 +271,11 @@
 
     <!-- Dropdown menu mobile -->
     <div id="mobileMenu" class="md:hidden hidden glass px-5 pb-4 flex-col gap-3 text-sm font-semibold">
-      <a href="#about"    class="block py-1 hover:text-accent" data-i18n="nav_about">Tentang</a>
-      <a href="#projects" class="block py-1 hover:text-accent" data-i18n="nav_projects">Proyek</a>
-      <a href="#skills"   class="block py-1 hover:text-accent" data-i18n="nav_skills">Keahlian</a>
-      <a href="#repos"    class="block py-1 hover:text-accent" data-i18n="nav_repos">Repositori</a>
-      <a href="#contact"  class="block py-1 hover:text-accent" data-i18n="nav_contact">Kontak</a>
+      <a href="#about"    class="block py-1 hover:text-accent dark:hover:text-sky-300" data-i18n="nav_about">Tentang</a>
+      <a href="#projects" class="block py-1 hover:text-accent dark:hover:text-sky-300" data-i18n="nav_projects">Proyek</a>
+      <a href="#skills"   class="block py-1 hover:text-accent dark:hover:text-sky-300" data-i18n="nav_skills">Keahlian</a>
+      <a href="#repos"    class="block py-1 hover:text-accent dark:hover:text-sky-300" data-i18n="nav_repos">Repositori</a>
+      <a href="#contact"  class="block py-1 hover:text-accent dark:hover:text-sky-300" data-i18n="nav_contact">Kontak</a>
     </div>
   </nav>
 
@@ -325,7 +298,7 @@
         <!-- Judul utama -->
         <h1 class="mt-6 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
           <span data-i18n="hero_hello" class="text-slate-500 dark:text-slate-400 text-2xl md:text-3xl block font-bold">Halo, saya</span>
-          <span class="text-gradient">Agung Tri Mahmudi</span>
+          <span class="text-primary dark:text-white">Agung Tri Mahmudi</span>
         </h1>
 
         <!-- Tagline -->
@@ -349,19 +322,19 @@
       <div class="reveal mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
         <!-- data-count = angka target untuk animasi count-up; data-suffix = teks setelah angka -->
         <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
-          <div class="text-3xl md:text-4xl font-extrabold text-gradient"><span class="stat-num" data-count="95">0</span>%</div>
+          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-sky-300"><span class="stat-num" data-count="95">0</span>%</div>
           <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_time">Waktu Dihemat</div>
         </div>
         <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
-          <div class="text-3xl md:text-4xl font-extrabold text-gradient"><span class="stat-num" data-count="5">0</span></div>
+          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-sky-300"><span class="stat-num" data-count="5">0</span></div>
           <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_systems">Sistem Produksi</div>
         </div>
         <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
-          <div class="text-3xl md:text-4xl font-extrabold text-gradient"><span class="stat-num" data-count="0">0</span>%</div>
+          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-sky-300"><span class="stat-num" data-count="0">0</span>%</div>
           <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_halu">Halusinasi AI</div>
         </div>
         <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
-          <div class="text-3xl md:text-4xl font-extrabold text-gradient">24/7</div>
+          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-sky-300">24/7</div>
           <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_service">Layanan Otomatis</div>
         </div>
       </div>
@@ -373,7 +346,7 @@
        ================================================================= -->
   <section id="about" class="py-20 md:py-28">
     <div class="max-w-4xl mx-auto px-5 reveal">
-      <p class="text-sm font-bold uppercase tracking-widest text-accent" data-i18n="about_kicker">Tentang Saya</p>
+      <p class="text-sm font-bold uppercase tracking-widest text-accent dark:text-sky-300" data-i18n="about_kicker">Tentang Saya</p>
       <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="about_title">Otomatisasi cerdas, hasil nyata.</h2>
       <p class="mt-6 text-lg text-slate-600 dark:text-slate-300 leading-relaxed text-justify hyphens-auto" data-i18n="about_body">
         Saya merancang alur kerja otomatisasi yang menghemat waktu dan biaya, menggabungkan logika node dengan kecerdasan buatan untuk menyelesaikan masalah operasional yang kompleks. Portofolio ini menampilkan solusi nyata yang saya bangun untuk rumah sakit, Basarnas, UMKM, dan sistem pengetahuan berbasis AI.
@@ -406,7 +379,7 @@
   <section id="projects" class="py-20 md:py-28 bg-slate-50 dark:bg-nightCard/40">
     <div class="max-w-6xl mx-auto px-5">
       <div class="reveal max-w-2xl">
-        <p class="text-sm font-bold uppercase tracking-widest text-accent" data-i18n="proj_kicker">Portofolio</p>
+        <p class="text-sm font-bold uppercase tracking-widest text-accent dark:text-sky-300" data-i18n="proj_kicker">Portofolio</p>
         <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="proj_title">Solusi otomatisasi yang saya bangun</h2>
         <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="proj_sub">Empat sistem nyata untuk rumah sakit, Basarnas, UMKM, dan knowledge base AI. Klik untuk cerita lengkapnya.</p>
       </div>
@@ -422,7 +395,7 @@
   <section id="skills" class="py-20 md:py-28">
     <div class="max-w-6xl mx-auto px-5">
       <div class="reveal max-w-2xl">
-        <p class="text-sm font-bold uppercase tracking-widest text-accent" data-i18n="skill_kicker">Teknologi</p>
+        <p class="text-sm font-bold uppercase tracking-widest text-accent dark:text-sky-300" data-i18n="skill_kicker">Teknologi</p>
         <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="skill_title">Tools & keahlian saya</h2>
         <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="skill_sub">Kombinasi tools yang saya pakai untuk membangun otomatisasi end-to-end.</p>
       </div>
@@ -440,7 +413,7 @@
   <section id="repos" class="py-20 md:py-28 bg-slate-50 dark:bg-nightCard/40">
     <div class="max-w-6xl mx-auto px-5">
       <div class="reveal max-w-2xl">
-        <p class="text-sm font-bold uppercase tracking-widest text-accent" data-i18n="repo_kicker">Repository</p>
+        <p class="text-sm font-bold uppercase tracking-widest text-accent dark:text-sky-300" data-i18n="repo_kicker">Repository</p>
         <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="repo_title">Semua repository publik</h2>
         <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="repo_sub">Diambil langsung dari GitHub, selalu terbaru, termasuk proyek yang belum sempat dibuatkan cerita di atas.</p>
       </div>
@@ -459,7 +432,7 @@
 
       <!-- Kiri: ajakan + kontak langsung -->
       <div class="reveal">
-        <p class="text-sm font-bold uppercase tracking-widest text-accent" data-i18n="contact_kicker">Kontak</p>
+        <p class="text-sm font-bold uppercase tracking-widest text-accent dark:text-sky-300" data-i18n="contact_kicker">Kontak</p>
         <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="contact_title">Punya proses yang ingin diotomatisasi?</h2>
         <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="contact_sub">Ceritakan tantangan operasional Anda. Saya bantu rancang alur kerja yang menghemat waktu dan biaya.</p>
 
@@ -477,21 +450,21 @@
             <span class="w-10 h-10 grid place-content-center rounded-xl bg-green-500/10 text-green-600 dark:text-green-400">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4a3.4 3.4 0 0 0-1 2.5 6 6 0 0 0 1.2 3.1 13.6 13.6 0 0 0 5.3 4.7c2 .8 2 .5 2.4.5a3 3 0 0 0 2-1.4c.2-.5.2-1 .2-1.1l-.5-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.4A10 10 0 1 0 12 2z"/></svg>
             </span>
-            <span class="font-semibold group-hover:text-accent transition">+62 851-7410-2020</span>
+            <span class="font-semibold group-hover:text-accent dark:group-hover:text-sky-300 transition">+62 851-7410-2020</span>
           </a>
           <!-- LinkedIn -->
           <a href="https://www.linkedin.com/in/agung-tri-mahmudi/" target="_blank" rel="noopener" class="flex items-center gap-3 group">
             <span class="w-10 h-10 grid place-content-center rounded-xl bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.8-2.1c4 0 4.75 2.6 4.75 6V21H17v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg>
             </span>
-            <span class="font-semibold group-hover:text-accent transition">linkedin.com/in/agung-tri-mahmudi</span>
+            <span class="font-semibold group-hover:text-accent dark:group-hover:text-sky-300 transition">linkedin.com/in/agung-tri-mahmudi</span>
           </a>
           <!-- GitHub -->
           <a href="https://github.com/Agungtrimahmudi-automation" target="_blank" rel="noopener" class="flex items-center gap-3 group">
             <span class="w-10 h-10 grid place-content-center rounded-xl bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.39.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
             </span>
-            <span class="font-semibold group-hover:text-accent transition">Agungtrimahmudi-automation</span>
+            <span class="font-semibold group-hover:text-accent dark:group-hover:text-sky-300 transition">Agungtrimahmudi-automation</span>
           </a>
         </div>
       </div>
@@ -771,7 +744,7 @@
   ];
 
   /* ===================================================================
-     1b) BADGE TEKNOLOGI — shields.io, style & warna sama persis dengan
+     1b) BADGE TEKNOLOGI , shields.io, style & warna sama persis dengan
          badge yang dipakai di README tiap repo GitHub-nya, supaya tag di
          kartu proyek langsung dikenali sebagai hal yang sama.
          Tag yang belum ada di kamus ini otomatis fallback ke badge abu-abu
@@ -1059,7 +1032,7 @@
       : '';
     document.getElementById('modalBody').innerHTML = modalImg + d.sections.map(s => `
       <div>
-        <h4 class="text-sm font-extrabold uppercase tracking-wider text-accent">${s.h}</h4>
+        <h4 class="text-sm font-extrabold uppercase tracking-wider text-accent dark:text-sky-300">${s.h}</h4>
         <p class="mt-1.5 text-slate-600 dark:text-slate-300 leading-relaxed text-justify hyphens-auto">${s.p}</p>
       </div>`).join('');
     document.getElementById('modalTags').innerHTML = renderTagBadges(p.tags);
