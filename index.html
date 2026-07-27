@@ -89,17 +89,19 @@
       theme: {
         extend: {
           colors: {
-            // Palet biru-netral, dipilih berdasarkan riset: biru/warna sejuk
-            // paling konsisten dikaitkan dengan kepercayaan & profesionalitas,
-            // dan tiap warna teks dicek supaya lolos kontras WCAG AA (4.5:1).
-            primary:   '#1E4272', // navy blue (warna utama, teks di atas latar terang)
-            primary2:  '#3B6EA8', // biru lebih terang, untuk gradient/aksen sekunder
+            // Biru tegas (bukan navy-indigo yang bisa terbaca ungu) + aksen
+            // teal, dipakai tipis-tipis seperti referensi yang disukai owner.
+            // Dark mode pakai abu-abu netral murni (zinc, bukan slate yang
+            // sedikit kebiruan), kedalaman mengikuti pedoman Material Design
+            // (~#121212, bukan hitam pekat) supaya tidak sakit mata.
+            primary:   '#2563EB', // biru tegas (warna utama, teks di atas latar terang)
+            primary2:  '#3B82F6', // biru lebih terang, untuk gradient/aksen sekunder
             accent:    '#0F766E', // teal gelap (aksen/CTA, kontras 5.9:1 di atas putih)
-            warm:      '#64748B', // abu-biru netral (dekorasi halus, pengganti emas)
-            warmSoft:  '#94A3B8', // abu-biru lebih terang
-            night:     '#0F172A', // slate-900, dark mode utama
-            nightCard: '#1E293B', // slate-800, kartu dark mode
-            nightLine: '#334155', // slate-700, border dark mode
+            warm:      '#64748B', // abu-abu netral (dekorasi halus)
+            warmSoft:  '#94A3B8', // abu-abu lebih terang
+            night:     '#18181B', // zinc-900, abu-abu gelap netral, dark mode utama
+            nightCard: '#27272A', // zinc-800, kartu dark mode
+            nightLine: '#3F3F46', // zinc-700, border dark mode
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -120,15 +122,15 @@
       background-color: #F1F5F9;
       background-image:
         radial-gradient(at 15% 20%, rgba(100,116,139,0.10) 0px, transparent 55%),
-        radial-gradient(at 85% 15%, rgba(30,66,114,0.08) 0px, transparent 50%),
+        radial-gradient(at 85% 15%, rgba(37,99,235,0.07) 0px, transparent 50%),
         radial-gradient(at 50% 90%, rgba(100,116,139,0.08) 0px, transparent 55%);
     }
     .dark .mesh-bg {
-      background-color: #0F172A;
+      background-color: #18181B;
       background-image:
-        radial-gradient(at 15% 20%, rgba(59,110,168,0.16) 0px, transparent 55%),
-        radial-gradient(at 85% 15%, rgba(100,116,139,0.12) 0px, transparent 50%),
-        radial-gradient(at 50% 90%, rgba(30,66,114,0.14) 0px, transparent 55%);
+        radial-gradient(at 15% 20%, rgba(37,99,235,0.14) 0px, transparent 55%),
+        radial-gradient(at 85% 15%, rgba(113,113,122,0.14) 0px, transparent 50%),
+        radial-gradient(at 50% 90%, rgba(37,99,235,0.10) 0px, transparent 55%);
     }
 
     /* ===== GLASSMORPHISM NAVBAR ===== */
@@ -136,16 +138,16 @@
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       background: rgba(255,255,255,0.72);
-      border-bottom: 1px solid rgba(30,66,114,0.10);
+      border-bottom: 1px solid rgba(37,99,235,0.10);
     }
     .dark .glass {
-      background: rgba(15,23,42,0.75);
-      border-bottom: 1px solid rgba(51,65,85,0.6);
+      background: rgba(24,24,27,0.78);
+      border-bottom: 1px solid rgba(63,63,70,0.7);
     }
 
     /* ===== TEKS AKSEN: dua warna biru, statis (tanpa animasi) ===== */
     .text-gradient {
-      background: linear-gradient(120deg, #1E4272, #3B6EA8);
+      background: linear-gradient(120deg, #2563EB, #3B82F6);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -157,24 +159,27 @@
     }
     .project-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 20px 40px -16px rgba(30,66,114,0.25);
-      border-color: rgba(59,110,168,0.4);
+      box-shadow: 0 20px 40px -16px rgba(37,99,235,0.22);
+      border-color: rgba(37,99,235,0.35);
     }
+    /* Ikon proyek: lingkaran bergaris tipis polos (bukan lagi lingkaran isi
+       glow) mengikuti gaya ikon sosial di situs referensi, lebih flat. */
     .icon-seal {
       width: 3.5rem; height: 3.5rem;
       border-radius: 9999px;
       display: grid; place-content: center;
-      background: rgba(30,66,114,0.08);
+      border: 1.5px solid rgba(37,99,235,0.25);
+      background: transparent;
     }
     .dark .icon-seal {
-      background: rgba(59,110,168,0.16);
+      border-color: rgba(59,130,246,0.35);
     }
 
     /* ===== AKSEN "BARIS PERTAMA": baris pembuka tiap paragraf cerita proyek
        sedikit lebih tebal, supaya lebih mudah dipindai saat dibaca cepat ===== */
     #modalBody p::first-line {
       font-weight: 700;
-      color: #1E4272;
+      color: #2563EB;
     }
     .dark #modalBody p::first-line {
       color: #93C5FD;
@@ -238,6 +243,7 @@
         <a href="#projects" class="hover:text-accent dark:hover:text-sky-300 transition" data-i18n="nav_projects">Portofolio</a>
         <a href="#skills"   class="hover:text-accent dark:hover:text-sky-300 transition" data-i18n="nav_skills">Keahlian</a>
         <a href="#repos"    class="hover:text-accent dark:hover:text-sky-300 transition" data-i18n="nav_repos">Repositori</a>
+        <a href="#certifications" class="hover:text-accent dark:hover:text-sky-300 transition" data-i18n="nav_cert">Sertifikasi</a>
         <a href="#contact"  class="hover:text-accent dark:hover:text-sky-300 transition" data-i18n="nav_contact">Kontak</a>
       </div>
 
@@ -267,6 +273,7 @@
       <a href="#projects" class="block py-1 hover:text-accent dark:hover:text-sky-300" data-i18n="nav_projects">Portofolio</a>
       <a href="#skills"   class="block py-1 hover:text-accent dark:hover:text-sky-300" data-i18n="nav_skills">Keahlian</a>
       <a href="#repos"    class="block py-1 hover:text-accent dark:hover:text-sky-300" data-i18n="nav_repos">Repositori</a>
+      <a href="#certifications" class="block py-1 hover:text-accent dark:hover:text-sky-300" data-i18n="nav_cert">Sertifikasi</a>
       <a href="#contact"  class="block py-1 hover:text-accent dark:hover:text-sky-300" data-i18n="nav_contact">Kontak</a>
     </div>
   </nav>
@@ -312,15 +319,13 @@
         </div>
 
         <!-- Foto profil, ukuran cukup besar untuk koneksi personal (bukan cuma logo kecil di navbar).
-             Bingkai cincin gradient biru (bukan putih polos) supaya senada dengan palet situs. -->
+             Bingkai cincin solid tipis (bukan gradient/glow) supaya tetap flat & sederhana. -->
         <div class="reveal order-1 md:order-2 flex justify-center md:justify-end">
-          <span class="relative block w-32 h-32 md:w-44 md:h-44 rounded-full p-1 bg-gradient-to-br from-primary via-primary2 to-accent shadow-xl shrink-0">
-            <span class="relative block w-full h-full rounded-full overflow-hidden ring-4 ring-white dark:ring-nightCard">
-              <img src="profile.jpg" alt="Agung Tri Mahmudi"
-                   class="w-full h-full object-cover"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-              <span class="hidden w-full h-full place-content-center bg-gradient-to-br from-primary to-primary2 text-white font-extrabold text-4xl md:text-5xl">AT</span>
-            </span>
+          <span class="relative block w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden ring-4 ring-primary/25 dark:ring-primary2/40 shadow-lg shrink-0">
+            <img src="profile.jpg" alt="Agung Tri Mahmudi"
+                 class="w-full h-full object-cover"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <span class="hidden w-full h-full place-content-center bg-gradient-to-br from-primary to-primary2 text-white font-extrabold text-4xl md:text-5xl">AT</span>
           </span>
         </div>
       </div>
@@ -360,21 +365,26 @@
       </p>
 
       <!-- Highlight approach -->
-      <div class="mt-8 grid sm:grid-cols-3 gap-4">
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-slate-50 dark:bg-nightCard">
-          <i data-lucide="target" class="w-7 h-7 text-primary dark:text-accent"></i>
+          <i data-lucide="target" class="w-7 h-7 text-primary dark:text-sky-300"></i>
           <h3 class="mt-2 font-bold" data-i18n="about_c1_t">Fokus Masalah</h3>
           <p class="mt-1 text-sm text-slate-500 dark:text-slate-400" data-i18n="about_c1_b">Setiap solusi berawal dari masalah operasional yang nyata dan menyakitkan.</p>
         </div>
         <div class="rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-slate-50 dark:bg-nightCard">
-          <i data-lucide="settings" class="w-7 h-7 text-primary dark:text-accent"></i>
+          <i data-lucide="settings" class="w-7 h-7 text-primary dark:text-sky-300"></i>
           <h3 class="mt-2 font-bold" data-i18n="about_c2_t">Logika + AI</h3>
           <p class="mt-1 text-sm text-slate-500 dark:text-slate-400" data-i18n="about_c2_b">Menggabungkan node workflow n8n dengan model AI untuk keputusan cerdas.</p>
         </div>
         <div class="rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-slate-50 dark:bg-nightCard">
-          <i data-lucide="trending-up" class="w-7 h-7 text-primary dark:text-accent"></i>
+          <i data-lucide="trending-up" class="w-7 h-7 text-primary dark:text-sky-300"></i>
           <h3 class="mt-2 font-bold" data-i18n="about_c3_t">Terukur</h3>
           <p class="mt-1 text-sm text-slate-500 dark:text-slate-400" data-i18n="about_c3_b">Sistem berjalan produksi lebih dari setahun dengan hasil yang terukur.</p>
+        </div>
+        <div class="rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-slate-50 dark:bg-nightCard">
+          <i data-lucide="wallet" class="w-7 h-7 text-primary dark:text-sky-300"></i>
+          <h3 class="mt-2 font-bold" data-i18n="about_c4_t">Tanpa UI Kalau Tidak Perlu</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400" data-i18n="about_c4_b">Automation murni jauh lebih murah daripada membangun aplikasi atau website. UI baru dibuat kalau memang diminta klien.</p>
         </div>
       </div>
     </div>
@@ -427,6 +437,65 @@
 
       <div id="repoGrid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="repo_loading">Memuat daftar repository…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       SERTIFIKASI (kursus gratis/online yang benar-benar diselesaikan,
+       bukan bootcamp berbayar, jujur sesuai yang sebenarnya diikuti)
+       ================================================================= -->
+  <section id="certifications" class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="reveal max-w-2xl">
+        <p class="text-sm font-bold uppercase tracking-widest text-accent dark:text-sky-300" data-i18n="cert_kicker">Sertifikasi</p>
+        <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="cert_title">Kursus yang sudah diselesaikan</h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="cert_sub">Kursus online, bukan bootcamp berbayar, setiap judul di bawah benar-benar diselesaikan.</p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="reveal rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-white dark:bg-nightCard flex gap-3">
+          <i data-lucide="award" class="w-6 h-6 text-primary dark:text-sky-300 shrink-0"></i>
+          <div>
+            <h3 class="font-bold leading-snug">n8n: No Code AI Agent Builder</h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Simplilearn &middot; 2026</p>
+          </div>
+        </div>
+        <div class="reveal rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-white dark:bg-nightCard flex gap-3">
+          <i data-lucide="award" class="w-6 h-6 text-primary dark:text-sky-300 shrink-0"></i>
+          <div>
+            <h3 class="font-bold leading-snug">Introduction to Prompt Engineering</h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Simplilearn &middot; 2026</p>
+          </div>
+        </div>
+        <div class="reveal rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-white dark:bg-nightCard flex gap-3">
+          <i data-lucide="award" class="w-6 h-6 text-primary dark:text-sky-300 shrink-0"></i>
+          <div>
+            <h3 class="font-bold leading-snug">Critical Thinking in the Age of AI</h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">HP LIFE &middot; 2026</p>
+          </div>
+        </div>
+        <div class="reveal rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-white dark:bg-nightCard flex gap-3">
+          <i data-lucide="award" class="w-6 h-6 text-primary dark:text-sky-300 shrink-0"></i>
+          <div>
+            <h3 class="font-bold leading-snug">AI for Business Professionals</h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">HP LIFE &middot; 2026</p>
+          </div>
+        </div>
+        <div class="reveal rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-white dark:bg-nightCard flex gap-3">
+          <i data-lucide="award" class="w-6 h-6 text-primary dark:text-sky-300 shrink-0"></i>
+          <div>
+            <h3 class="font-bold leading-snug">Data Science and Analytics</h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">HP LIFE &middot; 2026</p>
+          </div>
+        </div>
+        <div class="reveal rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-white dark:bg-nightCard flex gap-3">
+          <i data-lucide="award" class="w-6 h-6 text-primary dark:text-sky-300 shrink-0"></i>
+          <div>
+            <h3 class="font-bold leading-snug">Introduction to Cybersecurity</h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">HP LIFE &middot; 2026</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -791,7 +860,7 @@
      =================================================================== */
   const I18N = {
     id: {
-      nav_about:'Tentang', nav_projects:'Portofolio', nav_skills:'Keahlian', nav_repos:'Repositori', nav_contact:'Kontak',
+      nav_about:'Tentang', nav_projects:'Portofolio', nav_skills:'Keahlian', nav_repos:'Repositori', nav_cert:'Sertifikasi', nav_contact:'Kontak',
       hero_badge:'Tersedia untuk proyek otomatisasi',
       hero_hello:'Halo, saya',
       hero_bio:'Saya merancang alur kerja otomatisasi yang menghemat waktu dan biaya, menggabungkan logika node dengan kecerdasan buatan untuk menyelesaikan masalah operasional yang kompleks.',
@@ -802,6 +871,7 @@
       about_c1_t:'Fokus Masalah', about_c1_b:'Setiap solusi berawal dari masalah operasional yang nyata dan menyakitkan.',
       about_c2_t:'Logika + AI', about_c2_b:'Menggabungkan node workflow n8n dengan model AI untuk keputusan cerdas.',
       about_c3_t:'Terukur', about_c3_b:'Sistem berjalan produksi lebih dari setahun dengan hasil yang terukur.',
+      about_c4_t:'Tanpa UI Kalau Tidak Perlu', about_c4_b:'Automation murni jauh lebih murah daripada membangun aplikasi atau website. UI baru dibuat kalau memang diminta klien.',
       proj_kicker:'Portofolio', proj_title:'Solusi otomatisasi yang saya bangun',
       proj_sub:'Enam sistem nyata untuk rumah sakit, Basarnas, UMKM, asisten resep, ranking HP, dan digest novel. Klik untuk cerita lengkapnya.',
       proj_readmore:'Baca Selengkapnya',
@@ -813,6 +883,8 @@
       repo_error:'Daftar repository belum bisa dimuat otomatis saat ini.',
       repo_error_link:'Lihat langsung di GitHub',
       repo_updated:'diperbarui',
+      cert_kicker:'Sertifikasi', cert_title:'Kursus yang sudah diselesaikan',
+      cert_sub:'Kursus online, bukan bootcamp berbayar, setiap judul di bawah benar-benar diselesaikan.',
       contact_kicker:'Kontak', contact_title:'Punya proses yang ingin diotomatisasi?',
       contact_sub:'Ceritakan tantangan operasional Anda. Saya bantu rancang alur kerja yang menghemat waktu dan biaya.',
       form_name:'Nama', form_name_ph:'Nama Anda',
@@ -823,7 +895,7 @@
       modal_doc:'Lihat dokumentasi teknis',
     },
     en: {
-      nav_about:'About', nav_projects:'Portfolio', nav_skills:'Skills', nav_repos:'Repositories', nav_contact:'Contact',
+      nav_about:'About', nav_projects:'Portfolio', nav_skills:'Skills', nav_repos:'Repositories', nav_cert:'Certifications', nav_contact:'Contact',
       hero_badge:'Available for automation projects',
       hero_hello:"Hi, I'm",
       hero_bio:'I design automation workflows that save time and cost, combining node logic with artificial intelligence to solve complex operational problems.',
@@ -834,6 +906,7 @@
       about_c1_t:'Problem-First', about_c1_b:'Every solution starts from a real, painful operational problem.',
       about_c2_t:'Logic + AI', about_c2_b:'Combining n8n workflow nodes with AI models for smart decisions.',
       about_c3_t:'Measurable', about_c3_b:'Systems running in production for over a year with measurable results.',
+      about_c4_t:'No UI Unless Needed', about_c4_b:'Pure automation is far cheaper than building an app or website. A UI only gets built when a client actually asks for one.',
       proj_kicker:'Portfolio', proj_title:'Automation solutions I built',
       proj_sub:'Six real systems for hospitals, Basarnas, small businesses, a cooking assistant, phone rankings, and a novel digest. Click for the full story.',
       proj_readmore:'Read More',
@@ -845,6 +918,8 @@
       repo_error:'The repository list could not be loaded automatically right now.',
       repo_error_link:'View directly on GitHub',
       repo_updated:'updated',
+      cert_kicker:'Certifications', cert_title:'Courses completed',
+      cert_sub:'Online courses, not paid bootcamps, every title below was actually completed.',
       contact_kicker:'Contact', contact_title:'Have a process you want to automate?',
       contact_sub:'Tell me about your operational challenge. I’ll help design a workflow that saves time and cost.',
       form_name:'Name', form_name_ph:'Your name',
