@@ -226,18 +226,10 @@
        ================================================================= -->
   <nav class="glass fixed top-0 inset-x-0 z-50">
     <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-      <!-- Logo: foto profil bulat.
-           Upload file bernama "profile.jpg" (rasio 1:1) ke folder yang sama di VPS.
-           Selama file belum ada, otomatis tampil inisial "AT" sebagai fallback. -->
-      <a href="#hero" class="flex items-center gap-2 group">
-        <span class="relative block w-9 h-9 rounded-full overflow-hidden ring-2 ring-primary/30 dark:ring-accent/30 shadow-lg group-hover:scale-105 transition">
-          <img src="profile.jpg" alt="Agung Tri Mahmudi"
-               class="w-full h-full object-cover"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-          <!-- Fallback inisial (disembunyikan bila foto berhasil dimuat) -->
-          <span class="hidden w-full h-full place-content-center bg-gradient-to-br from-primary to-accent text-white font-extrabold text-sm">AT</span>
-        </span>
-        <span class="font-extrabold tracking-tight text-slate-800 dark:text-white">Agung Tri Mahmudi</span>
+      <!-- Wordmark teks saja (bukan foto lagi, foto ukuran penuh sudah ada di Hero
+           supaya tidak terasa dobel). -->
+      <a href="#hero" class="flex items-center group">
+        <span class="font-extrabold tracking-tight text-slate-800 dark:text-white group-hover:text-primary dark:group-hover:text-sky-300 transition">Agung Tri Mahmudi</span>
       </a>
 
       <!-- Menu desktop -->
@@ -319,13 +311,16 @@
           </div>
         </div>
 
-        <!-- Foto profil, ukuran cukup besar untuk koneksi personal (bukan cuma logo kecil di navbar) -->
+        <!-- Foto profil, ukuran cukup besar untuk koneksi personal (bukan cuma logo kecil di navbar).
+             Bingkai cincin gradient biru (bukan putih polos) supaya senada dengan palet situs. -->
         <div class="reveal order-1 md:order-2 flex justify-center md:justify-end">
-          <span class="relative block w-32 h-32 md:w-44 md:h-44 rounded-full overflow-hidden ring-4 ring-white dark:ring-nightCard shadow-xl shrink-0">
-            <img src="profile.jpg" alt="Agung Tri Mahmudi"
-                 class="w-full h-full object-cover"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <span class="hidden w-full h-full place-content-center bg-gradient-to-br from-primary to-primary2 text-white font-extrabold text-4xl md:text-5xl">AT</span>
+          <span class="relative block w-32 h-32 md:w-44 md:h-44 rounded-full p-1 bg-gradient-to-br from-primary via-primary2 to-accent shadow-xl shrink-0">
+            <span class="relative block w-full h-full rounded-full overflow-hidden ring-4 ring-white dark:ring-nightCard">
+              <img src="profile.jpg" alt="Agung Tri Mahmudi"
+                   class="w-full h-full object-cover"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+              <span class="hidden w-full h-full place-content-center bg-gradient-to-br from-primary to-primary2 text-white font-extrabold text-4xl md:text-5xl">AT</span>
+            </span>
           </span>
         </div>
       </div>
