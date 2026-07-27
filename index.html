@@ -908,7 +908,9 @@
     grid.innerHTML = REPO_CACHE.map(r => `
       <a href="${r.html_url}" target="_blank" rel="noopener" class="project-card block rounded-2xl bg-white dark:bg-nightCard border border-primary/10 dark:border-nightLine p-5 shadow-sm">
         <h3 class="font-bold text-slate-800 dark:text-white">${escapeHtml(r.name)}</h3>
-        <p class="mt-1.5 text-sm text-slate-500 dark:text-slate-400 line-clamp-2">${r.description ? escapeHtml(r.description) : ''}</p>
+        <!-- Deskripsi mentah dari GitHub sengaja TIDAK ditampilkan di sini — bahasanya
+             ikut bahasa asli tiap repo (campur ID/EN) dan tidak bisa ikut toggle ID/EN
+             halaman ini, jadi malah bikin tampilan campur aduk kalau ditampilkan. -->
         <div class="mt-3 flex items-center gap-3 text-xs text-slate-400 dark:text-slate-500">
           ${r.language ? `<span class="font-semibold">${escapeHtml(r.language)}</span>` : ''}
           <span>${t('repo_updated')} ${new Date(r.pushed_at).toLocaleDateString(LANG === 'id' ? 'id-ID' : 'en-US', { year: 'numeric', month: 'short' })}</span>
