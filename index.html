@@ -72,13 +72,17 @@
   }
   </script>
 
-  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Google Fonts: Plus Jakarta Sans (teks isi, mudah dibaca) +
+       Cinzel (judul section, aksen dramatis bergaya LOTM) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons (MIT) — SVG modern, dipanggil lewat <i data-lucide="nama-icon">,
+       diubah jadi SVG oleh lucide.createIcons(). Menggantikan emoji lama. -->
+  <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Konfigurasi Tailwind: palet warna kustom + font + dark mode via class -->
   <script>
     tailwind.config = {
@@ -86,17 +90,20 @@
       theme: {
         extend: {
           colors: {
-            primary:   '#5763A6', // indigo kalem (lebih lembut di mata)
-            primary2:  '#8189B5', // biru lavender lembut
-            accent:    '#9A8AD6', // lavender (bukan ungu neon)
-            warm:      '#F2B265', // amber lembut (aksen hangat)
-            warmSoft:  '#F6C48A', // amber lebih lembut
-            night:     '#0F1226', // dark bg utama (biru tenang, bukan hitam)
-            nightCard: '#181C3A', // dark bg kartu
-            nightLine: '#2A2F55', // dark border
+            // Palet LOTM (Lord of the Mysteries): ungu royal pekat + emas/perunggu
+            // redup, gaya Beyonder/Tarot Club, tetap terbaca untuk portofolio kerja.
+            primary:   '#3D2E63', // ungu royal pekat (utama)
+            primary2:  '#4A3B7C', // ungu sedikit lebih terang, untuk gradient
+            accent:    '#B08D57', // emas/perunggu redup (aksen, gaya segel Beyonder)
+            warm:      '#C9A227', // emas lebih cerah (glow, highlight)
+            warmSoft:  '#E4C77E', // emas pucat (glow lembut)
+            night:     '#0B0A14', // dark bg utama, hitam kebiruan pekat
+            nightCard: '#161225', // dark bg kartu, ungu-hitam
+            nightLine: '#2E2447', // dark border, ungu gelap
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Cinzel', 'serif'], // judul section, kesan dramatis/gothic
           },
         },
       },
@@ -107,21 +114,29 @@
     /* ===== BASE ===== */
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
 
-    /* ===== GRADIENT MESH HERO (efek AI/futuristik yang halus) ===== */
-    /* Gradient dibuat jauh lebih lembut & sedikit titik agar nyaman di mata */
+    /* Judul (h1 hero + h2 tiap section) pakai Cinzel: aksen dramatis gaya
+       LOTM, tanpa mengganti font isi/paragraf supaya tetap mudah dibaca HRD. */
+    h1.font-extrabold, h2.font-extrabold {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.01em;
+    }
+
+    /* ===== GRADIENT MESH HERO: kabut ungu-emas gaya LOTM, bukan mesh cerah ===== */
     .mesh-bg {
-      background-color: #F6F7FB;
+      background-color: #EDEAF4;
       background-image:
-        radial-gradient(at 12% 18%, rgba(154,138,214,0.16) 0px, transparent 52%),
-        radial-gradient(at 88% 12%, rgba(87,99,166,0.14) 0px, transparent 48%),
-        radial-gradient(at 80% 90%, rgba(242,178,101,0.10) 0px, transparent 50%);
+        radial-gradient(at 12% 18%, rgba(61,46,99,0.18) 0px, transparent 55%),
+        radial-gradient(at 88% 12%, rgba(74,59,124,0.14) 0px, transparent 50%),
+        radial-gradient(at 80% 90%, rgba(176,141,87,0.14) 0px, transparent 52%),
+        radial-gradient(at 30% 85%, rgba(61,46,99,0.10) 0px, transparent 45%);
     }
     .dark .mesh-bg {
-      background-color: #0F1226;
+      background-color: #0B0A14;
       background-image:
-        radial-gradient(at 12% 18%, rgba(154,138,214,0.14) 0px, transparent 52%),
-        radial-gradient(at 88% 12%, rgba(87,99,166,0.22) 0px, transparent 48%),
-        radial-gradient(at 80% 90%, rgba(242,178,101,0.07) 0px, transparent 50%);
+        radial-gradient(at 12% 18%, rgba(74,59,124,0.35) 0px, transparent 55%),
+        radial-gradient(at 88% 12%, rgba(176,141,87,0.10) 0px, transparent 48%),
+        radial-gradient(at 80% 90%, rgba(201,162,39,0.08) 0px, transparent 52%),
+        radial-gradient(at 30% 85%, rgba(74,59,124,0.25) 0px, transparent 45%);
     }
 
     /* ===== GLASSMORPHISM NAVBAR ===== */
@@ -136,9 +151,9 @@
       border-bottom: 1px solid rgba(160,132,232,0.15);
     }
 
-    /* ===== TEKS GRADIENT (3 warna + gerak halus, bukan statis) ===== */
+    /* ===== TEKS GRADIENT: ungu royal ke emas, gerak halus ===== */
     .text-gradient {
-      background: linear-gradient(120deg, #5763A6, #9A8AD6 55%, #F2B265 100%);
+      background: linear-gradient(120deg, #3D2E63, #B08D57 55%, #C9A227 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
       background-clip: text;
@@ -150,14 +165,35 @@
       50%      { background-position: 100% center; }
     }
 
-    /* ===== KARTU PROYEK: hover lift + glow lebih kaya ===== */
+    /* ===== KARTU PROYEK gaya "segel/tarot": hairline emas di atas, hover
+       lift + glow ungu-emas, medali ikon melingkar ===== */
     .project-card {
+      position: relative;
       transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 14%; right: 14%; height: 2px;
+      background: linear-gradient(90deg, transparent, #B08D57, transparent);
+      opacity: .85;
     }
     .project-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 24px 48px -14px rgba(74,85,162,0.4), 0 8px 20px -8px rgba(242,178,101,0.25);
-      border-color: rgba(160,132,232,0.5);
+      box-shadow: 0 24px 48px -14px rgba(61,46,99,0.45), 0 8px 20px -8px rgba(176,141,87,0.3);
+      border-color: rgba(176,141,87,0.55);
+    }
+    .icon-seal {
+      width: 3.5rem; height: 3.5rem;
+      border-radius: 9999px;
+      display: grid; place-content: center;
+      border: 2px solid rgba(176,141,87,0.55);
+      background: radial-gradient(circle, rgba(61,46,99,0.08), rgba(176,141,87,0.08));
+      box-shadow: 0 0 18px rgba(201,162,39,0.25);
+    }
+    .dark .icon-seal {
+      border-color: rgba(201,162,39,0.45);
+      box-shadow: 0 0 20px rgba(201,162,39,0.2);
     }
 
     /* ===== AKSEN "BARIS PERTAMA": tiap paragraf cerita proyek dibuka dengan
@@ -165,10 +201,10 @@
        majalah, supaya kartu cerita terasa lebih premium saat dibaca ===== */
     #modalBody p::first-line {
       font-weight: 700;
-      color: #5763A6;
+      color: #3D2E63;
     }
     .dark #modalBody p::first-line {
-      color: #C3B6EE;
+      color: #E4C77E;
     }
 
     /* ===== ANIMASI FADE-IN ON SCROLL ===== */
@@ -210,7 +246,7 @@
   </style>
 </head>
 
-<body class="bg-white dark:bg-night text-slate-800 dark:text-slate-200 transition-colors duration-500">
+<body class="bg-[#EDEAF4] dark:bg-night text-slate-800 dark:text-slate-200 transition-colors duration-500">
 
   <!-- =================================================================
        NAVBAR
@@ -346,17 +382,17 @@
       <!-- Highlight approach -->
       <div class="mt-8 grid sm:grid-cols-3 gap-4">
         <div class="rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-slate-50 dark:bg-nightCard">
-          <div class="text-2xl">🎯</div>
+          <i data-lucide="target" class="w-7 h-7 text-primary dark:text-accent"></i>
           <h3 class="mt-2 font-bold" data-i18n="about_c1_t">Fokus Masalah</h3>
           <p class="mt-1 text-sm text-slate-500 dark:text-slate-400" data-i18n="about_c1_b">Setiap solusi berawal dari masalah operasional yang nyata dan menyakitkan.</p>
         </div>
         <div class="rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-slate-50 dark:bg-nightCard">
-          <div class="text-2xl">⚙️</div>
+          <i data-lucide="settings" class="w-7 h-7 text-primary dark:text-accent"></i>
           <h3 class="mt-2 font-bold" data-i18n="about_c2_t">Logika + AI</h3>
           <p class="mt-1 text-sm text-slate-500 dark:text-slate-400" data-i18n="about_c2_b">Menggabungkan node workflow n8n dengan model AI untuk keputusan cerdas.</p>
         </div>
         <div class="rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-slate-50 dark:bg-nightCard">
-          <div class="text-2xl">📈</div>
+          <i data-lucide="trending-up" class="w-7 h-7 text-primary dark:text-accent"></i>
           <h3 class="mt-2 font-bold" data-i18n="about_c3_t">Terukur</h3>
           <p class="mt-1 text-sm text-slate-500 dark:text-slate-400" data-i18n="about_c3_b">Sistem berjalan produksi lebih dari setahun dengan hasil yang terukur.</p>
         </div>
@@ -567,7 +603,7 @@
   const PROJECTS = [
     /* ---------- PROYEK 1: Rekap RS ---------- */
     {
-      icon: '🏥',
+      icon: 'hospital',
       github: 'https://github.com/Agungtrimahmudi-automation/Rekap-Data-Dokter',
       image: 'rekap-rs-workflow.png', // screenshot n8n asli dari repo (assets/workflow.PNG)
       tags: ['n8n','Apps Script','Google Sheets API','Google Docs API','Google Drive API','Gmail API','JavaScript'],
@@ -595,7 +631,7 @@
 
     /* ---------- PROYEK 2: Jurnal Basarnas ---------- */
     {
-      icon: '📋',
+      icon: 'clipboard-list',
       github: 'https://github.com/Agungtrimahmudi-automation/Jurnal-Siaga',
       image: 'placeholder-jurnal.svg', // TODO: ganti dengan screenshot form/spreadsheet asli
       tags: ['n8n','Google Sheets API','Google Drive API','Google Form','SMTP Email','JavaScript'],
@@ -623,7 +659,7 @@
 
     /* ---------- PROYEK 3: AI Chatbot UMKM ---------- */
     {
-      icon: '🤖',
+      icon: 'bot',
       github: null, // instance lama, tidak ada repo publik , tampil sebagai studi kasus teknis
       image: 'placeholder-umkm.svg', // TODO: ganti dengan screenshot chat/Sheets asli
       tags: ['n8n','Google Sheets API','Gemini API','Telegram API'],
@@ -651,7 +687,7 @@
 
     /* ---------- PROYEK 4: Recipe RAG (Telegram) ---------- */
     {
-      icon: '🍳',
+      icon: 'chef-hat',
       github: 'https://github.com/Agungtrimahmudi-automation/recipe-rag-assistant',
       image: 'placeholder-recipe.svg', // TODO: ganti dengan screenshot percakapan bot asli
       tags: ['Python','FastAPI','Gemini API','Telegram API','n8n','Docker'],
@@ -679,7 +715,7 @@
 
     /* ---------- PROYEK 5: Laporan Mingguan HP ---------- */
     {
-      icon: '📱',
+      icon: 'smartphone',
       github: 'https://github.com/Agungtrimahmudi-automation/laporan-hp-mingguan',
       image: 'placeholder-hp.svg', // TODO: ganti dengan screenshot PDF/rekap Sheets asli
       tags: ['Python','YouTube Data API','Google Sheets API','Google Slides API','Gmail API'],
@@ -707,7 +743,7 @@
 
     /* ---------- PROYEK 6: Novel Rekomendasi Harian ---------- */
     {
-      icon: '📖',
+      icon: 'book-open',
       github: 'https://github.com/Agungtrimahmudi-automation/novel-rekomendasi-harian',
       image: 'placeholder-novel.svg', // TODO: ganti dengan screenshot email digest asli
       tags: ['n8n','Gemini API','Google Sheets API','Gmail API'],
@@ -733,6 +769,42 @@
       },
     },
   ];
+
+  /* ===================================================================
+     1b) BADGE TEKNOLOGI — shields.io, style & warna sama persis dengan
+         badge yang dipakai di README tiap repo GitHub-nya, supaya tag di
+         kartu proyek langsung dikenali sebagai hal yang sama.
+         Tag yang belum ada di kamus ini otomatis fallback ke badge abu-abu
+         polos (masih tampil rapi, tidak pernah pecah/404).
+     =================================================================== */
+  const TAG_BADGES = {
+    'n8n': 'https://img.shields.io/badge/n8n-0A0A0A?style=for-the-badge&logo=n8n&logoColor=white',
+    'Python': 'https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white',
+    'JavaScript': 'https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black',
+    'Docker': 'https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white',
+    'FastAPI': 'https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white',
+    'Apps Script': 'https://img.shields.io/badge/Apps%20Script-4285F4?style=for-the-badge&logo=googleappsscript&logoColor=white',
+    'Gemini API': 'https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white',
+    'Telegram API': 'https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white',
+    'Google Sheets API': 'https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white',
+    'Google Docs API': 'https://img.shields.io/badge/Google%20Docs-4285F4?style=for-the-badge&logo=googledocs&logoColor=white',
+    'Google Drive API': 'https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white',
+    'Google Slides API': 'https://img.shields.io/badge/Google%20Slides-F4B400?style=for-the-badge&logo=googleslides&logoColor=white',
+    'Gmail API': 'https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white',
+    'Google Form': 'https://img.shields.io/badge/Google%20Forms-7248B9?style=for-the-badge&logo=googleforms&logoColor=white',
+    'SMTP Email': 'https://img.shields.io/badge/SMTP%20Email-4B5563?style=for-the-badge&logo=gmail&logoColor=white',
+    'YouTube Data API': 'https://img.shields.io/badge/YouTube%20Data%20API-FF0000?style=for-the-badge&logo=youtube&logoColor=white',
+  };
+
+  function tagBadgeUrl(tag) {
+    return TAG_BADGES[tag] || `https://img.shields.io/badge/${encodeURIComponent(tag)}-4B5563?style=for-the-badge`;
+  }
+
+  function renderTagBadges(tags) {
+    return tags.map(tag =>
+      `<img src="${tagBadgeUrl(tag)}" alt="${tag}" class="h-6 rounded" loading="lazy" />`
+    ).join('');
+  }
 
   /* ===================================================================
      2) KAMUS TEKS UI (bilingual). data-i18n mengacu ke key di sini.
@@ -812,14 +884,14 @@
     {
       cat:  { id:'Platform Otomasi', en:'Automation Platform' },
       note: { id:'tool utama saya',  en:'my primary tool' },
-      items:[ ['⚡','n8n'] ],
+      items:[ ['zap','n8n'] ],
     },
     {
       // Python & JavaScript dipindah ke sini (bukan lagi "sedang dipelajari") karena
       // sudah dipakai di repo produksi nyata: recipe-rag-assistant & laporan-hp-mingguan
       // (Python), workflow n8n & Apps Script (JavaScript).
       cat:  { id:'Bahasa Pemrograman', en:'Programming Languages' },
-      items:[ ['🐍','Python'], ['🟨','JavaScript'] ],
+      items:[ ['file-code','Python'], ['braces','JavaScript'] ],
     },
     {
       // Sengaja TIDAK menyebut model spesifik (Gemini/GPT/Claude/DeepSeek),
@@ -828,23 +900,23 @@
       // (recipe-rag-assistant) justru sengaja dibangun TANPA vector database.
       cat:  { id:'AI & LLM', en:'AI & LLM' },
       items:[
-        ['✨','Generative AI (LLM)'], ['✍️','Prompt Engineering'], ['📚','RAG'],
-        ['🔎','Embeddings & Retrieval'], ['🤖','AI Agent'], ['🧑‍💻','AI-Driven Coding'],
+        ['sparkles','Generative AI (LLM)'], ['pen-line','Prompt Engineering'], ['library','RAG'],
+        ['search','Embeddings & Retrieval'], ['bot','AI Agent'], ['code-2','AI-Driven Coding'],
       ],
     },
     {
       cat:  { id:'Integrasi & API', en:'Integrations & APIs' },
-      items:[ ['🔗','Google APIs'], ['🌐','HTTP Request'], ['💬','Telegram API'], ['🔌','REST API'], ['🪝','Webhook'] ],
+      items:[ ['link','Google APIs'], ['globe','HTTP Request'], ['message-circle','Telegram API'], ['plug','REST API'], ['webhook','Webhook'] ],
     },
     {
       cat:  { id:'Inti & Pendukung', en:'Core & Supporting' },
-      items:[ ['🧩','Workflow Design'], ['📜','Apps Script'], ['🎨','HTML/CSS'], ['🟢','Node.js'], ['🐳','Docker'] ],
+      items:[ ['puzzle','Workflow Design'], ['file-terminal','Apps Script'], ['palette','HTML/CSS'], ['hexagon','Node.js'], ['container','Docker'] ],
     },
     {
       cat:  { id:'Sedang Dipelajari', en:'Currently Learning' },
       note: { id:'target belajar berikutnya', en:'next learning goals' },
       learning: true,
-      items:[ ['🗄️','Supabase'], ['🧠','MCP (Model Context Protocol)'] ],
+      items:[ ['database','Supabase'], ['brain','MCP (Model Context Protocol)'] ],
     },
   ];
 
@@ -862,9 +934,6 @@
     const grid = document.getElementById('projectGrid');
     grid.innerHTML = PROJECTS.map((p, i) => {
       const d = p[LANG];
-      const tagPreview = p.tags.slice(0, 4).map(tag =>
-        `<span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-primary/8 dark:bg-accent/10 text-primary dark:text-accent">${tag}</span>`
-      ).join('');
       const thumb = p.image
         ? `<div class="-mx-6 -mt-6 md:-mx-7 md:-mt-7 mb-4 rounded-t-3xl overflow-hidden border-b border-primary/10 dark:border-nightLine">
              <img src="${p.image}" alt="${d.title}" class="w-full h-40 object-cover" loading="lazy" />
@@ -873,16 +942,19 @@
       return `
       <article class="project-card reveal rounded-3xl bg-white dark:bg-nightCard border border-primary/10 dark:border-nightLine p-6 md:p-7 flex flex-col shadow-sm overflow-hidden">
         ${thumb}
-        <div class="text-4xl">${p.icon}</div>
+        <div class="icon-seal">
+          <i data-lucide="${p.icon}" class="w-7 h-7 text-primary dark:text-accent"></i>
+        </div>
         <h3 class="mt-4 text-lg md:text-xl font-extrabold tracking-tight leading-snug">${d.title}</h3>
         <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-grow">${d.hook}</p>
-        <div class="mt-4 flex flex-wrap gap-2">${tagPreview}</div>
+        <div class="mt-4 flex flex-wrap gap-2">${renderTagBadges(p.tags)}</div>
         <button data-open="${i}" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary dark:text-accent hover:gap-3 transition-all">
           ${t('proj_readmore')}
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </button>
       </article>`;
     }).join('');
+    if (window.lucide) lucide.createIcons();
 
     // Pasang event listener tombol "Baca Selengkapnya"
     grid.querySelectorAll('[data-open]').forEach(btn => {
@@ -953,7 +1025,7 @@
         ? 'skill-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-transparent border border-dashed border-primary/30 dark:border-accent/30 text-slate-500 dark:text-slate-400 font-semibold text-sm'
         : 'skill-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white dark:bg-nightCard border border-primary/10 dark:border-nightLine font-semibold text-sm shadow-sm';
       const pills = group.items.map(([icon, name]) =>
-        `<span class="${pillClass}"><span class="text-lg">${icon}</span>${name}</span>`
+        `<span class="${pillClass}"><i data-lucide="${icon}" class="w-4 h-4"></i>${name}</span>`
       ).join('');
       const note = group.note
         ? `<span class="text-xs font-semibold text-slate-400 dark:text-slate-500 normal-case tracking-normal">(${group.note[LANG]})</span>` : '';
@@ -967,6 +1039,7 @@
           <div class="flex flex-wrap gap-3">${pills}</div>
         </div>`;
     }).join('');
+    if (window.lucide) lucide.createIcons();
     observeReveal(); // daftarkan blok baru ke animasi fade-in
   }
 
@@ -978,7 +1051,8 @@
   function openModal(index) {
     const p = PROJECTS[index];
     const d = p[LANG];
-    document.getElementById('modalIcon').textContent = p.icon;
+    document.getElementById('modalIcon').innerHTML =
+      `<div class="icon-seal"><i data-lucide="${p.icon}" class="w-7 h-7 text-primary dark:text-accent"></i></div>`;
     document.getElementById('modalTitle').textContent = d.title;
     const modalImg = p.image
       ? `<img src="${p.image}" alt="${d.title}" class="w-full rounded-2xl border border-primary/10 dark:border-nightLine" loading="lazy" />`
@@ -988,9 +1062,8 @@
         <h4 class="text-sm font-extrabold uppercase tracking-wider text-accent">${s.h}</h4>
         <p class="mt-1.5 text-slate-600 dark:text-slate-300 leading-relaxed text-justify hyphens-auto">${s.p}</p>
       </div>`).join('');
-    document.getElementById('modalTags').innerHTML = p.tags.map(tag =>
-      `<span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-primary/8 dark:bg-accent/10 text-primary dark:text-accent">${tag}</span>`
-    ).join('');
+    document.getElementById('modalTags').innerHTML = renderTagBadges(p.tags);
+    if (window.lucide) lucide.createIcons();
     const githubBtn = document.getElementById('modalGithub');
     if (p.github) {
       githubBtn.href = p.github;
@@ -1154,6 +1227,7 @@
   observeReveal();   // aktifkan fade-in
   initCountUp();     // aktifkan animasi stats
   loadRepos();       // ambil daftar repo publik terbaru dari GitHub API
+  if (window.lucide) lucide.createIcons(); // konversi ikon statis (mis. bagian Tentang)
   </script>
 </body>
 </html>
