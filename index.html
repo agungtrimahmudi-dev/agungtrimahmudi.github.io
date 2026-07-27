@@ -1,0 +1,1131 @@
+<!--
+  =====================================================================
+  PORTOFOLIO — AGUNG TRI MAHMUDI
+  AI Automation Engineer | n8n Workflow Specialist
+  ---------------------------------------------------------------------
+  1 file HTML  •  Tailwind CDN + custom CSS  •  Vanilla JS
+  Fitur: Bilingual ID/EN, Dark mode (biru hangat), Modal proyek,
+         Stats count-up, Fade-in on scroll, Smooth scroll.
+  =====================================================================
+-->
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agung Tri Mahmudi — AI Automation Engineer | n8n Workflow Specialist</title>
+
+  <!-- ===================================================================
+       SEO / SOCIAL META
+       PENTING: ganti semua "https://agungtrimahmudi.site" di bawah dengan
+       domain asli VPS-mu setelah online (mis. https://agungtm.com).
+       og:image sebaiknya gambar 1200x630. Sementara memakai profile.jpg
+       (1:1) — tetap jalan, hanya sedikit ter-crop di preview. Untuk hasil
+       terbaik, buat file "og-image.jpg" ukuran 1200x630 lalu ganti di sini.
+       =================================================================== -->
+
+  <!-- SEO dasar -->
+  <meta name="description" content="AI Automation & Workflow Engineer spesialis n8n. Membangun sistem otomatisasi cerdas untuk rumah sakit, Basarnas, UMKM, dan knowledge base berbasis AI (RAG)." />
+  <meta name="keywords" content="AI Automation Engineer, n8n, Workflow Automation, RAG, LLM, Generative AI, Prompt Engineering, Google Apps Script, Automation Indonesia, Agung Tri Mahmudi" />
+  <meta name="author" content="Agung Tri Mahmudi" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#5763A6" />
+  <link rel="canonical" href="https://agungtrimahmudi.site/" />
+
+  <!-- Favicon (ikon tab browser) — inisial ATM, tema keunguan/putih -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp, dll) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Agung Tri Mahmudi — Portfolio" />
+  <meta property="og:title" content="Agung Tri Mahmudi — AI Automation Engineer | n8n Workflow Specialist" />
+  <meta property="og:description" content="Merancang alur kerja otomatisasi yang menghemat waktu & biaya. Solusi nyata untuk rumah sakit, Basarnas, UMKM, dan knowledge base berbasis AI." />
+  <meta property="og:url" content="https://agungtrimahmudi.site/" />
+  <meta property="og:image" content="https://agungtrimahmudi.site/profile.jpg" />
+  <meta property="og:image:alt" content="Foto Agung Tri Mahmudi, AI Automation Engineer" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agung Tri Mahmudi — AI Automation Engineer | n8n Workflow Specialist" />
+  <meta name="twitter:description" content="Merancang alur kerja otomatisasi yang menghemat waktu & biaya. Solusi nyata untuk rumah sakit, Basarnas, UMKM, dan knowledge base berbasis AI." />
+  <meta name="twitter:image" content="https://agungtrimahmudi.site/profile.jpg" />
+
+  <!-- Structured Data (schema.org Person) — bantu Google mengenali profil.
+       Ganti "url" & "image" dengan domain asli setelah online. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Agung Tri Mahmudi",
+    "jobTitle": "AI Automation Engineer",
+    "description": "AI Automation & Workflow Engineer spesialis n8n. Membangun sistem otomatisasi cerdas menggabungkan logika workflow dengan AI.",
+    "url": "https://agungtrimahmudi.site/",
+    "image": "https://agungtrimahmudi.site/profile.jpg",
+    "email": "mailto:agungtrimahmudi.it@gmail.com",
+    "knowsAbout": ["n8n", "Workflow Automation", "Generative AI", "LLM", "RAG", "Prompt Engineering", "Google Apps Script", "API Integration"],
+    "sameAs": [
+      "https://www.linkedin.com/in/agung-tri-mahmudi/",
+      "https://github.com/Agungtrimahmudi-automation"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Konfigurasi Tailwind: palet warna kustom + font + dark mode via class -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary:   '#5763A6', // indigo kalem (lebih lembut di mata)
+            primary2:  '#8189B5', // biru lavender lembut
+            accent:    '#9A8AD6', // lavender (bukan ungu neon)
+            warm:      '#F2B265', // amber lembut (aksen hangat)
+            warmSoft:  '#F6C48A', // amber lebih lembut
+            night:     '#0F1226', // dark bg utama (biru tenang, bukan hitam)
+            nightCard: '#181C3A', // dark bg kartu
+            nightLine: '#2A2F55', // dark border
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* ===== BASE ===== */
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* ===== GRADIENT MESH HERO (efek AI/futuristik yang halus) ===== */
+    /* Gradient dibuat jauh lebih lembut & sedikit titik agar nyaman di mata */
+    .mesh-bg {
+      background-color: #F6F7FB;
+      background-image:
+        radial-gradient(at 12% 18%, rgba(154,138,214,0.16) 0px, transparent 52%),
+        radial-gradient(at 88% 12%, rgba(87,99,166,0.14) 0px, transparent 48%),
+        radial-gradient(at 80% 90%, rgba(242,178,101,0.10) 0px, transparent 50%);
+    }
+    .dark .mesh-bg {
+      background-color: #0F1226;
+      background-image:
+        radial-gradient(at 12% 18%, rgba(154,138,214,0.14) 0px, transparent 52%),
+        radial-gradient(at 88% 12%, rgba(87,99,166,0.22) 0px, transparent 48%),
+        radial-gradient(at 80% 90%, rgba(242,178,101,0.07) 0px, transparent 50%);
+    }
+
+    /* ===== GLASSMORPHISM NAVBAR ===== */
+    .glass {
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.72);
+      border-bottom: 1px solid rgba(74,85,162,0.10);
+    }
+    .dark .glass {
+      background: rgba(18,21,46,0.72);
+      border-bottom: 1px solid rgba(160,132,232,0.15);
+    }
+
+    /* ===== TEKS GRADIENT ===== */
+    .text-gradient {
+      background: linear-gradient(120deg, #5763A6, #9A8AD6 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ===== KARTU PROYEK: hover lift + glow ===== */
+    .project-card {
+      transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -12px rgba(74,85,162,0.35);
+      border-color: rgba(160,132,232,0.5);
+    }
+
+    /* ===== ANIMASI FADE-IN ON SCROLL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== MODAL: animasi buka/tutup ===== */
+    .modal-overlay {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .3s ease, visibility .3s ease;
+    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+    .modal-panel {
+      transform: translateY(24px) scale(.98);
+      transition: transform .35s cubic-bezier(.2,.8,.2,1);
+    }
+    .modal-overlay.open .modal-panel { transform: translateY(0) scale(1); }
+
+    /* Scrollbar halus di dalam modal */
+    .modal-scroll::-webkit-scrollbar { width: 8px; }
+    .modal-scroll::-webkit-scrollbar-thumb { background: #A084E8; border-radius: 8px; }
+    .modal-scroll::-webkit-scrollbar-track { background: transparent; }
+
+    /* ===== SKILL PILL hover ===== */
+    .skill-pill { transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+    .skill-pill:hover { transform: translateY(-4px); box-shadow: 0 10px 24px -10px rgba(160,132,232,0.6); }
+
+    /* Blob mengambang dekoratif */
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-18px)} }
+    .floaty { animation: float 6s ease-in-out infinite; }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-night text-slate-800 dark:text-slate-200 transition-colors duration-500">
+
+  <!-- =================================================================
+       NAVBAR
+       ================================================================= -->
+  <nav class="glass fixed top-0 inset-x-0 z-50">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <!-- Logo: foto profil bulat.
+           Upload file bernama "profile.jpg" (rasio 1:1) ke folder yang sama di VPS.
+           Selama file belum ada, otomatis tampil inisial "AT" sebagai fallback. -->
+      <a href="#hero" class="flex items-center gap-2 group">
+        <span class="relative block w-9 h-9 rounded-full overflow-hidden ring-2 ring-primary/30 dark:ring-accent/30 shadow-lg group-hover:scale-105 transition">
+          <img src="profile.jpg" alt="Agung Tri Mahmudi"
+               class="w-full h-full object-cover"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+          <!-- Fallback inisial (disembunyikan bila foto berhasil dimuat) -->
+          <span class="hidden w-full h-full place-content-center bg-gradient-to-br from-primary to-accent text-white font-extrabold text-sm">AT</span>
+        </span>
+        <span class="font-extrabold tracking-tight text-slate-800 dark:text-white">Agung<span class="text-accent">.</span></span>
+      </a>
+
+      <!-- Menu desktop -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+        <a href="#about"    class="hover:text-accent transition" data-i18n="nav_about">Tentang</a>
+        <a href="#projects" class="hover:text-accent transition" data-i18n="nav_projects">Proyek</a>
+        <a href="#skills"   class="hover:text-accent transition" data-i18n="nav_skills">Keahlian</a>
+        <a href="#repos"    class="hover:text-accent transition" data-i18n="nav_repos">Repositori</a>
+        <a href="#contact"  class="hover:text-accent transition" data-i18n="nav_contact">Kontak</a>
+      </div>
+
+      <!-- Kontrol kanan: toggle bahasa + dark mode + menu mobile -->
+      <div class="flex items-center gap-2">
+        <!-- Toggle Bahasa ID/EN -->
+        <button id="langToggle" class="px-3 h-9 rounded-full text-xs font-bold border border-primary/20 dark:border-accent/25 hover:bg-primary/5 dark:hover:bg-accent/10 transition" aria-label="Ganti bahasa">
+          <span id="langLabel">EN</span>
+        </button>
+        <!-- Toggle Dark Mode -->
+        <button id="themeToggle" class="w-9 h-9 grid place-content-center rounded-full border border-primary/20 dark:border-accent/25 hover:bg-primary/5 dark:hover:bg-accent/10 transition" aria-label="Ganti tema">
+          <!-- ikon matahari (light) -->
+          <svg id="iconSun" class="w-5 h-5 hidden dark:block text-warm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2m0 16v2M4 12H2m20 0h-2m-2.5-7.5L16 6M6 18l1.5-1.5m10 0L19 18M6 6l1.5 1.5"/></svg>
+          <!-- ikon bulan (dark) -->
+          <svg id="iconMoon" class="w-5 h-5 block dark:hidden text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <!-- Tombol menu mobile -->
+        <button id="menuBtn" class="md:hidden w-9 h-9 grid place-content-center rounded-full border border-primary/20 dark:border-accent/25" aria-label="Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dropdown menu mobile -->
+    <div id="mobileMenu" class="md:hidden hidden glass px-5 pb-4 flex-col gap-3 text-sm font-semibold">
+      <a href="#about"    class="block py-1 hover:text-accent" data-i18n="nav_about">Tentang</a>
+      <a href="#projects" class="block py-1 hover:text-accent" data-i18n="nav_projects">Proyek</a>
+      <a href="#skills"   class="block py-1 hover:text-accent" data-i18n="nav_skills">Keahlian</a>
+      <a href="#repos"    class="block py-1 hover:text-accent" data-i18n="nav_repos">Repositori</a>
+      <a href="#contact"  class="block py-1 hover:text-accent" data-i18n="nav_contact">Kontak</a>
+    </div>
+  </nav>
+
+  <!-- =================================================================
+       HERO
+       ================================================================= -->
+  <header id="hero" class="mesh-bg relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
+    <!-- blob dekoratif -->
+    <div class="floaty absolute -top-10 right-6 w-40 h-40 rounded-full bg-accent/20 blur-3xl"></div>
+    <div class="floaty absolute bottom-0 left-8 w-52 h-52 rounded-full bg-warm/20 blur-3xl" style="animation-delay:-3s"></div>
+
+    <div class="max-w-6xl mx-auto px-5 relative">
+      <div class="reveal">
+        <!-- Badge status -->
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-white/70 dark:bg-nightCard/70 border border-primary/15 dark:border-accent/20 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          <span data-i18n="hero_badge">Tersedia untuk proyek otomatisasi</span>
+        </span>
+
+        <!-- Judul utama -->
+        <h1 class="mt-6 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+          <span data-i18n="hero_hello" class="text-slate-500 dark:text-slate-400 text-2xl md:text-3xl block font-bold">Halo, saya</span>
+          <span class="text-gradient">Agung Tri Mahmudi</span>
+        </h1>
+
+        <!-- Tagline -->
+        <p class="mt-4 text-lg md:text-2xl font-bold text-primary dark:text-accent">
+          AI Automation Engineer <span class="text-warm">|</span> n8n Workflow Specialist
+        </p>
+
+        <!-- Bio ringkas -->
+        <p class="mt-5 max-w-2xl text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="hero_bio">
+          Saya merancang alur kerja otomatisasi yang menghemat waktu dan biaya — menggabungkan logika node dengan kecerdasan buatan untuk menyelesaikan masalah operasional yang kompleks.
+        </p>
+
+        <!-- Tombol aksi -->
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#projects" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-primary to-accent text-white font-bold shadow-lg shadow-primary/30 hover:shadow-xl hover:-translate-y-0.5 transition" data-i18n="hero_cta1">Lihat Proyek</a>
+          <a href="#contact" class="px-6 py-3 rounded-2xl bg-white dark:bg-nightCard border border-primary/20 dark:border-accent/25 font-bold hover:border-accent hover:-translate-y-0.5 transition" data-i18n="hero_cta2">Hubungi Saya</a>
+        </div>
+      </div>
+
+      <!-- ===== STATS BAR (angka hasil diangkat ke depan) ===== -->
+      <div class="reveal mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- data-count = angka target untuk animasi count-up; data-suffix = teks setelah angka -->
+        <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
+          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-accent"><span class="stat-num" data-count="95">0</span>%</div>
+          <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_time">Waktu Dihemat</div>
+        </div>
+        <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
+          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-accent"><span class="stat-num" data-count="5">0</span></div>
+          <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_systems">Sistem Produksi</div>
+        </div>
+        <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
+          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-accent"><span class="stat-num" data-count="0">0</span>%</div>
+          <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_halu">Halusinasi AI</div>
+        </div>
+        <div class="rounded-2xl bg-white/70 dark:bg-nightCard/60 border border-primary/10 dark:border-nightLine p-5 text-center shadow-sm">
+          <div class="text-3xl md:text-4xl font-extrabold text-primary dark:text-accent">24/7</div>
+          <div class="mt-1 text-xs md:text-sm font-semibold text-slate-500 dark:text-slate-400" data-i18n="stat_service">Layanan Otomatis</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =================================================================
+       ABOUT
+       ================================================================= -->
+  <section id="about" class="py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-5 reveal">
+      <p class="text-sm font-bold uppercase tracking-widest text-accent" data-i18n="about_kicker">Tentang Saya</p>
+      <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="about_title">Otomatisasi cerdas, hasil nyata.</h2>
+      <p class="mt-6 text-lg text-slate-600 dark:text-slate-300 leading-relaxed text-justify hyphens-auto" data-i18n="about_body">
+        Saya merancang alur kerja otomatisasi yang menghemat waktu dan biaya, menggabungkan logika node dengan kecerdasan buatan untuk menyelesaikan masalah operasional yang kompleks. Portofolio ini menampilkan solusi nyata yang saya bangun untuk rumah sakit, Basarnas, UMKM, dan sistem pengetahuan berbasis AI.
+      </p>
+
+      <!-- Highlight approach -->
+      <div class="mt-8 grid sm:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-slate-50 dark:bg-nightCard">
+          <div class="text-2xl">🎯</div>
+          <h3 class="mt-2 font-bold" data-i18n="about_c1_t">Fokus Masalah</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400" data-i18n="about_c1_b">Setiap solusi berawal dari masalah operasional yang nyata dan menyakitkan.</p>
+        </div>
+        <div class="rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-slate-50 dark:bg-nightCard">
+          <div class="text-2xl">⚙️</div>
+          <h3 class="mt-2 font-bold" data-i18n="about_c2_t">Logika + AI</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400" data-i18n="about_c2_b">Menggabungkan node workflow n8n dengan model AI untuk keputusan cerdas.</p>
+        </div>
+        <div class="rounded-2xl border border-primary/10 dark:border-nightLine p-5 bg-slate-50 dark:bg-nightCard">
+          <div class="text-2xl">📈</div>
+          <h3 class="mt-2 font-bold" data-i18n="about_c3_t">Terukur</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400" data-i18n="about_c3_b">Sistem berjalan produksi lebih dari setahun dengan hasil yang terukur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PROJECTS  (grid diisi otomatis oleh JS dari data `projects`)
+       ================================================================= -->
+  <section id="projects" class="py-20 md:py-28 bg-slate-50 dark:bg-nightCard/40">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="reveal max-w-2xl">
+        <p class="text-sm font-bold uppercase tracking-widest text-accent" data-i18n="proj_kicker">Portofolio</p>
+        <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="proj_title">Solusi otomatisasi yang saya bangun</h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="proj_sub">Empat sistem nyata untuk rumah sakit, Basarnas, UMKM, dan knowledge base AI. Klik untuk cerita lengkapnya.</p>
+      </div>
+
+      <!-- Grid kartu (2x2 desktop, 1 kolom di HP) -->
+      <div id="projectGrid" class="mt-12 grid md:grid-cols-2 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       SKILLS  (grid pill diisi otomatis oleh JS)
+       ================================================================= -->
+  <section id="skills" class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="reveal max-w-2xl">
+        <p class="text-sm font-bold uppercase tracking-widest text-accent" data-i18n="skill_kicker">Teknologi</p>
+        <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="skill_title">Tools & keahlian saya</h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="skill_sub">Kombinasi tools yang saya pakai untuk membangun otomatisasi end-to-end.</p>
+      </div>
+
+      <div id="skillGrid" class="mt-12 space-y-8"></div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       REPOSITORIES  (daftar lengkap, diambil otomatis via GitHub API —
+       jadi repo baru langsung muncul di sini tanpa perlu edit manual.
+       Kartu cerita di atas ("Proyek") tetap ditulis manual karena butuh
+       narasi Problem/Solusi/Hasil yang tidak bisa di-generate dari README.)
+       ================================================================= -->
+  <section id="repos" class="py-20 md:py-28 bg-slate-50 dark:bg-nightCard/40">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="reveal max-w-2xl">
+        <p class="text-sm font-bold uppercase tracking-widest text-accent" data-i18n="repo_kicker">Repository</p>
+        <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="repo_title">Semua repository publik</h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="repo_sub">Diambil langsung dari GitHub — selalu terbaru, termasuk proyek yang belum sempat dibuatkan cerita di atas.</p>
+      </div>
+
+      <div id="repoGrid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="repo_loading">Memuat daftar repository…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       CONTACT
+       ================================================================= -->
+  <section id="contact" class="py-20 md:py-28 bg-slate-50 dark:bg-nightCard/40">
+    <div class="max-w-5xl mx-auto px-5 grid md:grid-cols-2 gap-10 items-start">
+
+      <!-- Kiri: ajakan + kontak langsung -->
+      <div class="reveal">
+        <p class="text-sm font-bold uppercase tracking-widest text-accent" data-i18n="contact_kicker">Kontak</p>
+        <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight" data-i18n="contact_title">Punya proses yang ingin diotomatisasi?</h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="contact_sub">Ceritakan tantangan operasional Anda. Saya bantu rancang alur kerja yang menghemat waktu dan biaya.</p>
+
+        <!-- Kontak langsung -->
+        <div class="mt-8 space-y-3">
+          <!-- Email -->
+          <a href="mailto:agungtrimahmudi.it@gmail.com" class="flex items-center gap-3 group">
+            <span class="w-10 h-10 grid place-content-center rounded-xl bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </span>
+            <span class="font-semibold group-hover:text-accent transition break-all">agungtrimahmudi.it@gmail.com</span>
+          </a>
+          <!-- WhatsApp -->
+          <a href="https://wa.me/6285174102020" target="_blank" rel="noopener" class="flex items-center gap-3 group">
+            <span class="w-10 h-10 grid place-content-center rounded-xl bg-green-500/10 text-green-600 dark:text-green-400">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4a3.4 3.4 0 0 0-1 2.5 6 6 0 0 0 1.2 3.1 13.6 13.6 0 0 0 5.3 4.7c2 .8 2 .5 2.4.5a3 3 0 0 0 2-1.4c.2-.5.2-1 .2-1.1l-.5-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.4A10 10 0 1 0 12 2z"/></svg>
+            </span>
+            <span class="font-semibold group-hover:text-accent transition">+62 851-7410-2020</span>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/agung-tri-mahmudi/" target="_blank" rel="noopener" class="flex items-center gap-3 group">
+            <span class="w-10 h-10 grid place-content-center rounded-xl bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.8-2.1c4 0 4.75 2.6 4.75 6V21H17v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg>
+            </span>
+            <span class="font-semibold group-hover:text-accent transition">linkedin.com/in/agung-tri-mahmudi</span>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/Agungtrimahmudi-automation" target="_blank" rel="noopener" class="flex items-center gap-3 group">
+            <span class="w-10 h-10 grid place-content-center rounded-xl bg-primary/10 dark:bg-accent/10 text-primary dark:text-accent">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.39.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            </span>
+            <span class="font-semibold group-hover:text-accent transition">Agungtrimahmudi-automation</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Kanan: form kontak (Formspree) -->
+      <!--
+        CARA MENGHUBUNGKAN FORM (belum aktif):
+        1. Daftar gratis di https://formspree.io  -> buat form baru.
+        2. Salin endpoint-nya (contoh: https://formspree.io/f/xxxxxxx).
+        3. Ganti nilai action="..." di bawah ini dengan endpoint tersebut.
+        Setelah itu form langsung mengirim pesan ke email Anda. Tanpa endpoint,
+        submit hanya menampilkan pesan sukses lokal (lihat JS di bawah).
+      -->
+      <form id="contactForm" action="https://formspree.io/f/mgognopa" method="POST"
+            class="reveal rounded-3xl bg-white dark:bg-nightCard border border-primary/10 dark:border-nightLine p-6 md:p-8 shadow-xl shadow-primary/5">
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-semibold mb-1.5" data-i18n="form_name">Nama</label>
+            <input required name="name" type="text"
+                   class="w-full rounded-xl border border-slate-200 dark:border-nightLine bg-slate-50 dark:bg-night px-4 py-3 outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition"
+                   data-i18n-ph="form_name_ph" placeholder="Nama Anda" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1.5" data-i18n="form_email">Email</label>
+            <input required name="email" type="email"
+                   class="w-full rounded-xl border border-slate-200 dark:border-nightLine bg-slate-50 dark:bg-night px-4 py-3 outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition"
+                   data-i18n-ph="form_email_ph" placeholder="email@contoh.com" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1.5" data-i18n="form_msg">Pesan</label>
+            <textarea required name="message" rows="4"
+                      class="w-full rounded-xl border border-slate-200 dark:border-nightLine bg-slate-50 dark:bg-night px-4 py-3 outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition resize-none"
+                      data-i18n-ph="form_msg_ph" placeholder="Ceritakan proses yang ingin diotomatisasi..."></textarea>
+          </div>
+          <button type="submit"
+                  class="w-full py-3 rounded-2xl bg-gradient-to-r from-primary to-accent text-white font-bold shadow-lg shadow-primary/30 hover:shadow-xl hover:-translate-y-0.5 transition"
+                  data-i18n="form_send">Kirim Pesan</button>
+          <!-- Pesan sukses (disembunyikan default) -->
+          <p id="formStatus" class="hidden text-center text-sm font-semibold text-green-600 dark:text-green-400" data-i18n="form_success">✓ Terima kasih! Pesan Anda sudah terkirim.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       FOOTER
+       ================================================================= -->
+  <footer class="border-t border-primary/10 dark:border-nightLine py-10">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-500 dark:text-slate-400">
+        © <span id="year"></span> Agung Tri Mahmudi. <span data-i18n="footer_rights">Dibuat dengan n8n & kopi.</span>
+      </p>
+      <div class="flex items-center gap-3">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/agung-tri-mahmudi/" target="_blank" rel="noopener" aria-label="LinkedIn"
+           class="w-9 h-9 grid place-content-center rounded-full border border-primary/15 dark:border-nightLine hover:bg-primary hover:text-white transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.8-2.1c4 0 4.75 2.6 4.75 6V21H17v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9z"/></svg>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/Agungtrimahmudi-automation" target="_blank" rel="noopener" aria-label="GitHub"
+           class="w-9 h-9 grid place-content-center rounded-full border border-primary/15 dark:border-nightLine hover:bg-primary hover:text-white transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.39.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/6285174102020" target="_blank" rel="noopener" aria-label="WhatsApp"
+           class="w-9 h-9 grid place-content-center rounded-full border border-primary/15 dark:border-nightLine hover:bg-green-500 hover:text-white transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4a3.4 3.4 0 0 0-1 2.5 6 6 0 0 0 1.2 3.1 13.6 13.6 0 0 0 5.3 4.7c2 .8 2 .5 2.4.5a3 3 0 0 0 2-1.4c.2-.5.2-1 .2-1.1l-.5-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.4A10 10 0 1 0 12 2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =================================================================
+       MODAL PROYEK (satu container, diisi dinamis oleh JS)
+       ================================================================= -->
+  <div id="modal" class="modal-overlay fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div class="modal-panel w-full max-w-2xl max-h-[88vh] rounded-3xl bg-white dark:bg-nightCard border border-primary/10 dark:border-nightLine shadow-2xl overflow-hidden flex flex-col">
+      <!-- Header modal -->
+      <div class="flex items-start justify-between gap-4 p-6 border-b border-slate-100 dark:border-nightLine">
+        <div>
+          <div id="modalIcon" class="text-3xl"></div>
+          <h3 id="modalTitle" class="mt-2 text-xl md:text-2xl font-extrabold tracking-tight"></h3>
+        </div>
+        <button id="modalClose" class="shrink-0 w-9 h-9 grid place-content-center rounded-full border border-slate-200 dark:border-nightLine hover:bg-slate-100 dark:hover:bg-night transition" aria-label="Tutup">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <!-- Isi modal (scrollable) -->
+      <div id="modalBody" class="modal-scroll p-6 overflow-y-auto space-y-5"></div>
+      <!-- Footer modal: tags + tombol dokumentasi -->
+      <div class="p-6 border-t border-slate-100 dark:border-nightLine">
+        <div id="modalTags" class="flex flex-wrap gap-2 mb-4"></div>
+        <a id="modalGithub" href="https://github.com/Agungtrimahmudi-automation" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 text-sm font-bold text-primary dark:text-accent hover:underline">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.39.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+          <span data-i18n="modal_doc">Lihat dokumentasi teknis</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       JAVASCRIPT
+       ================================================================= -->
+  <script>
+  /* ===================================================================
+     1) DATA PROYEK (bilingual: id & en). Section = {h: heading, p: paragraf}
+     =================================================================== */
+  const PROJECTS = [
+    /* ---------- PROYEK 1: Rekap RS ---------- */
+    {
+      icon: '🏥',
+      github: 'https://github.com/Agungtrimahmudi-automation/Rekap-Data-Dokter',
+      image: 'rekap-rs-workflow.png', // screenshot n8n asli dari repo (assets/workflow.PNG)
+      tags: ['n8n','Apps Script','Google Sheets API','Google Docs API','Google Drive API','Gmail API','JavaScript'],
+      id: {
+        title: 'Rekap Data Kunjungan Dokter — Otomatis dalam 1 Menit',
+        hook: 'Dari 2 jam menyatukan 3 file Excel jadi 1 menit — laporan kunjungan dokter langsung tersaji sebagai PDF rapi, siap kirim.',
+        sections: [
+          { h: 'Pendahuluan', p: 'Setiap bulan, staf administrasi rumah sakit harus menyusun laporan kunjungan dokter — dokumen wajib yang harus akurat dan tepat waktu. Tapi prosesnya menyita dua jam, penuh salah hitung, dan sering berujung lembur. Saya melihat ini, dan saya yakin ada cara yang lebih baik.' },
+          { h: 'Masalah', p: 'Ada tiga sumber data yang harus digabung: Rawat Inap, Poli, dan ICU. Setiap sumber memiliki format yang berbeda. Di satu file, tanggal tertulis DD/MM/YYYY. Di file lain, MM/DD/YYYY. Ada juga yang pakai strip, ada yang pakai slash. Staf harus menyesuaikan semuanya secara manual. Masalah berikutnya adalah data pasien rawat inap. Seorang pasien yang masuk 2 Juni dan keluar 5 Juni hanya muncul sebagai satu baris di Excel. Tapi untuk laporan, satu baris itu harus dipecah menjadi empat hari terpisah. Ini harus dilakukan untuk setiap pasien, setiap bulan. Setelah semua data selesai dipecah dan disesuaikan, staf masih harus mengelompokkan data per dokter dan menghitung jumlah pasien per hari. Selama tiga puluh hari. Untuk empat dokter berbeda. Proses ini sederhana, tapi sangat melelahkan. Kesalahan kecil bisa menyebabkan laporan harus diulang dari awal.' },
+          { h: 'Solusi', p: 'Saya merancang sistem otomatis yang menangani seluruh langkah ini tanpa campur tangan manusia. Staf cukup membuka form yang saya buat dengan Google Apps Script, mengunggah tiga file Excel, dan memasukkan bulan target. Setelah tombol submit ditekan, sistem bekerja sendiri: membaca ketiga file, menormalkan semua format tanggal, memecah rentang tanggal rawat inap menjadi per hari, lalu menggabungkan seluruh data. Setelah itu data dikelompokkan per dokter dan dihitung jumlah pasien per hari. Hasil akhirnya disusun rapi ke dalam Google Docs, lalu otomatis dikonversi menjadi PDF — siap langsung diunggah atau dibagikan, atau diedit manual dulu bila masih ada yang perlu disesuaikan. Staf menerima email notifikasi berisi file laporan tersebut.' },
+          { h: 'Hasil', p: 'Proses yang dulu memakan waktu dua jam kini selesai dalam satu menit — penghematan waktu mencapai 95 persen. Kesalahan hitung nyaris tidak pernah terjadi lagi, dan staf tidak perlu lagi lembur di akhir bulan sehingga bisa fokus ke pekerjaan yang lebih penting. Sistem ini mulai dipakai staf rumah sakit sejak Juni 2026, dan langsung memangkas beban kerja mereka sejak laporan bulan pertama.' },
+        ],
+      },
+      en: {
+        title: 'Doctor Visit Report — Automated in Under a Minute',
+        hook: 'From 2 hours merging three Excel files down to 1 minute — the doctor visit report is generated straight into a clean, send-ready PDF.',
+        sections: [
+          { h: 'Introduction', p: 'Every month, hospital admin staff must compile the doctor visit report — a mandatory document that has to be accurate and on time. But the process ate up two hours, was riddled with miscalculations, and often meant overtime. I saw this, and I was sure there was a better way.' },
+          { h: 'Problem', p: 'Three data sources had to be merged: Inpatient, Outpatient (Poli), and ICU. Each source had a different format. In one file, dates were written as DD/MM/YYYY. In another, MM/DD/YYYY. Some used dashes, some used slashes. Staff had to reconcile all of it by hand. The next problem was the inpatient data. A patient admitted on June 2 and discharged on June 5 appeared as a single row in Excel. But for the report, that one row had to be split into four separate days. This had to be done for every patient, every month. After all the data was split and reconciled, staff still had to group it per doctor and count patients per day — for thirty days, across four different doctors. The process was simple but exhausting. One small mistake could force the whole report to be redone.' },
+          { h: 'Solution', p: 'I designed an automated system that handles every one of these steps without human intervention. Staff simply open a form I built with Google Apps Script, upload the three Excel files, and enter the target month. Once submit is pressed, the system works on its own: it reads all three files, normalizes every date format, expands inpatient date ranges into individual days, then merges all the data. It then groups the data per doctor and counts patients per day. The final result is laid out neatly in Google Docs and automatically converted into a PDF — ready to upload or share directly, or to edit manually first if something still needs adjusting. Staff receive an email notification containing the report file.' },
+          { h: 'Result', p: 'A process that once took two hours now finishes in one minute — a 95 percent time saving. Miscalculations have all but disappeared, and staff no longer work overtime at month-end, freeing them to focus on more important work. The system has been used by the hospital staff since June 2026 and cut their workload from the very first monthly report.' },
+        ],
+      },
+    },
+
+    /* ---------- PROYEK 2: Jurnal Basarnas ---------- */
+    {
+      icon: '📋',
+      github: 'https://github.com/Agungtrimahmudi-automation/Jurnal-Siaga',
+      image: 'placeholder-jurnal.svg', // TODO: ganti dengan screenshot form/spreadsheet asli
+      tags: ['n8n','Google Sheets API','Google Drive API','Google Form','SMTP Email','JavaScript'],
+      id: {
+        title: 'Jurnal Siaga — Generator Laporan Shift Bulanan Otomatis',
+        hook: 'Laporan shift Basarnas dari 30+ dropdown manual jadi 1 form: 30 menit → 2 menit.',
+        sections: [
+          { h: 'Pendahuluan', p: 'Di setiap bulan, staf Basarnas harus membuat jurnal siaga shift. Dokumen ini wajib, harus akurat, dan harus selesai tepat waktu. Tapi di satu kantor, proses ini selalu menyita waktu. Mereka harus memilih dari dropdown panjang, menyesuaikan kombinasi shift dan hari, lalu mengetik ulang data yang sama setiap bulan. Butuh 30 menit. Repetitif. Membosankan. Dan selalu terasa seperti pekerjaan sia-sia. Saya melihat ini, dan saya yakin ada cara yang lebih baik.' },
+          { h: 'Masalah', p: 'Setiap bulan, staf membuat laporan shift lewat file dengan dropdown yang panjang — 30+ pilihan. Alurnya selalu sama: pilih dari dropdown, lalu salin baris itu dan ganti isinya dengan kegiatan shift berikutnya, berulang-ulang sampai satu bulan penuh. Duplikasinya memang mudah, tapi sangat membosankan dan menyita 30 menit setiap bulan. Padahal kalau diperhatikan, semua kombinasi shift dan hari itu sebenarnya hanya membentuk empat pola yang berulang — sesuatu yang sangat mungkin diotomatisasi.' },
+          { h: 'Solusi', p: 'Saya menganalisis pola shift dan hari, dan menemukan bahwa semua kombinasi hanya membentuk 4 pola berulang. Saya menyederhanakan semuanya menjadi 4 template: A, B, C, dan D. Staf hanya perlu mengisi 1 Google Form — tanggal, bulan, dan shift awal. Sistem otomatis menentukan template yang tepat untuk setiap tanggal, menyalinnya, mengisi hari dan tanggal, menggabungkan semua sheet, lalu mengirim PDF ke email pengirim. Semua otomatis.' },
+          { h: 'Hasil', p: 'Proses yang dulu memakan waktu 30 menit kini selesai dalam 2 menit. Penghematan waktu mencapai 80 persen. Sistem ini sudah berjalan konsisten sejak Juli 2025 — lebih dari 1 tahun. Meskipun template admin berubah dua kali, logika inti tetap sama dan sistem tetap berjalan tanpa kendala.' },
+        ],
+      },
+      en: {
+        title: 'Standby Journal — Automated Monthly Shift Report Generator',
+        hook: 'Basarnas shift reports from 30+ manual dropdowns down to a single form: 30 minutes → 2 minutes.',
+        sections: [
+          { h: 'Introduction', p: 'Every month, Basarnas (search & rescue) staff must produce a standby shift journal. The document is mandatory, must be accurate, and must be finished on time. But at one office, this process always ate up time. They had to pick from long dropdowns, adjust shift-and-day combinations, then retype the same data every month. It took 30 minutes. Repetitive. Tedious. And it always felt like wasted effort. I saw this, and I was sure there was a better way.' },
+          { h: 'Problem', p: 'Every month, staff created the shift report in a file full of long dropdowns — 30+ options. The routine was always the same: pick from a dropdown, then copy that row and replace its contents with the next shift’s activity, over and over until the whole month was filled. The duplication was easy but deeply tedious, eating up 30 minutes every month. Yet on closer inspection, all the shift-and-day combinations really formed just four recurring patterns — something perfectly suited for automation.' },
+          { h: 'Solution', p: 'I analyzed the shift-and-day patterns and found that all the combinations formed only 4 recurring patterns. I simplified everything into 4 templates: A, B, C, and D. Staff only fill in a single Google Form — date, month, and starting shift. The system automatically selects the correct template for each date, copies it, fills in the day and date, merges all sheets, then emails a PDF to the sender. All automatic.' },
+          { h: 'Result', p: 'A process that once took 30 minutes now finishes in 2 minutes — an 80 percent time saving. The system has run consistently since July 2025 — over a year. Even though the admin template changed twice, the core logic stayed the same and the system kept running without issues.' },
+        ],
+      },
+    },
+
+    /* ---------- PROYEK 3: AI Chatbot UMKM ---------- */
+    {
+      icon: '🤖',
+      github: null, // instance lama, tidak ada repo publik — tampil sebagai studi kasus teknis
+      image: 'placeholder-umkm.svg', // TODO: ganti dengan screenshot chat/Sheets asli
+      tags: ['n8n','Google Sheets API','Gemini API','Telegram API'],
+      id: {
+        title: 'AI Chatbot UMKM — Otomatisasi Layanan Pelanggan 24/7',
+        hook: 'Bot Telegram + Google Sheets + AI menjawab 80% pertanyaan pelanggan secara otomatis.',
+        sections: [
+          { h: 'Pendahuluan', p: 'Setiap UMKM punya masalah yang sama: pelanggan bertanya terus menerus soal stok, harga, dan ketersediaan barang. Admin harus membalas satu per satu. Saat jam sibuk, balasan tertunda. Pelanggan kecewa. Penjualan hilang. Seorang teman yang punya usaha jajanan di Kotamara mengeluh hal yang sama. Dia harus mengecek stok manual, membalas chat satu per satu, dan sering kewalahan. Saya melihat ini, dan saya yakin ada cara yang lebih baik.' },
+          { h: 'Masalah', p: 'Admin UMKM harus membalas pertanyaan pelanggan secara manual. Stok dan harga dicatat di buku atau Excel, tidak terhubung dengan chat. Setiap kali ada pertanyaan, admin harus mengecek dulu, lalu membalas. Proses ini lambat, apalagi di jam sibuk. Pelanggan menunggu lama. Admin stres. Pesanan kadang hilang karena respon terlambat.' },
+          { h: 'Solusi', p: 'Saya bangun bot Telegram yang terhubung dengan Google Sheets dan AI. Bot ini membaca data stok dan harga dari Google Sheets, lalu menjawab pertanyaan pelanggan secara otomatis. Pelanggan cukup chat ke bot, tanya stok atau harga, dan langsung mendapat jawaban. Bot juga punya fitur: cek stok, cek harga, deteksi pembayaran (jika pelanggan transfer, bot deteksi dan kabari admin), dan admin mode (admin bisa update stok dan harga lewat chat).' },
+          { h: 'Hasil', p: 'Admin UMKM kini tidak perlu lagi membalas satu per satu. Bot menangani 80% pertanyaan pelanggan secara otomatis. Admin hanya perlu update data di Google Sheets, dan bot langsung pakai data terbaru. Pelanggan dapat informasi kapan saja, 24 jam. Tidak perlu menunggu admin online. Beban admin berkurang drastis.' },
+        ],
+      },
+      en: {
+        title: 'SME AI Chatbot — 24/7 Automated Customer Service',
+        hook: 'A Telegram bot + Google Sheets + AI that answers 80% of customer questions automatically.',
+        sections: [
+          { h: 'Introduction', p: 'Every small business (SME) has the same problem: customers constantly ask about stock, prices, and availability. The admin has to reply one by one. During busy hours, replies get delayed. Customers get frustrated. Sales are lost. A friend who runs a snack business in Kotamara complained about exactly this. He had to check stock manually, reply to chats one by one, and was often overwhelmed. I saw this, and I was sure there was a better way.' },
+          { h: 'Problem', p: 'The SME admin had to answer customer questions manually. Stock and prices were recorded in a notebook or Excel, disconnected from the chat. For every question, the admin had to check first, then reply. The process was slow, especially during busy hours. Customers waited a long time. The admin was stressed. Orders were sometimes lost due to late responses.' },
+          { h: 'Solution', p: 'I built a Telegram bot connected to Google Sheets and AI. The bot reads stock and price data from Google Sheets, then answers customer questions automatically. Customers simply chat the bot, ask about stock or price, and get an instant answer. The bot also has features: check stock, check price, payment detection (if a customer transfers money, the bot detects it and notifies the admin), and admin mode (the admin can update stock and prices via chat).' },
+          { h: 'Result', p: 'The SME admin no longer has to reply one by one. The bot handles 80% of customer questions automatically. The admin only updates the data in Google Sheets, and the bot instantly uses the latest data. Customers get information anytime, 24 hours a day, without waiting for the admin to be online. The admin’s workload dropped drastically.' },
+        ],
+      },
+    },
+
+    /* ---------- PROYEK 4: Recipe RAG (Telegram) ---------- */
+    {
+      icon: '🍳',
+      github: 'https://github.com/Agungtrimahmudi-automation/recipe-rag-assistant',
+      image: 'placeholder-recipe.svg', // TODO: ganti dengan screenshot percakapan bot asli
+      tags: ['Python','FastAPI','Gemini API','Telegram API','n8n','Docker'],
+      id: {
+        title: 'Recipe RAG — Asisten Masak via Telegram',
+        hook: 'Bot Telegram yang menjawab dari 1.000 resep asli — tanpa vector database, tanpa resep karangan.',
+        sections: [
+          { h: 'Pendahuluan', p: '"Enaknya tempe di rumah dimasak apa ya?" adalah pertanyaan yang lebih cocok ditanyakan ke bot daripada mesin pencari — tapi hanya kalau bot itu benar-benar melihat kumpulan resep nyata, bukan mengarang sesuatu yang terdengar masuk akal. AI generatif biasa tidak bisa melihat koleksi resep tertentu, dan akan dengan santai mengarang bahan atau langkah yang sebenarnya tidak ada.' },
+          { h: 'Masalah', p: 'Saya ingin pipeline yang menjejakkan setiap klaim pada kumpulan dokumen nyata, bisa diakses dari Telegram, dan mau mengaku "tidak ada di koleksi saya" ketimbang menebak-nebak — juga berperilaku seperti asisten sungguhan (bisa basa-basi, tanya balik, memilih dari daftar pendek), bukan kotak pencarian sekali tembak yang menumpahkan daftar tautan.' },
+          { h: 'Solusi', p: 'Tiga bagian terpisah: (1) `prepare_dataset.py` menyaring dataset resep Indonesia dari Kaggle (8 kategori dari Cookpad Indonesia) menjadi 1.000 resep paling disukai, tiap baris menyimpan URL sumber aslinya. (2) `build_index.py` meng-embed setiap resep dengan Gemini dan menyimpan vektornya ke file JSON biasa — sengaja tanpa vector database terpisah — dan bisa dilanjutkan kapan saja tanpa mengulang panggilan API untuk resep yang sudah pernah di-embed. (3) `ask.py` / `api.py` menjalankan pencarian + jawaban, baik lewat CLI untuk uji manual maupun sebagai bot Telegram untuk pemakaian sehari-hari.' },
+          { h: 'Hasil', p: 'Berjalan aktif lewat Telegram untuk kebutuhan sehari-hari. Contoh nyata: tanya "saya punya tempe di rumah, enaknya dimasak apa ya?" — bot mengambil 8 resep tempe paling relevan (skor kecocokan 0.72–0.73) lengkap dengan tautan sumber Cookpad-nya, lalu menjawab dari resep-resep itu saja. Tidak ada bahan atau langkah yang dikarang; semua bisa ditelusuri balik ke resep aslinya.' },
+        ],
+      },
+      en: {
+        title: 'Recipe RAG — Telegram Cooking Assistant',
+        hook: 'A Telegram bot that answers from 1,000 real recipes — no vector database, no invented recipes.',
+        sections: [
+          { h: 'Introduction', p: '"What can I cook with the tempe I already have?" is a question worth asking a bot instead of a search engine, but only if the bot actually looks at a real recipe collection instead of hallucinating a plausible-sounding one. A plain LLM call can\'t see any particular collection and will happily invent ingredients or steps that don\'t exist.' },
+          { h: 'Problem', p: 'I wanted a pipeline that grounds every factual claim in a real document set, reachable from Telegram, that admits "not in my collection" instead of guessing — and that behaves like an actual assistant (chit-chat, follow-up questions, picking from a shortlist) rather than a one-shot search box that dumps a wall of links.' },
+          { h: 'Solution', p: 'Three separate pieces: (1) `prepare_dataset.py` samples a Kaggle Indonesian-recipe dataset (8 categories scraped from Cookpad Indonesia) down to the 1,000 most-loved recipes, each keeping its source URL. (2) `build_index.py` embeds every recipe with Gemini and caches the vectors to a plain JSON file — deliberately with no separate vector database — and is resumable, so re-running it only embeds genuinely new recipes. (3) `ask.py` / `api.py` handle retrieval and generation, either as a CLI for manual testing or as a Telegram bot for everyday use.' },
+          { h: 'Result', p: 'Runs actively via Telegram for daily use. A real example: asking "I have tempe at home, what should I cook?" returns the 8 most relevant tempe recipes (match scores 0.72–0.73) with their original Cookpad source links, and answers only from those recipes. Nothing is invented — every claim traces back to an actual recipe.' },
+        ],
+      },
+    },
+
+    /* ---------- PROYEK 5: Laporan Mingguan HP ---------- */
+    {
+      icon: '📱',
+      github: 'https://github.com/Agungtrimahmudi-automation/laporan-hp-mingguan',
+      image: 'placeholder-hp.svg', // TODO: ganti dengan screenshot PDF/rekap Sheets asli
+      tags: ['Python','YouTube Data API','Google Sheets API','Google Slides API','Gmail API'],
+      id: {
+        title: 'Laporan Mingguan HP — Konsensus Top 10 per Kelas Harga',
+        hook: 'Memindai ratusan ulasan YouTube dan artikel setiap Minggu, lalu mengirim peringkat konsensus Top 10 HP per kelas harga sebagai PDF + rekap Sheets.',
+        sections: [
+          { h: 'Pendahuluan', p: 'Setiap kali ada yang bertanya "HP 3 jutaan sekarang bagusnya apa?", jawabannya butuh satu jam menonton review. Tiap kanal punya jagoan sendiri, tiap artikel menyusun daftar dengan kriteria yang tidak dijelaskan, dan tidak ada satu pun yang menggabungkan semuanya menjadi satu daftar per kelas harga.' },
+          { h: 'Masalah', p: 'Yang sebenarnya dicari bukan opini satu reviewer, melainkan titik temu banyak reviewer — dan itu pekerjaan yang bisa dihitung, bukan ditonton. Seminggu kemudian pertanyaannya berulang, dan pekerjaannya harus diulang dari nol kalau dikerjakan manual.' },
+          { h: 'Solusi', p: 'Pipeline Python delapan tahap: kumpulkan ulasan YouTube dan artikel media teknologi, ekstrak penyebutan tiap perangkat, hitung skor konsensus (otoritas sumber × kesegaran × sinyal peringkat × kecocokan kelas harga), lalu susun deliverable — Google Sheets dan deck Google Slides yang diekspor ke PDF — dan kirim ke email. Sengaja tanpa model bahasa di jalur penilaian, supaya setiap angka bisa ditelusuri ke sumber dan posisi karakternya. Berjalan otomatis tiap Minggu pagi lewat Windows Task Scheduler.' },
+          { h: 'Hasil', p: 'Run 2026-W30: 238 sumber terkumpul (174 video YouTube, 64 artikel web) menghasilkan 2.102 penyebutan perangkat, disaring menjadi 50 peringkat akhir (10 HP × 5 kelas harga). Deliverable berupa PDF dan rekap Google Sheets dengan 238 sumber yang bisa ditelusuri balik.' },
+        ],
+      },
+      en: {
+        title: 'Weekly Phone Report — Top 10 Consensus per Price Class',
+        hook: 'Scans hundreds of YouTube reviews and tech articles every Sunday, then emails a consensus Top 10 phone ranking per price class as a PDF + Sheets recap.',
+        sections: [
+          { h: 'Introduction', p: 'Whenever someone asks "what\'s the best phone under 3 million rupiah right now?", the answer takes an hour of watching reviews. Every channel has its own favorite, every article ranks by unstated criteria, and none of them combine everything into a single list per price class.' },
+          { h: 'Problem', p: 'What\'s actually being sought isn\'t one reviewer\'s opinion, but the point where many reviewers agree — and that\'s something that can be computed, not watched. A week later the same question comes up, and the manual work starts over from zero.' },
+          { h: 'Solution', p: 'An eight-stage Python pipeline: collect YouTube reviews and tech articles, extract device mentions, compute a consensus score (source authority × recency × ranking signal × price-class fit), then assemble the deliverables — a Google Sheets recap and a Google Slides deck exported to PDF — and email them out. Deliberately no language model in the scoring path, so every number can be traced back to its source and character position. Runs automatically every Sunday morning via Windows Task Scheduler.' },
+          { h: 'Result', p: 'Run 2026-W30: 238 collected sources (174 YouTube videos, 64 web articles) produced 2,102 device mentions, filtered down to 50 final rankings (10 phones × 5 price classes). The deliverable is a PDF plus a Google Sheets recap with all 238 sources traceable.' },
+        ],
+      },
+    },
+
+    /* ---------- PROYEK 6: Novel Rekomendasi Harian ---------- */
+    {
+      icon: '📖',
+      github: 'https://github.com/Agungtrimahmudi-automation/novel-rekomendasi-harian',
+      image: 'placeholder-novel.svg', // TODO: ganti dengan screenshot email digest asli
+      tags: ['n8n','Gemini API','Google Sheets API','Gmail API'],
+      id: {
+        title: 'Novel Rekomendasi Harian — Digest Ranking Lintas Situs',
+        hook: 'Digest email otomatis tiap pagi berisi Top 10 novel dari empat situs berbeda, dengan penanda judul baru dan perubahan peringkat.',
+        sections: [
+          { h: 'Pendahuluan', p: 'Saya membaca web novel setiap hari, dan tiap pagi selalu mengulang ritual yang sama: buka satu per satu situs peringkat, bandingkan mana yang naik, tebak mana yang layak dibaca — sering membaca daftar yang sama persis dengan kemarin tanpa sadar, karena peringkat jarang berubah drastis.' },
+          { h: 'Masalah', p: 'Tiga hal yang ingin diselesaikan: empat situs harus dibuka manual tiap hari, tidak ada cara tahu mana judul yang benar-benar baru versus yang sudah nangkring seminggu, dan sebagian besar situs berbahasa Inggris termasuk genre yang selalu harus difilter manual.' },
+          { h: 'Solusi', p: 'Satu workflow n8n terjadwal 07:00 WITA yang mengambil data dari empat sumber (WTR Lab, Royal Road, NovelUpdates via proxy, MeioNovel), menggabungkan dan menyaring genre, menerjemahkan dengan Gemini 2.5 Flash, membandingkan dengan riwayat di Google Sheets untuk menghitung status baru/naik/turun, lalu mengirim digest HTML lewat Gmail. Sebelas situs di-probe lebih dulu untuk memetakan mana yang bisa diakses sebelum arsitektur diputuskan — lima di antaranya diblokir Cloudflare atau mati dan tidak dipakai.' },
+          { h: 'Hasil', p: 'Berjalan otomatis tiap pagi, satu eksekusi ±67 detik, menghasilkan 40 judul per hari (10 dari tiap 4 sumber) yang sudah tersaring genre — lengkap dengan badge BARU, indikator naik/turun peringkat, dan hari ke-berapa judul itu bertahan di daftar.' },
+        ],
+      },
+      en: {
+        title: 'Daily Novel Recommendations — Cross-Site Ranking Digest',
+        hook: 'An automated morning email digest of Top 10 novels from four different sites, with new-title badges and rank-change indicators.',
+        sections: [
+          { h: 'Introduction', p: 'I read web novels every day, and every morning I repeated the same ritual: open each ranking site one by one, compare what moved up, guess what\'s worth reading — often reading the exact same list as yesterday without realizing it, since rankings rarely change drastically.' },
+          { h: 'Problem', p: 'Three things needed solving: four sites had to be opened manually every day, there was no way to tell a genuinely new title from one that had been sitting there for a week, and most sites were in English, including genres that always had to be filtered by hand.' },
+          { h: 'Solution', p: 'A single n8n workflow scheduled for 07:00 WITA that fetches from four sources (WTR Lab, Royal Road, NovelUpdates via proxy, MeioNovel), merges and filters by genre, translates with Gemini 2.5 Flash, compares against history in Google Sheets to compute new/up/down status, then sends an HTML digest via Gmail. Eleven sites were probed first to map what was actually reachable before the architecture was decided — five of them were Cloudflare-blocked or dead and were dropped.' },
+          { h: 'Result', p: 'Runs automatically every morning, one execution takes about 67 seconds, producing 40 titles a day (10 from each of 4 sources) already filtered by genre — complete with a NEW badge, rank up/down indicators, and a day-count for titles that have stuck around.' },
+        ],
+      },
+    },
+  ];
+
+  /* ===================================================================
+     2) KAMUS TEKS UI (bilingual). data-i18n mengacu ke key di sini.
+     =================================================================== */
+  const I18N = {
+    id: {
+      nav_about:'Tentang', nav_projects:'Proyek', nav_skills:'Keahlian', nav_repos:'Repositori', nav_contact:'Kontak',
+      hero_badge:'Tersedia untuk proyek otomatisasi',
+      hero_hello:'Halo, saya',
+      hero_bio:'Saya merancang alur kerja otomatisasi yang menghemat waktu dan biaya — menggabungkan logika node dengan kecerdasan buatan untuk menyelesaikan masalah operasional yang kompleks.',
+      hero_cta1:'Lihat Proyek', hero_cta2:'Hubungi Saya',
+      stat_time:'Waktu Dihemat', stat_systems:'Sistem Produksi', stat_halu:'Halusinasi AI', stat_service:'Layanan Otomatis',
+      about_kicker:'Tentang Saya', about_title:'Otomatisasi cerdas, hasil nyata.',
+      about_body:'Saya merancang alur kerja otomatisasi yang menghemat waktu dan biaya, menggabungkan logika node dengan kecerdasan buatan untuk menyelesaikan masalah operasional yang kompleks. Portofolio ini menampilkan solusi nyata yang saya bangun untuk rumah sakit, Basarnas, UMKM, dan sistem pengetahuan berbasis AI.',
+      about_c1_t:'Fokus Masalah', about_c1_b:'Setiap solusi berawal dari masalah operasional yang nyata dan menyakitkan.',
+      about_c2_t:'Logika + AI', about_c2_b:'Menggabungkan node workflow n8n dengan model AI untuk keputusan cerdas.',
+      about_c3_t:'Terukur', about_c3_b:'Sistem berjalan produksi lebih dari setahun dengan hasil yang terukur.',
+      proj_kicker:'Portofolio', proj_title:'Solusi otomatisasi yang saya bangun',
+      proj_sub:'Enam sistem nyata untuk rumah sakit, Basarnas, UMKM, asisten resep, ranking HP, dan digest novel. Klik untuk cerita lengkapnya.',
+      proj_readmore:'Baca Selengkapnya',
+      skill_kicker:'Teknologi', skill_title:'Tools & keahlian saya',
+      skill_sub:'n8n sebagai platform utama saya, didukung keahlian di AI/LLM, integrasi API, dan perancangan workflow.',
+      repo_kicker:'Repository', repo_title:'Semua repository publik',
+      repo_sub:'Diambil langsung dari GitHub — selalu terbaru, termasuk proyek yang belum sempat dibuatkan cerita di atas.',
+      repo_loading:'Memuat daftar repository…',
+      repo_error:'Daftar repository belum bisa dimuat otomatis saat ini.',
+      repo_error_link:'Lihat langsung di GitHub',
+      repo_updated:'diperbarui',
+      contact_kicker:'Kontak', contact_title:'Punya proses yang ingin diotomatisasi?',
+      contact_sub:'Ceritakan tantangan operasional Anda. Saya bantu rancang alur kerja yang menghemat waktu dan biaya.',
+      form_name:'Nama', form_name_ph:'Nama Anda',
+      form_email:'Email', form_email_ph:'email@contoh.com',
+      form_msg:'Pesan', form_msg_ph:'Ceritakan proses yang ingin diotomatisasi...',
+      form_send:'Kirim Pesan', form_success:'✓ Terima kasih! Pesan Anda sudah terkirim.',
+      footer_rights:'Dibuat dengan n8n & kopi.',
+      modal_doc:'Lihat dokumentasi teknis',
+    },
+    en: {
+      nav_about:'About', nav_projects:'Projects', nav_skills:'Skills', nav_repos:'Repositories', nav_contact:'Contact',
+      hero_badge:'Available for automation projects',
+      hero_hello:"Hi, I'm",
+      hero_bio:'I design automation workflows that save time and cost — combining node logic with artificial intelligence to solve complex operational problems.',
+      hero_cta1:'View Projects', hero_cta2:'Contact Me',
+      stat_time:'Time Saved', stat_systems:'Production Systems', stat_halu:'AI Hallucination', stat_service:'Automated Service',
+      about_kicker:'About Me', about_title:'Smart automation, real results.',
+      about_body:'I design automation workflows that save time and cost, combining node logic with artificial intelligence to solve complex operational problems. This portfolio showcases real solutions I built for hospitals, search & rescue (Basarnas), small businesses, and AI-based knowledge systems.',
+      about_c1_t:'Problem-First', about_c1_b:'Every solution starts from a real, painful operational problem.',
+      about_c2_t:'Logic + AI', about_c2_b:'Combining n8n workflow nodes with AI models for smart decisions.',
+      about_c3_t:'Measurable', about_c3_b:'Systems running in production for over a year with measurable results.',
+      proj_kicker:'Portfolio', proj_title:'Automation solutions I built',
+      proj_sub:'Six real systems for hospitals, Basarnas, small businesses, a cooking assistant, phone rankings, and a novel digest. Click for the full story.',
+      proj_readmore:'Read More',
+      skill_kicker:'Technology', skill_title:'My tools & skills',
+      skill_sub:'n8n as my primary platform, supported by expertise in AI/LLM, API integration, and workflow design.',
+      repo_kicker:'Repositories', repo_title:'All public repositories',
+      repo_sub:'Pulled directly from GitHub — always current, including projects not yet written up as a case study above.',
+      repo_loading:'Loading repository list…',
+      repo_error:'The repository list could not be loaded automatically right now.',
+      repo_error_link:'View directly on GitHub',
+      repo_updated:'updated',
+      contact_kicker:'Contact', contact_title:'Have a process you want to automate?',
+      contact_sub:'Tell me about your operational challenge. I’ll help design a workflow that saves time and cost.',
+      form_name:'Name', form_name_ph:'Your name',
+      form_email:'Email', form_email_ph:'email@example.com',
+      form_msg:'Message', form_msg_ph:'Tell me about the process you want to automate...',
+      form_send:'Send Message', form_success:'✓ Thank you! Your message has been sent.',
+      footer_rights:'Built with n8n & coffee.',
+      modal_doc:'View technical documentation',
+    },
+  };
+
+  /* Daftar skill DIKELOMPOKKAN — framing jelas: n8n = tool utama, sisanya keahlian.
+     Tiap grup punya label bilingual (cat) + catatan opsional (note).
+     Grup dengan learning:true ditampilkan bergaya "garis putus-putus" (aspirasi).
+     GANTI isi grup "Sedang Dipelajari" sesuai apa yang benar-benar kamu pelajari. */
+  const SKILLS = [
+    {
+      cat:  { id:'Platform Otomasi', en:'Automation Platform' },
+      note: { id:'tool utama saya',  en:'my primary tool' },
+      items:[ ['⚡','n8n'] ],
+    },
+    {
+      // Sengaja TIDAK menyebut model spesifik (Gemini/GPT/Claude/DeepSeek) —
+      // cukup "LLM" generik agar tidak terkunci ke satu model & fleksibel saat ditanya.
+      cat:  { id:'AI & LLM', en:'AI & LLM' },
+      items:[
+        ['✨','Generative AI (LLM)'], ['✍️','Prompt Engineering'], ['📚','RAG'],
+        ['🌲','Vector DB (Pinecone)'], ['🤖','AI Agent'], ['🧑‍💻','AI-Driven Coding'],
+      ],
+    },
+    {
+      cat:  { id:'Integrasi & API', en:'Integrations & APIs' },
+      items:[ ['🔗','Google APIs'], ['🌐','HTTP Request'], ['💬','Telegram API'], ['🔌','REST API'], ['🪝','Webhook'] ],
+    },
+    {
+      cat:  { id:'Inti & Pendukung', en:'Core & Supporting' },
+      items:[ ['🧩','Workflow Design'], ['🟨','JavaScript'], ['📜','Apps Script'], ['🎨','HTML/CSS'], ['🟢','Node.js'], ['🐳','Docker'] ],
+    },
+    {
+      cat:  { id:'Sedang Dipelajari', en:'Currently Learning' },
+      note: { id:'target belajar berikutnya', en:'next learning goals' },
+      learning: true,
+      items:[ ['🐍','Python'], ['🗄️','Supabase'], ['🧠','MCP (Model Context Protocol)'] ],
+    },
+  ];
+
+  /* ===================================================================
+     3) STATE & HELPER
+     =================================================================== */
+  let LANG = localStorage.getItem('lang') || 'id';
+
+  const t = (key) => (I18N[LANG] && I18N[LANG][key]) || key;
+
+  /* ===================================================================
+     4) RENDER KONTEN DINAMIS (kartu proyek, skill) sesuai bahasa
+     =================================================================== */
+  function renderProjects() {
+    const grid = document.getElementById('projectGrid');
+    grid.innerHTML = PROJECTS.map((p, i) => {
+      const d = p[LANG];
+      const tagPreview = p.tags.slice(0, 4).map(tag =>
+        `<span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-primary/8 dark:bg-accent/10 text-primary dark:text-accent">${tag}</span>`
+      ).join('');
+      const thumb = p.image
+        ? `<div class="-mx-6 -mt-6 md:-mx-7 md:-mt-7 mb-4 rounded-t-3xl overflow-hidden border-b border-primary/10 dark:border-nightLine">
+             <img src="${p.image}" alt="${d.title}" class="w-full h-40 object-cover" loading="lazy" />
+           </div>`
+        : '';
+      return `
+      <article class="project-card reveal rounded-3xl bg-white dark:bg-nightCard border border-primary/10 dark:border-nightLine p-6 md:p-7 flex flex-col shadow-sm overflow-hidden">
+        ${thumb}
+        <div class="text-4xl">${p.icon}</div>
+        <h3 class="mt-4 text-lg md:text-xl font-extrabold tracking-tight leading-snug">${d.title}</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-grow">${d.hook}</p>
+        <div class="mt-4 flex flex-wrap gap-2">${tagPreview}</div>
+        <button data-open="${i}" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary dark:text-accent hover:gap-3 transition-all">
+          ${t('proj_readmore')}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </button>
+      </article>`;
+    }).join('');
+
+    // Pasang event listener tombol "Baca Selengkapnya"
+    grid.querySelectorAll('[data-open]').forEach(btn => {
+      btn.addEventListener('click', () => openModal(parseInt(btn.dataset.open, 10)));
+    });
+    observeReveal(); // daftarkan elemen baru ke animasi fade-in
+  }
+
+  /* ===================================================================
+     4b) REPOSITORIES — daftar live via GitHub REST API (tanpa autentikasi,
+         cukup untuk trafik portofolio pribadi). Fork & repo profil README
+         sendiri disaring. Gagal fetch (rate limit/offline) → degrade ke
+         link langsung ke GitHub, bukan section kosong/rusak.
+     =================================================================== */
+  let REPO_CACHE = null;
+  let REPO_FETCH_FAILED = false;
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, (c) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+  }
+
+  async function loadRepos() {
+    try {
+      const res = await fetch('https://api.github.com/users/Agungtrimahmudi-automation/repos?sort=updated&per_page=100');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      REPO_CACHE = data.filter(r => !r.fork && r.name.toLowerCase() !== 'agungtrimahmudi-automation');
+    } catch (err) {
+      REPO_FETCH_FAILED = true;
+    }
+    renderRepoGrid();
+  }
+
+  function renderRepoGrid() {
+    const grid = document.getElementById('repoGrid');
+    if (!grid) return;
+    if (REPO_FETCH_FAILED) {
+      grid.innerHTML = `
+        <div class="sm:col-span-2 lg:col-span-3 text-sm text-slate-500 dark:text-slate-400">
+          <p>${t('repo_error')}</p>
+          <a href="https://github.com/Agungtrimahmudi-automation?tab=repositories" target="_blank" rel="noopener" class="font-bold text-primary dark:text-accent hover:underline">${t('repo_error_link')} →</a>
+        </div>`;
+      return;
+    }
+    if (!REPO_CACHE) {
+      grid.innerHTML = `<p class="text-sm text-slate-500 dark:text-slate-400">${t('repo_loading')}</p>`;
+      return;
+    }
+    grid.innerHTML = REPO_CACHE.map(r => `
+      <a href="${r.html_url}" target="_blank" rel="noopener" class="project-card block rounded-2xl bg-white dark:bg-nightCard border border-primary/10 dark:border-nightLine p-5 shadow-sm">
+        <h3 class="font-bold text-slate-800 dark:text-white">${escapeHtml(r.name)}</h3>
+        <p class="mt-1.5 text-sm text-slate-500 dark:text-slate-400 line-clamp-2">${r.description ? escapeHtml(r.description) : ''}</p>
+        <div class="mt-3 flex items-center gap-3 text-xs text-slate-400 dark:text-slate-500">
+          ${r.language ? `<span class="font-semibold">${escapeHtml(r.language)}</span>` : ''}
+          <span>${t('repo_updated')} ${new Date(r.pushed_at).toLocaleDateString(LANG === 'id' ? 'id-ID' : 'en-US', { year: 'numeric', month: 'short' })}</span>
+        </div>
+      </a>`).join('');
+    observeReveal();
+  }
+
+  function renderSkills() {
+    const grid = document.getElementById('skillGrid');
+    grid.innerHTML = SKILLS.map(group => {
+      // Gaya pill berbeda untuk grup "Sedang Dipelajari" (garis putus-putus, muted)
+      const pillClass = group.learning
+        ? 'skill-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-transparent border border-dashed border-primary/30 dark:border-accent/30 text-slate-500 dark:text-slate-400 font-semibold text-sm'
+        : 'skill-pill inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white dark:bg-nightCard border border-primary/10 dark:border-nightLine font-semibold text-sm shadow-sm';
+      const pills = group.items.map(([icon, name]) =>
+        `<span class="${pillClass}"><span class="text-lg">${icon}</span>${name}</span>`
+      ).join('');
+      const note = group.note
+        ? `<span class="text-xs font-semibold text-slate-400 dark:text-slate-500 normal-case tracking-normal">— ${group.note[LANG]}</span>` : '';
+      return `
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-4">
+            <h3 class="text-sm font-extrabold uppercase tracking-wider text-primary dark:text-accent whitespace-nowrap">${group.cat[LANG]}</h3>
+            ${note}
+            <span class="flex-grow h-px bg-primary/10 dark:bg-nightLine"></span>
+          </div>
+          <div class="flex flex-wrap gap-3">${pills}</div>
+        </div>`;
+    }).join('');
+    observeReveal(); // daftarkan blok baru ke animasi fade-in
+  }
+
+  /* ===================================================================
+     5) MODAL PROYEK
+     =================================================================== */
+  const modal = document.getElementById('modal');
+
+  function openModal(index) {
+    const p = PROJECTS[index];
+    const d = p[LANG];
+    document.getElementById('modalIcon').textContent = p.icon;
+    document.getElementById('modalTitle').textContent = d.title;
+    const modalImg = p.image
+      ? `<img src="${p.image}" alt="${d.title}" class="w-full rounded-2xl border border-primary/10 dark:border-nightLine" loading="lazy" />`
+      : '';
+    document.getElementById('modalBody').innerHTML = modalImg + d.sections.map(s => `
+      <div>
+        <h4 class="text-sm font-extrabold uppercase tracking-wider text-accent">${s.h}</h4>
+        <p class="mt-1.5 text-slate-600 dark:text-slate-300 leading-relaxed text-justify hyphens-auto">${s.p}</p>
+      </div>`).join('');
+    document.getElementById('modalTags').innerHTML = p.tags.map(tag =>
+      `<span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-primary/8 dark:bg-accent/10 text-primary dark:text-accent">${tag}</span>`
+    ).join('');
+    const githubBtn = document.getElementById('modalGithub');
+    if (p.github) {
+      githubBtn.href = p.github;
+      githubBtn.classList.remove('hidden');
+    } else {
+      githubBtn.classList.add('hidden');
+    }
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden'; // kunci scroll background
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); }); // klik backdrop
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); }); // tekan Esc
+
+  /* ===================================================================
+     6) TOGGLE BAHASA
+     =================================================================== */
+  function applyLang() {
+    // Update <html lang>
+    document.documentElement.lang = LANG;
+    // Update semua elemen bertanda data-i18n (textContent)
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (I18N[LANG][key] !== undefined) el.textContent = I18N[LANG][key];
+    });
+    // Update placeholder input bertanda data-i18n-ph
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const key = el.getAttribute('data-i18n-ph');
+      if (I18N[LANG][key] !== undefined) el.setAttribute('placeholder', I18N[LANG][key]);
+    });
+    // Label tombol menampilkan bahasa TUJUAN (kalau sekarang id -> tampil EN)
+    document.getElementById('langLabel').textContent = LANG === 'id' ? 'EN' : 'ID';
+    // Render ulang konten dinamis
+    renderProjects();
+    renderSkills();
+    renderRepoGrid();
+  }
+
+  document.getElementById('langToggle').addEventListener('click', () => {
+    LANG = LANG === 'id' ? 'en' : 'id';
+    localStorage.setItem('lang', LANG);
+    applyLang();
+  });
+
+  /* ===================================================================
+     7) TOGGLE DARK MODE (default mengikuti preferensi tersimpan / sistem)
+     =================================================================== */
+  const themeToggle = document.getElementById('themeToggle');
+  function initTheme() {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  }
+  themeToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  });
+
+  /* ===================================================================
+     8) MENU MOBILE
+     =================================================================== */
+  const mobileMenu = document.getElementById('mobileMenu');
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  });
+  // Tutup menu mobile setelah klik salah satu link
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+  }));
+
+  /* ===================================================================
+     9) ANIMASI FADE-IN ON SCROLL (IntersectionObserver)
+     =================================================================== */
+  let revealObserver;
+  function observeReveal() {
+    if (!revealObserver) {
+      revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target); // sekali animasi saja
+          }
+        });
+      }, { threshold: 0.12 });
+    }
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
+  }
+
+  /* ===================================================================
+     10) STATS COUNT-UP (animasi angka saat masuk viewport)
+     =================================================================== */
+  function initCountUp() {
+    const nums = document.querySelectorAll('.stat-num');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        let current = 0;
+        const steps = 40;
+        const inc = Math.max(1, Math.ceil(target / steps));
+        const timer = setInterval(() => {
+          current += inc;
+          if (current >= target) { current = target; clearInterval(timer); }
+          el.textContent = current;
+        }, 25);
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    nums.forEach(n => obs.observe(n));
+  }
+
+  /* ===================================================================
+     11) FORM KONTAK — submit via fetch (Formspree). Placeholder-safe:
+         jika endpoint belum diganti, tetap tampilkan pesan sukses lokal.
+     =================================================================== */
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const status = document.getElementById('formStatus');
+    const action = form.getAttribute('action');
+
+    // Jika endpoint masih placeholder, jangan kirim ke server — tampilkan sukses lokal.
+    if (action.includes('your-id-here')) {
+      status.classList.remove('hidden');
+      form.reset();
+      return;
+    }
+    try {
+      const res = await fetch(action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+      });
+      if (res.ok) {
+        status.classList.remove('hidden');
+        form.reset();
+      }
+    } catch (err) {
+      // Fallback sederhana bila jaringan gagal
+      status.classList.remove('hidden');
+    }
+  });
+
+  /* ===================================================================
+     12) INISIALISASI SAAT HALAMAN SIAP
+     =================================================================== */
+  initTheme();
+  document.getElementById('year').textContent = '2026'; // tahun copyright (statis, aman tanpa Date)
+  applyLang();       // render teks + kartu + skill sesuai bahasa aktif
+  observeReveal();   // aktifkan fade-in
+  initCountUp();     // aktifkan animasi stats
+  loadRepos();       // ambil daftar repo publik terbaru dari GitHub API
+  </script>
+</body>
+</html>

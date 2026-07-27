@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — Agung Tri Mahmudi Portfolio
+  PENTING: ganti semua "https://agungtrimahmudi.site" dengan domain VPS aslimu.
+  Situs ini satu halaman (single page), jadi cukup 1 URL utama.
+  Perbarui <lastmod> setiap kali kamu update konten penting.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://agungtrimahmudi.site/</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
