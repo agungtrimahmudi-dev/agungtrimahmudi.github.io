@@ -74,7 +74,7 @@ const PROJECTS = [
   /* ---------- III. AI Chatbot UMKM ---------- */
   {
     icon: 'bot',
-    github: 'https://github.com/Agungtrimahmudi-automation/warung-sore-bot',
+    github: 'https://github.com/Agungtrimahmudi-automation/chatbot-umkm-warung-sore',
     image: 'assets/img/bot-umkm.png',
     tags: ['n8n','Google Sheets API','Gemini API','Telegram API'],
     id: {
