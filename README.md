@@ -12,12 +12,12 @@ Hand-written CSS and vanilla JS, no framework and no build step.
   ornaments, and every component.
 - `assets/app.js` — project data, the Indonesian/English dictionary, rendering,
   the project modal, and the theme, language, and scroll behaviour.
-- `assets/img/` — `profile.jpg`, `rekap-rs-workflow.png` (a real n8n workflow
-  screenshot from the
+- `assets/img/` — `profile.jpg`, plus one screenshot per project: an n8n
+  workflow diagram for
   [Rekap-Data-Dokter](https://github.com/Agungtrimahmudi-automation/Rekap-Data-Dokter)
-  project), and `placeholder-*.svg` stand-ins for projects whose screenshot
-  hasn't been taken yet. Each placeholder is named after its project, so
-  replacing one means overwriting the file — no code change.
+  (`rekap-rs-workflow.png`) and Telegram/UI screenshots for the rest
+  (`jurnal-siaga.png`, `bot-umkm.png`, `recipe-rag.png`,
+  `laporan-hp-mingguan.png`, `novel-harian.png`).
 - `favicon.svg`, `robots.txt`, `sitemap.xml`, `CNAME` — branding, SEO plumbing,
   and the custom domain for GitHub Pages.
 

@@ -47,7 +47,7 @@ const PROJECTS = [
   {
     icon: 'clipboard-list',
     github: 'https://github.com/Agungtrimahmudi-automation/Jurnal-Siaga',
-    image: 'assets/img/placeholder-jurnal.svg',
+    image: 'assets/img/jurnal-siaga.png',
     tags: ['n8n','Google Sheets API','Google Drive API','Google Form','SMTP Email','JavaScript'],
     id: {
       title: 'Jurnal Siaga: Generator Laporan Shift Bulanan Otomatis',
@@ -75,7 +75,7 @@ const PROJECTS = [
   {
     icon: 'bot',
     github: null, // prototipe yang tidak jadi dipakai; tampil sebagai studi kasus tanpa repo
-    image: 'assets/img/placeholder-umkm.svg',
+    image: 'assets/img/bot-umkm.png',
     tags: ['n8n','Google Sheets API','Gemini API','Telegram API'],
     id: {
       title: 'AI Chatbot UMKM: Studi Kasus Layanan Pelanggan Otomatis',
@@ -103,7 +103,7 @@ const PROJECTS = [
   {
     icon: 'chef-hat',
     github: 'https://github.com/Agungtrimahmudi-automation/recipe-rag-assistant',
-    image: 'assets/img/placeholder-recipe.svg',
+    image: 'assets/img/recipe-rag.png',
     tags: ['Python','FastAPI','Gemini API','Telegram API','n8n','Docker'],
     id: {
       title: 'Recipe RAG: Asisten Masak via Telegram',
@@ -131,7 +131,7 @@ const PROJECTS = [
   {
     icon: 'smartphone',
     github: 'https://github.com/Agungtrimahmudi-automation/laporan-hp-mingguan',
-    image: 'assets/img/placeholder-hp.svg',
+    image: 'assets/img/laporan-hp-mingguan.png',
     tags: ['Python','YouTube Data API','Google Sheets API','Google Slides API','Gmail API'],
     id: {
       title: 'Laporan Mingguan HP: Konsensus Top 10 per Kelas Harga',
@@ -159,7 +159,7 @@ const PROJECTS = [
   {
     icon: 'book-open',
     github: 'https://github.com/Agungtrimahmudi-automation/novel-rekomendasi-harian',
-    image: 'assets/img/placeholder-novel.svg',
+    image: 'assets/img/novel-harian.png',
     tags: ['n8n','Gemini API','Google Sheets API','Gmail API'],
     id: {
       title: 'Novel Rekomendasi Harian: Digest Ranking Lintas Situs',
