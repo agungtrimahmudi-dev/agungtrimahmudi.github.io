@@ -18,7 +18,7 @@ const PROJECTS = [
   /* ---------- I. Rekap RS ---------- */
   {
     icon: 'hospital',
-    github: 'https://github.com/agungtrimahmudi-dev/Rekap-Data-Dokter',
+    github: 'https://github.com/Agungtrimahmudi-automation/Rekap-Data-Dokter',
     image: 'assets/img/rekap-rs-workflow.png',
     tags: ['n8n','Apps Script','Google Sheets API','Google Docs API','Google Drive API','Gmail API','JavaScript'],
     id: {
@@ -46,7 +46,7 @@ const PROJECTS = [
   /* ---------- II. Jurnal Basarnas ---------- */
   {
     icon: 'clipboard-list',
-    github: 'https://github.com/agungtrimahmudi-dev/Jurnal-Siaga',
+    github: 'https://github.com/Agungtrimahmudi-automation/Jurnal-Siaga',
     image: 'assets/img/jurnal-siaga.png',
     tags: ['n8n','Google Sheets API','Google Drive API','Google Form','SMTP Email','JavaScript'],
     id: {
@@ -74,7 +74,7 @@ const PROJECTS = [
   /* ---------- III. AI Chatbot UMKM ---------- */
   {
     icon: 'bot',
-    github: 'https://github.com/agungtrimahmudi-dev/chatbot-umkm-warung-sore',
+    github: 'https://github.com/Agungtrimahmudi-automation/chatbot-umkm-warung-sore',
     image: 'assets/img/bot-umkm.png',
     tags: ['n8n','Google Sheets API','Gemini API','Telegram API'],
     id: {
@@ -102,7 +102,7 @@ const PROJECTS = [
   /* ---------- IV. Recipe RAG (Telegram) ---------- */
   {
     icon: 'chef-hat',
-    github: 'https://github.com/agungtrimahmudi-dev/recipe-rag-assistant',
+    github: 'https://github.com/Agungtrimahmudi-automation/recipe-rag-assistant',
     image: 'assets/img/recipe-rag.png',
     tags: ['Python','FastAPI','Gemini API','Telegram API','n8n','Docker'],
     id: {
@@ -130,7 +130,7 @@ const PROJECTS = [
   /* ---------- V. Laporan Mingguan HP ---------- */
   {
     icon: 'smartphone',
-    github: 'https://github.com/agungtrimahmudi-dev/laporan-hp-mingguan',
+    github: 'https://github.com/Agungtrimahmudi-automation/laporan-hp-mingguan',
     image: 'assets/img/laporan-hp-mingguan.png',
     tags: ['Python','YouTube Data API','Google Sheets API','Google Slides API','Gmail API'],
     id: {
@@ -158,7 +158,7 @@ const PROJECTS = [
   /* ---------- VI. Novel Rekomendasi Harian ---------- */
   {
     icon: 'book-open',
-    github: 'https://github.com/agungtrimahmudi-dev/novel-rekomendasi-harian',
+    github: 'https://github.com/Agungtrimahmudi-automation/novel-rekomendasi-harian',
     image: 'assets/img/novel-harian.png',
     tags: ['n8n','Gemini API','Google Sheets API','Gmail API'],
     id: {
@@ -225,41 +225,46 @@ const I18N = {
     nav_about:'Tentang', nav_projects:'Portofolio', nav_skills:'Keahlian',
     nav_repos:'Repositori', nav_cert:'Sertifikasi', nav_contact:'Kontak',
     hero_badge:'Tersedia untuk proyek otomatisasi',
-        hero_hello:'Halo, saya Agung.',
-                hero_bio:'Saya merancang sistem otomatisasi yang mengurangi pekerjaan manual, menghubungkan berbagai aplikasi, dan membantu tim bekerja lebih cepat serta terstruktur.',
-        hero_cta1:'Lihat Hasilnya', hero_cta2:'Hubungi Saya',
-        stat_time:'Waktu Dihemat di Laporan RS',
-        stat_orgs:'Instansi Memakainya',
-        stat_systems:'Sistem Berjalan',
-        stat_uptime_val:'1+', stat_uptime:'Tahun di Produksi',
-        about_kicker:'Tentang Saya', about_title:'Otomatisasi yang tepat, bukan sekadar otomatis',
-                about_body:'Saya memulai dari masalah nyata: pekerjaan berulang yang menghabiskan waktu, seperti menyalin data antar-spreadsheet, membuat rekap, atau memindahkan informasi dari satu aplikasi ke aplikasi lain.', about_body2:'Bagi saya, otomatisasi bukan tentang membuat sistem yang terlihat canggih. Tujuannya adalah mengurangi pekerjaan manual, memperkecil kesalahan, dan membuat proses lebih cepat serta terukur.', about_body3:'Saya juga tidak menyarankan semua pekerjaan langsung diotomatisasi. Bila alurnya belum stabil atau masih sering berubah, proses manual terkadang lebih efisien. Sistem baru layak dibangun ketika benar-benar mengurangi beban kerja, bukan menambah kompleksitas.', proj_kicker:'Portofolio', proj_title:'Solusi otomatisasi yang saya bangun',
-        proj_sub:'Enam sistem: dua dipakai instansi lain setiap bulan, tiga saya jalankan sendiri setiap hari, dan satu studi kasus yang terbukti bekerja tapi belum dipakai. Klik untuk detail lengkapnya, termasuk keputusan dan angkanya.',
-        proj_readmore:'Baca Selengkapnya',
-        how_kicker:'Cara Kerja', how_title:'Yang saya kerjakan sebelum node pertama dibuat',
-        how_sub:'Empat kebiasaan yang menentukan apakah sebuah otomatisasi masih berjalan setahun kemudian, atau berhenti begitu ada satu hal yang berubah.',
-        how_s1_t:'Petakan dulu, bangun belakangan',
-        how_s1_b:'Untuk digest novel, sebelas situs saya periksa satu per satu sebelum arsitekturnya diputuskan. Lima ternyata diblokir atau sudah mati, dan itu jauh lebih murah diketahui di awal daripada setelah parser-nya selesai dibuat.',
-        how_s2_t:'Rancang alur kerja end-to-end: input \u2192 proses \u2192 output terverifikasi.',
-        how_s2_b:'Saya merancang otomatisasi sesuai kebutuhan sebenarnya, bukan menambah lapisan aplikasi yang tidak diperlukan. UI baru dibangun saat proyek memang membutuhkannya.',
-        how_s3_t:'Angka yang bisa ditelusuri',
-        how_s3_b:'Peringkat HP dihitung tanpa model bahasa sama sekali, supaya tiap angka bisa ditelusuri balik ke sumbernya. Bot resep menjawab hanya dari 1.000 resep nyata, lengkap dengan tautan aslinya.',
-        how_s4_t:'Metrik terverifikasi, bukan perkiraan.',
-        how_s4_b:'Staf rumah sakit memakai sistemnya sendiri sejak Juni 2026. Jurnal Basarnas bertahan melewati dua kali pergantian template tanpa logika intinya disentuh.',
-        mid_cta:'Punya pekerjaan bulanan yang mirip? Ceritakan saja.',
-        mid_cta_btn:'Ceritakan prosesnya',
-        skill_kicker:'Teknologi', skill_title:'Tools & keahlian saya',
-        skill_sub:'n8n sebagai platform utama saya, didukung keahlian di AI/LLM, integrasi API, dan perancangan workflow.',
-        repo_kicker:'Repositori', repo_title:'Semua repository publik',
-        repo_sub:'Diambil langsung dari GitHub, selalu terbaru, termasuk yang belum ditulis ceritanya di atas.',
-        repo_loading:'Memuat daftar repository...',
-        repo_error:'Daftar repository belum bisa dimuat otomatis saat ini.',
-        repo_error_link:'Lihat langsung di GitHub',
-        repo_updated:'diperbarui',
-        cert_kicker:'Sertifikasi', cert_title:'Kursus yang sudah diselesaikan',
-        cert_sub:'Setiap kursus di bawah ini saya selesaikan sampai sertifikatnya terbit.',
-        contact_kicker:'Kontak', contact_title:'Punya proses yang ingin diotomatisasi?',
-        contact_sub:'Buka untuk kolaborasi otomatisasi workflow dan integrasi AI. Hubungi via email atau LinkedIn.',
+    hero_hello:'Halo, saya',
+    hero_bio:'Saya membangun sistem yang mengambil alih pekerjaan berulang. Laporan bulanan sebuah rumah sakit yang dulu memakan dua jam kini selesai dalam satu menit, dan sudah berjalan begitu sejak Juni 2026.',
+    hero_cta1:'Lihat Hasilnya', hero_cta2:'Hubungi Saya',
+    stat_time:'Waktu Dihemat di Laporan RS',
+    stat_orgs:'Instansi Memakainya',
+    stat_systems:'Sistem Berjalan',
+    stat_uptime_val:'1+', stat_uptime:'Tahun di Produksi',
+    about_kicker:'Tentang Saya', about_title:'Otomatisasi cerdas, hasil nyata.',
+    about_body:'Saya tidak mulai dari daftar tool. Saya mulai dari melihat orang menghabiskan malam untuk menyalin angka dari satu spreadsheet ke spreadsheet lain, lalu mengerjakan hal yang sama lagi bulan depan dengan angka yang berbeda. Pekerjaan seperti ini jarang sulit. Yang berat adalah panjangnya: langkahnya banyak, isinya berulang, dan tidak ada satu pun yang menuntut orang berpikir. Pekerjaan yang tidak menuntut orang berpikir memang paling pantas dikerjakan mesin.',
+    about_body2:'Di luar itu, saya lebih sering menyarankan untuk tetap manual saja. Otomatisasi yang dipasang di proses yang salah tidak mengurangi beban siapa pun. Yang bertambah malah satu sistem baru yang harus ikut dirawat.',
+    about_c1_t:'Fokus Masalah', about_c1_b:'Setiap sistem berawal dari masalah nyata yang benar-benar merepotkan, seperti staf rumah sakit yang lembur tiap akhir bulan demi satu laporan.',
+    about_c2_t:'Logika + AI', about_c2_b:'AI dipakai hanya di bagian yang butuh memahami bahasa. Perhitungan skor peringkat HP justru sengaja tanpa LLM, supaya angkanya bisa ditelusuri.',
+    about_c3_t:'Terukur', about_c3_b:'Sistem tertua saya berjalan sejak Juli 2025 dan bertahan melewati dua kali pergantian template admin.',
+    proj_kicker:'Portofolio', proj_title:'Solusi otomatisasi yang saya bangun',
+    proj_sub:'Enam sistem: dua dipakai instansi lain setiap bulan, tiga saya jalankan sendiri setiap hari, dan satu studi kasus yang terbukti bekerja tapi belum dipakai. Klik untuk cerita lengkapnya, termasuk keputusan dan angkanya.',
+    proj_readmore:'Baca Selengkapnya',
+    how_kicker:'Cara Kerja', how_title:'Yang saya kerjakan sebelum node pertama dibuat',
+    how_sub:'Empat kebiasaan yang menentukan apakah sebuah otomatisasi masih berjalan setahun kemudian, atau berhenti begitu ada satu hal yang berubah.',
+    how_s1_t:'Petakan dulu, bangun belakangan',
+    how_s1_b:'Untuk digest novel, sebelas situs saya periksa satu per satu sebelum arsitekturnya diputuskan. Lima ternyata diblokir atau sudah mati, dan itu jauh lebih murah diketahui di awal daripada setelah parser-nya selesai dibuat.',
+    how_s2_t:'Scope sesuai kebutuhan',
+    how_s2_b:'Saya merancang otomatisasi sesuai kebutuhan sebenarnya, bukan menambah lapisan aplikasi yang tidak diperlukan. UI baru dibangun saat proyek memang membutuhkannya.',
+    how_s3_t:'Angka yang bisa ditelusuri',
+    how_s3_b:'Peringkat HP dihitung tanpa model bahasa sama sekali, supaya tiap angka bisa ditelusuri balik ke sumbernya. Bot resep menjawab hanya dari 1.000 resep nyata, lengkap dengan tautan aslinya.',
+    how_s4_t:'Jalan tanpa saya',
+    how_s4_b:'Staf rumah sakit memakai sistemnya sendiri sejak Juni 2026. Jurnal Basarnas bertahan melewati dua kali pergantian template tanpa logika intinya disentuh.',
+    mid_cta:'Kalau ada pekerjaan bulanan di kantor Anda yang bentuknya mirip salah satu di atas, ceritakan saja.',
+    mid_cta_btn:'Ceritakan prosesnya',
+    skill_kicker:'Teknologi', skill_title:'Tools & keahlian saya',
+    skill_sub:'n8n sebagai platform utama saya, didukung keahlian di AI/LLM, integrasi API, dan perancangan workflow.',
+    repo_kicker:'Repositori', repo_title:'Semua repository publik',
+    repo_sub:'Diambil langsung dari GitHub, selalu terbaru, termasuk yang belum ditulis ceritanya di atas.',
+    repo_loading:'Memuat daftar repository…',
+    repo_error:'Daftar repository belum bisa dimuat otomatis saat ini.',
+    repo_error_link:'Lihat langsung di GitHub',
+    repo_updated:'diperbarui',
+    cert_kicker:'Sertifikasi', cert_title:'Kursus yang sudah diselesaikan',
+    cert_sub:'Setiap kursus di bawah ini saya selesaikan sampai sertifikatnya terbit.',
+    contact_kicker:'Kontak', contact_title:'Punya proses yang ingin diotomatisasi?',
+    contact_sub:'Ceritakan proses yang paling sering diulang di kantor Anda. Balasan pertama dari saya berupa pertanyaan untuk memetakan alurnya, bukan penawaran: sebagian proses ternyata lebih murah dirapikan daripada diotomatisasi, dan itu lebih baik diketahui sejak awal.',
     form_name:'Nama', form_name_ph:'Nama Anda',
     form_email:'Email', form_email_ph:'email@contoh.com',
     form_msg:'Pesan', form_msg_ph:'Ceritakan proses yang ingin diotomatisasi…',
@@ -282,7 +287,12 @@ const I18N = {
     stat_systems:'Systems Running',
     stat_uptime_val:'1+', stat_uptime:'Years in Production',
     about_kicker:'About Me', about_title:'Smart automation, real results.',
-        about_body:'I do not start from a list of tools. I start from watching someone spend an evening copying numbers from one spreadsheet into another, then doing the same thing again next month with different numbers. Work like this is rarely difficult. What makes it heavy is the length: many steps, all repetitive, and not one of them asks a person to think. Work that does not ask a person to think is exactly the work a machine should be doing.', about_body2:'Beyond that, I more often suggest leaving things manual. Automation dropped into the wrong process lifts nobody's burden. All it adds is one more system that has to be maintained.', about_body3:'I also don't suggest automating everything. If the flow isn't stable or changes often, manual can be more efficient. A new system is worth building only when it truly reduces workload, not when it adds complexity.', proj_kicker:'Portfolio', proj_title:'Automation solutions I built',
+    about_body:'I do not start from a list of tools. I start from watching someone spend an evening copying numbers from one spreadsheet into another, then doing the same thing again next month with different numbers. Work like this is rarely difficult. What makes it heavy is the length: many steps, all repetitive, and not one of them asks a person to think. Work that does not ask a person to think is exactly the work a machine should be doing.',
+    about_body2:'Beyond that, I more often suggest leaving things manual. Automation dropped into the wrong process lifts nobody\'s burden. All it adds is one more system that has to be maintained.',
+    about_c1_t:'Problem-First', about_c1_b:'Every system starts from a real, painful problem, like hospital staff working overtime each month-end for one report.',
+    about_c2_t:'Logic + AI', about_c2_b:'AI goes where language judgment is required. The phone-ranking scoring path is deliberately LLM-free, so the numbers stay traceable.',
+    about_c3_t:'Measurable', about_c3_b:'My oldest system has run since July 2025 and survived two changes to the admin template.',
+    proj_kicker:'Portfolio', proj_title:'Automation solutions I built',
     proj_sub:'Six systems: two used by other organizations every month, three I run myself every day, and one case study that works but is not yet in use. Click for the full story, including the decisions and the numbers.',
     proj_readmore:'Read More',
     how_kicker:'How I Work', how_title:'What I do before the first node is written',
@@ -359,7 +369,7 @@ const SKILLS = [
   },
 ];
 
-const GITHUB_USER = 'agungtrimahmudi-dev';
+const GITHUB_USER = 'Agungtrimahmudi-automation';
 const CONTACT_EMAIL = 'agungtrimahmudi.it@gmail.com';
 
 /* ========================= 4. RENDER KONTEN ======================== */
