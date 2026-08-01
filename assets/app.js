@@ -282,11 +282,7 @@ const I18N = {
     stat_systems:'Systems Running',
     stat_uptime_val:'1+', stat_uptime:'Years in Production',
     about_kicker:'About Me', about_title:'Smart automation, real results.',
-    about_body:'I do not start from a list of tools. I start from watching someone spend an evening copying numbers from one spreadsheet into another, then doing the same thing again next month with different numbers. Work like this is rarely difficult. What makes it heavy is the length: many steps, all repetitive, and not one of them asks a person to think. Work that does not ask a person to think is exactly the work a machine should be doing.',
-    about_body2:'Beyond that, I more often suggest leaving things manual. Automation dropped into the wrong process lifts nobody\'s burden. All it adds is one more system that has to be maintained.',
-    about_c1_t:'Problem-First', about_c1_b:'Every system starts from a real, painful problem, like hospital staff working overtime each month-end for one report.',
-    about_c2_t:'Logic + AI', about_c2_b:'AI goes where language judgment is required. The phone-ranking scoring path is deliberately LLM-free, so the numbers stay traceable.',
-    about_c3_t:'Measurable', about_c3_b:'My oldest system has run since July 2025 and survived two changes to the admin template.',
+        about_body:'I do not start from a list of tools. I start from watching someone spend an evening copying numbers from one spreadsheet into another, then doing the same thing again next month with different numbers. Work like this is rarely difficult. What makes it heavy is the length: many steps, all repetitive, and not one of them asks a person to think. Work that does not ask a person to think is exactly the work a machine should be doing.', about_body2:'Beyond that, I more often suggest leaving things manual. Automation dropped into the wrong process lifts nobody's burden. All it adds is one more system that has to be maintained.', about_body3:'I also don't suggest automating everything. If the flow isn't stable or changes often, manual can be more efficient. A new system is worth building only when it truly reduces workload, not when it adds complexity.', proj_kicker:
     proj_kicker:'Portfolio', proj_title:'Automation solutions I built',
     proj_sub:'Six systems: two used by other organizations every month, three I run myself every day, and one case study that works but is not yet in use. Click for the full story, including the decisions and the numbers.',
     proj_readmore:'Read More',
