@@ -226,7 +226,7 @@ const I18N = {
     nav_repos:'Repositori', nav_cert:'Sertifikasi', nav_contact:'Kontak',
     hero_badge:'Tersedia untuk proyek otomatisasi',
         hero_hello:'Halo, saya Agung.',
-        hero_bio:'Saya membangun sistem otomatisasi yang mengembalikan waktu kerja, sehingga tim bisa fokus pada tugas bernilai tinggi.',
+                hero_bio:'Saya merancang sistem otomatisasi yang mengurangi pekerjaan manual, menghubungkan berbagai aplikasi, dan membantu tim bekerja lebih cepat serta terstruktur.',
         hero_cta1:'Lihat Hasilnya', hero_cta2:'Hubungi Saya',
         stat_time:'Waktu Dihemat di Laporan RS',
         stat_orgs:'Instansi Memakainya',
