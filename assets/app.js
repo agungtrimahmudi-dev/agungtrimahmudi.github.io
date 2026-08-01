@@ -18,7 +18,7 @@ const PROJECTS = [
   /* ---------- I. Rekap RS ---------- */
   {
     icon: 'hospital',
-    github: 'https://github.com/Agungtrimahmudi-automation/Rekap-Data-Dokter',
+    github: 'https://github.com/agungtrimahmudi-dev/Rekap-Data-Dokter',
     image: 'assets/img/rekap-rs-workflow.png',
     tags: ['n8n','Apps Script','Google Sheets API','Google Docs API','Google Drive API','Gmail API','JavaScript'],
     id: {
@@ -46,7 +46,7 @@ const PROJECTS = [
   /* ---------- II. Jurnal Basarnas ---------- */
   {
     icon: 'clipboard-list',
-    github: 'https://github.com/Agungtrimahmudi-automation/Jurnal-Siaga',
+    github: 'https://github.com/agungtrimahmudi-dev/Jurnal-Siaga',
     image: 'assets/img/jurnal-siaga.png',
     tags: ['n8n','Google Sheets API','Google Drive API','Google Form','SMTP Email','JavaScript'],
     id: {
@@ -74,7 +74,7 @@ const PROJECTS = [
   /* ---------- III. AI Chatbot UMKM ---------- */
   {
     icon: 'bot',
-    github: 'https://github.com/Agungtrimahmudi-automation/chatbot-umkm-warung-sore',
+    github: 'https://github.com/agungtrimahmudi-dev/chatbot-umkm-warung-sore',
     image: 'assets/img/bot-umkm.png',
     tags: ['n8n','Google Sheets API','Gemini API','Telegram API'],
     id: {
@@ -102,7 +102,7 @@ const PROJECTS = [
   /* ---------- IV. Recipe RAG (Telegram) ---------- */
   {
     icon: 'chef-hat',
-    github: 'https://github.com/Agungtrimahmudi-automation/recipe-rag-assistant',
+    github: 'https://github.com/agungtrimahmudi-dev/recipe-rag-assistant',
     image: 'assets/img/recipe-rag.png',
     tags: ['Python','FastAPI','Gemini API','Telegram API','n8n','Docker'],
     id: {
@@ -130,7 +130,7 @@ const PROJECTS = [
   /* ---------- V. Laporan Mingguan HP ---------- */
   {
     icon: 'smartphone',
-    github: 'https://github.com/Agungtrimahmudi-automation/laporan-hp-mingguan',
+    github: 'https://github.com/agungtrimahmudi-dev/laporan-hp-mingguan',
     image: 'assets/img/laporan-hp-mingguan.png',
     tags: ['Python','YouTube Data API','Google Sheets API','Google Slides API','Gmail API'],
     id: {
@@ -158,7 +158,7 @@ const PROJECTS = [
   /* ---------- VI. Novel Rekomendasi Harian ---------- */
   {
     icon: 'book-open',
-    github: 'https://github.com/Agungtrimahmudi-automation/novel-rekomendasi-harian',
+    github: 'https://github.com/agungtrimahmudi-dev/novel-rekomendasi-harian',
     image: 'assets/img/novel-harian.png',
     tags: ['n8n','Gemini API','Google Sheets API','Gmail API'],
     id: {
@@ -360,7 +360,7 @@ const SKILLS = [
   },
 ];
 
-const GITHUB_USER = 'Agungtrimahmudi-automation';
+const GITHUB_USER = 'agungtrimahmudi-dev';
 const CONTACT_EMAIL = 'agungtrimahmudi.it@gmail.com';
 
 /* ========================= 4. RENDER KONTEN ======================== */
