@@ -18,7 +18,7 @@ const PROJECTS = [
   /* ---------- I. Rekap RS ---------- */
   {
     icon: 'hospital',
-    github: 'https://github.com/Agungtrimahmudi-automation/Rekap-Data-Dokter',
+    github: 'https://github.com/agungtrimahmudi-dev/Rekap-Data-Dokter',
     image: 'assets/img/rekap-rs-workflow.png',
     tags: ['n8n','Apps Script','Google Sheets API','Google Docs API','Google Drive API','Gmail API','JavaScript'],
     id: {
@@ -46,7 +46,7 @@ const PROJECTS = [
   /* ---------- II. Jurnal Basarnas ---------- */
   {
     icon: 'clipboard-list',
-    github: 'https://github.com/Agungtrimahmudi-automation/Jurnal-Siaga',
+    github: 'https://github.com/agungtrimahmudi-dev/Jurnal-Siaga',
     image: 'assets/img/jurnal-siaga.png',
     tags: ['n8n','Google Sheets API','Google Drive API','Google Form','SMTP Email','JavaScript'],
     id: {
@@ -74,27 +74,27 @@ const PROJECTS = [
   /* ---------- III. AI Chatbot UMKM ---------- */
   {
     icon: 'bot',
-    github: 'https://github.com/Agungtrimahmudi-automation/chatbot-umkm-warung-sore',
+    github: 'https://github.com/agungtrimahmudi-dev/chatbot-umkm-warung-sore',
     image: 'assets/img/bot-umkm.png',
     tags: ['n8n','Google Sheets API','Gemini API','Telegram API'],
     id: {
       title: 'AI Chatbot UMKM',
       hook: 'Studi kasus bot Telegram untuk menjawab pertanyaan menu, mencatat pesanan, dan menerima bukti pembayaran. Alurnya telah diuji dari awal hingga akhir menggunakan Google Sheets dan integrasi AI.',
       sections: [
-        { h: 'Pendahuluan', p: 'Saya ingin tahu sejauh mana satu bot bisa menggantikan pekerjaan menjawab pertanyaan pelanggan yang itu-itu saja. Supaya latihannya tidak mengambang, saya pakai usaha nyata sebagai skenario: usaha jajanan milik seorang teman di Kotamara. Sejak awal saya sudah tahu ini tidak akan langsung dipakai, jadi saya kerjakan sebagai studi kasus, bukan sebagai pesanan.' },
-        { h: 'Masalah', p: 'Pertanyaan yang masuk ke sebuah toko kecil sebenarnya sedikit dan berulang: barangnya ada atau tidak, harganya berapa, pembayarannya sudah masuk atau belum. Semua jawabannya sudah tersimpan, hanya saja di tempat yang tidak bisa dibaca oleh percakapan. Selama catatan dan chat terpisah, pemilik toko harus menjadi jembatan di antara keduanya, dan jembatan itu hanya bekerja saat dia sedang memegang ponsel.' },
-        { h: 'Solusi', p: 'Saya bangun bot Telegram yang membaca stok dan harga langsung dari Google Sheets, jadi tidak ada data yang perlu disalin dua kali. Di atasnya ada tiga hal lagi: pemesanan langsung lewat perintah /order dengan validasi stok, verifikasi bukti transfer (pelanggan kirim foto setelah order, bot meneruskannya ke admin untuk dicek manual), dan mode admin supaya stok dan harga bisa diperbarui lewat chat tanpa membuka spreadsheet.\n\nTelegram saya pilih karena API-nya terbuka dan gratis. WhatsApp menuntut API berbayar atau pindah ke WA Business, dan untuk sebuah studi kasus biaya itu tidak masuk akal dikeluarkan hanya untuk membuktikan logikanya bekerja.' },
-        { h: 'Hasil', p: 'Seluruh alurnya saya verifikasi ujung ke ujung: cek stok, cek harga, pemesanan lewat /order, bukti transfer yang tercocok otomatis ke pesanan yang benar dan diteruskan ke admin, serta mode admin — semuanya bekerja seperti yang dirancang. Dalam prosesnya saya juga menemukan dan memperbaiki beberapa bug nyata: trigger yang sempat mati total karena webhook placeholder dari template lama, dan notifikasi admin yang terkirim lebih awal dari seharusnya, sebelum bukti transfer sempat diunggah.\n\nMeski begitu, sampai sekarang teman saya belum memakainya untuk transaksi pelanggan sungguhan. Usahanya berjalan sepenuhnya offline, pembeli datang langsung, dan kode QRIS di pesan bot masih placeholder karena belum ada gambar asli dari admin.\n\nSaya memilih tetap menampilkannya apa adanya. Yang saya buktikan di sini adalah alurnya bisa bekerja ujung ke ujung, bukan bahwa ada transaksi nyata yang sudah lewat sana, dan dua hal itu tidak sama. Pelajaran yang saya bawa: memvalidasi bahwa sesuatu bisa dibangun jauh lebih mudah daripada memvalidasi bahwa seseorang benar-benar membutuhkannya, dan urutan yang benar adalah kebutuhan lebih dulu.' },
+        { h: 'Pendahuluan', p: 'Saya ingin tahu sejauh mana satu bot bisa menggantikan pekerjaan menjawab pertanyaan pelanggan yang itu-itu saja. Supaya latihannya tidak mengambang, saya pakai usaha nyata sebagai skenario: UMKM jualan makanan dan snack milik seorang teman di Kotamara. Sejak awal saya sudah tahu ini tidak akan langsung dipakai, jadi saya kerjakan sebagai studi kasus, bukan sebagai pesanan.' },
+        { h: 'Masalah', p: 'Pertanyaan yang masuk ke sebuah UMKM makanan sebenarnya sedikit dan berulang: menu apa yang tersedia, harganya berapa, pesanan sudah dibayar atau belum. Semua jawabannya sudah tersimpan, hanya saja di tempat yang tidak bisa dibaca oleh percakapan. Selama catatan dan chat terpisah, pemilik UMKM harus menjadi jembatan di antara keduanya, dan jembatan itu hanya bekerja saat dia sedang memegang ponsel.' },
+        { h: 'Solusi', p: 'Saya bangun bot Telegram yang membaca stok dan harga menu langsung dari Google Sheets, jadi tidak ada data yang perlu disalin dua kali. Di atasnya ada tiga hal lagi: pemesanan langsung lewat perintah /order dengan validasi stok, verifikasi bukti transfer (pelanggan kirim foto setelah order, bot meneruskannya ke admin untuk dicek manual), dan mode admin supaya stok dan harga bisa diperbarui lewat chat tanpa membuka spreadsheet.\n\nTelegram saya pilih karena API-nya terbuka dan gratis. WhatsApp menuntut API berbayar atau pindah ke WA Business, dan untuk sebuah studi kasus biaya itu tidak masuk akal dikeluarkan hanya untuk membuktikan logikanya bekerja.' },
+        { h: 'Hasil', p: 'Seluruh alurnya saya verifikasi ujung ke ujung: cek stok, cek harga menu, pemesanan lewat /order, bukti transfer yang tercocok otomatis ke pesanan yang benar dan diteruskan ke admin, serta mode admin — semuanya bekerja seperti yang dirancang. Dalam prosesnya saya juga menemukan dan memperbaiki beberapa bug nyata: trigger yang sempat mati total karena webhook placeholder dari template lama, dan notifikasi admin yang terkirim lebih awal dari seharusnya, sebelum bukti transfer sempat diunggah.\n\nMeski begitu, sampai sekarang teman saya belum memakainya untuk transaksi pelanggan sungguhan. Usahanya berjalan sepenuhnya offline, pembeli datang langsung, dan kode QRIS di pesan bot masih placeholder karena belum ada gambar asli dari admin.\n\nSaya memilih tetap menampilkannya apa adanya. Yang saya buktikan di sini adalah alurnya bisa bekerja ujung ke ujung, bukan bahwa ada transaksi nyata yang sudah lewat sana, dan dua hal itu tidak sama. Pelajaran yang saya bawa: memvalidasi bahwa sesuatu bisa dibangun jauh lebih mudah daripada memvalidasi bahwa seseorang benar-benar membutuhkannya, dan urutan yang benar adalah kebutuhan lebih dulu.' },
       ],
     },
     en: {
       title: 'SME AI Chatbot',
       hook: 'A Telegram bot case study for answering menu questions, taking orders, and receiving payment proof. The flow has been tested end to end using Google Sheets and AI integration.',
       sections: [
-        { h: 'Introduction', p: 'I wanted to find out how much of the work of answering the same handful of customer questions a single bot could take over. To keep the exercise grounded, I used a real business as the scenario: a friend\'s snack shop in Kotamara. I knew from the start it would not go straight into use, so I treated it as a case study rather than a commission.' },
-        { h: 'Problem', p: 'The questions a small shop receives are few and repetitive: is it in stock, what does it cost, has the payment come through. Every answer is already recorded somewhere, just somewhere the conversation cannot read. As long as the records and the chat stay separate, the shop owner has to be the bridge between them, and that bridge only works while he is holding his phone.' },
-        { h: 'Solution', p: 'I built a Telegram bot that reads stock and prices straight from Google Sheets, so no data has to be copied twice. On top of that sit three more things: ordering directly via an /order command with stock validation, payment-proof verification (the customer sends a photo after ordering and the bot forwards it to the admin for a manual check), and an admin mode so stock and prices can be updated over chat without opening the spreadsheet.\n\nI chose Telegram because its API is open and free. WhatsApp required either a paid API or a switch to WA Business, and for a case study that cost made no sense purely to prove the logic works.' },
-        { h: 'Result', p: 'I verified the whole flow end to end: stock lookups, price lookups, placing an order via /order, a payment-proof photo that gets auto-matched to the right order and forwarded to the admin, and admin mode — all working as designed. Along the way I also found and fixed real bugs: a trigger that was completely dead because of a leftover placeholder webhook ID from an old template, and an admin notification that fired too early, before the payment proof had even been uploaded.\n\nEven so, he has not put it to use for real customer transactions. His business runs entirely offline, buyers come to him in person, and the QRIS code in the bot\'s message is still a placeholder because the admin hasn\'t handed over the real image yet.\n\nI chose to show it exactly as it is. What I proved here is that the flow works end to end, not that any real transaction has gone through it, and those are not the same thing. The lesson I took away: proving something can be built is far easier than proving someone actually needs it, and the correct order is need first.' },
+        { h: 'Introduction', p: 'I wanted to find out how much of the work of answering the same handful of customer questions a single bot could take over. To keep the exercise grounded, I used a real business as the scenario: a friend\'s food and snack SME in Kotamara. I knew from the start it would not go straight into use, so I treated it as a case study rather than a commission.' },
+        { h: 'Problem', p: 'The questions a food SME receives are few and repetitive: what is on the menu, what does it cost, has the order been paid for. Every answer is already recorded somewhere, just somewhere the conversation cannot read. As long as the records and the chat stay separate, the owner has to be the bridge between them, and that bridge only works while he is holding his phone.' },
+        { h: 'Solution', p: 'I built a Telegram bot that reads menu stock and prices straight from Google Sheets, so no data has to be copied twice. On top of that sit three more things: ordering directly via an /order command with stock validation, payment-proof verification (the customer sends a photo after ordering and the bot forwards it to the admin for a manual check), and an admin mode so stock and prices can be updated over chat without opening the spreadsheet.\n\nI chose Telegram because its API is open and free. WhatsApp required either a paid API or a switch to WA Business, and for a case study that cost made no sense purely to prove the logic works.' },
+        { h: 'Result', p: 'I verified the whole flow end to end: stock lookups, menu price lookups, placing an order via /order, a payment-proof photo that gets auto-matched to the right order and forwarded to the admin, and admin mode — all working as designed. Along the way I also found and fixed real bugs: a trigger that was completely dead because of a leftover placeholder webhook ID from an old template, and an admin notification that fired too early, before the payment proof had even been uploaded.\n\nEven so, he has not put it to use for real customer transactions. His business runs entirely offline, buyers come to him in person, and the QRIS code in the bot\'s message is still a placeholder because the admin hasn\'t handed over the real image yet.\n\nI chose to show it exactly as it is. What I proved here is that the flow works end to end, not that any real transaction has gone through it, and those are not the same thing. The lesson I took away: proving something can be built is far easier than proving someone actually needs it, and the correct order is need first.' },
       ],
     },
   },
@@ -102,7 +102,7 @@ const PROJECTS = [
   /* ---------- IV. Recipe RAG (Telegram) ---------- */
   {
     icon: 'chef-hat',
-    github: 'https://github.com/Agungtrimahmudi-automation/recipe-rag-assistant',
+    github: 'https://github.com/agungtrimahmudi-dev/recipe-rag-assistant',
     image: 'assets/img/recipe-rag.png',
     tags: ['Python','FastAPI','Gemini API','Telegram API','n8n','Docker'],
     id: {
@@ -130,7 +130,7 @@ const PROJECTS = [
   /* ---------- V. Laporan Mingguan HP ---------- */
   {
     icon: 'smartphone',
-    github: 'https://github.com/Agungtrimahmudi-automation/laporan-hp-mingguan',
+    github: 'https://github.com/agungtrimahmudi-dev/laporan-hp-mingguan',
     image: 'assets/img/laporan-hp-mingguan.png',
     tags: ['Python','YouTube Data API','Google Sheets API','Google Slides API','Gmail API'],
     id: {
@@ -158,7 +158,7 @@ const PROJECTS = [
   /* ---------- VI. Novel Rekomendasi Harian ---------- */
   {
     icon: 'book-open',
-    github: 'https://github.com/Agungtrimahmudi-automation/novel-rekomendasi-harian',
+    github: 'https://github.com/agungtrimahmudi-dev/novel-rekomendasi-harian',
     image: 'assets/img/novel-harian.png',
     tags: ['n8n','Gemini API','Google Sheets API','Gmail API'],
     id: {
@@ -359,7 +359,7 @@ const SKILLS = [
   },
 ];
 
-const GITHUB_USER = 'Agungtrimahmudi-automation';
+const GITHUB_USER = 'agungtrimahmudi-dev';
 const CONTACT_EMAIL = 'agungtrimahmudi.it@gmail.com';
 
 /* ========================= 4. RENDER KONTEN ======================== */
