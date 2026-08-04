@@ -14,7 +14,7 @@ Hand-written CSS and vanilla JS, no framework and no build step.
   the project modal, and the theme, language, and scroll behaviour.
 - `assets/img/` — `profile.jpg`, plus one screenshot per project: an n8n
   workflow diagram for
-  [Rekap-Data-Dokter](https://github.com/Agungtrimahmudi-automation/Rekap-Data-Dokter)
+  [Rekap-Data-Dokter](https://github.com/agungtrimahmudi-dev/Rekap-Data-Dokter)
   (`rekap-rs-workflow.png`) and Telegram/UI screenshots for the rest
   (`jurnal-siaga.png`, `bot-umkm.png`, `recipe-rag.png`,
   `laporan-hp-mingguan.png`, `novel-harian.png`).
